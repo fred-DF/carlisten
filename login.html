@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/style.css">
+    <title>Admeldung</title>
+</head>
+<body>
+    <nav>
+        <div class="container" id="nav-bar-content">
+            <img src="https://carlisten.genanntnoelke.de/src/logos/Logo - Text - Weiss.svg" alt="">
+            <div class="links">
+                <a href="login.php" class="no-decoration" style="color: white;">Mitgliederbereich</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <form id="form" class="mt-5">
+            <div class="card mx-auto w-75">
+                <h1>Anmelden</h1>
+                <div class="alert-danger mx-3 mb-0" id="errorMsgBox" role="alert">
+                </div>
+                <span class="input-label">E-Mail Adresse</span>
+                <input type="email" class="input-l" id="email" placeholder="name@example.com">
+                <span class="input-label">Passwort</span>
+                <input type="password" class="input-l" id="password" placeholder="Password">
+            </div>
+            <input class="form-check-input" type="checkbox" value="" id="remember_me">
+            <label class="form-check-label" for="remember_me">
+                Angemeldet bleiben
+            </label>
+            <div class="col text-end">
+                <a href="resetPassword.php">Passwort vergessen?</a>
+            </div>
+            <button type="submit" class="filled">Anmelden</button>
+        </div>
+        </form>
+    </div>    
+    <script>
+        function checkData () {
+            event.preventDefault();
+            const username = document.getElementById('email').value;
+            const passwd = document.getElementById('password').value;            
+            const remember_me = document.getElementById('remember_me').checked;
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "backEnd/logIn.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {                    
+                    if (JSON.parse(xhr.responseText)['response'] == "success") {
+                        window.location = 'member/';
+                    } else {  
+                        if(JSON.parse(xhr.responseText)['response'] == "fail") {
+                            document.getElementById('errorMsgBox').innerText = JSON.parse(xhr.responseText)['error'];
+                            document.getElementById('errorMsgBox').classList.add("alert");
+                            document.getElementById('errorMsgBox').classList.add("mt-3");
+                        } else {
+                            document.getElementById('errorMsgBox').innerText = 'Ein unbekannter Fehler ist aufgetreten';
+                            document.getElementById('errorMsgBox').classList.add("warning");
+                            document.getElementById('errorMsgBox').classList.add("mt-3");
+                        }            
+                    }
+                }
+            };
+
+            xhr.send("username=" + encodeURIComponent(username) + "&password=" + encodeURIComponent(passwd) + "&rememberMe=" + encodeURIComponent(remember_me));
+        }
+        
+        document.getElementById('form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            checkData();
+        });
+
+    </script>
+</body>
+</html>

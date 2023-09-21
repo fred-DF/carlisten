@@ -1,0 +1,165 @@
+
+:root {
+    --primary: #003366;
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --link-color: #003366;
+    --danger-color: #ff3f3f;
+    --danger-color-background: rgba(255, 63, 63, 0.305);
+    --background-color-grey: #ededed;
+    --nav-bar-color: var(--primary);
+    --p-font-size: 16px;
+    --h1-font-size: 22px;
+    --h1-font-weigth: 600;
+    --space-s: 4px;
+    --space-m: 8px;
+    --space-l: 12px;
+    --site-widht: 1000px
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('../fonts/RobotoCondensed/RobotoCondensed-Light.woff2') format('truetype');
+    font-weight: light;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('../fonts/RobotoCondensed/RobotoCondensed-LightItalic.woff2') format('truetype');
+    font-weight: light;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('../fonts/RobotoCondensed/RobotoCondensed-Regular.woff2') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('../fonts/RobotoCondensed/RobotoCondensed-Italic.woff2') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('../fonts/RobotoCondensed/RobotoCondensed-Bold.woff2') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('../fonts/RobotoCondensed/RobotoCondensed-BoldItalic.woff2') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+body {
+    margin: 0 auto;
+}
+
+div.container {
+    max-width: var(--site-widht);
+    margin: 0 auto;
+    font-size: var(--p-font-size);
+    color: var(--text-color);
+    font-family: 'Roboto Condensed';
+}
+
+p {
+    font-size: var(--p-font-size);
+    color: var(--text-color);
+    line-height: calc(var(--p-font-size) + 2px);
+    
+}
+
+a {
+    color: var(--link-color);
+    text-decoration-line: underline;
+}
+
+a.no-decoration {
+    color: var(--text-color);
+    text-decoration-line: none;
+}
+
+nav {
+    background-color: var(--primary);
+    padding: 15px 0;
+    width: 100%;
+}
+
+div#nav-bar-content {
+    display: flex;
+    justify-content: space-between;    
+    align-items: last baseline;
+}
+
+footer {
+    width: 100%;
+    background-color: var(--background-color-grey);
+}
+
+div#footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: first baseline;
+}
+
+div#footer-content > div > p:first-of-type {
+    font-weight: bold;
+    color: var(--primary);
+}
+
+input, button, textarea, select {
+    height: 32px;
+    border: 1.5px solid var(--primary);
+    border-radius: 2px;
+    background-color: transparent;
+    padding: 0 var(--space-m);
+    color: var(--primary);
+    margin: var(--space-m) 0;
+    margin-top: var(--space-s);
+}
+
+button {
+    border-radius: 3px;
+}
+
+button.filled {
+    background-color: var(--primary);
+    color: #ffffff;
+}
+
+input[type=checkbox] {
+    height: 15px;
+    width: 15px;
+}
+
+span.input-label {
+    font-size: calc(var(--p-font-size) - 2px);
+    margin-bottom: 0px;
+}
+
+::placeholder {
+    color: var(--primary);
+    opacity: 80%;
+}
+
+:focus {
+    outline: none;
+}
+
+input:invalid {
+    background-color: var(--danger-color-background);
+    border-color: var(--danger-color);    
+}
+
+.input-l {
+    width: 100%;
+}
