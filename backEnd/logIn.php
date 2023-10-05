@@ -15,7 +15,7 @@ if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['remem
             echo json_encode(['response' => 'fail', 'error' => 'Neuer Session Token konnte nicht hochgeladen werden']);         
         } else {            
             ini_set('session.cookie_samesite', 'None');
-            ini_set('session.cookie_secure', 1);
+            ini_set('session.cookie_secure', 0);
             session_start();
             session_regenerate_id(true);
             $_SESSION['token'] = $token;

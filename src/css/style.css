@@ -14,68 +14,85 @@
     --space-s: 4px;
     --space-m: 8px;
     --space-l: 12px;
-    --site-widht: 1000px
+    --site-width: 1000px
 }
 
 @font-face {
     font-family: 'Roboto Condensed';
-    src: url('../fonts/RobotoCondensed/RobotoCondensed-Light.woff2') format('truetype');
+    src: url('https://carlisten.genanntnoelke.de/src/fonts/RobotoCondensed/RobotoCondensed-Light.woff2') format('truetype');
     font-weight: light;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Roboto Condensed';
-    src: url('../fonts/RobotoCondensed/RobotoCondensed-LightItalic.woff2') format('truetype');
+    src: url('https://carlisten.genanntnoelke.de/src/fonts/RobotoCondensed/RobotoCondensed-LightItalic.woff2') format('truetype');
     font-weight: light;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Roboto Condensed';
-    src: url('../fonts/RobotoCondensed/RobotoCondensed-Regular.woff2') format('truetype');
+    src: url('https://carlisten.genanntnoelke.de/src/fonts/RobotoCondensed/RobotoCondensed-Regular.woff2') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Roboto Condensed';
-    src: url('../fonts/RobotoCondensed/RobotoCondensed-Italic.woff2') format('truetype');
+    src: url('https://carlisten.genanntnoelke.de/src/fonts/RobotoCondensed/RobotoCondensed-Italic.woff2') format('truetype');
     font-weight: normal;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Roboto Condensed';
-    src: url('../fonts/RobotoCondensed/RobotoCondensed-Bold.woff2') format('truetype');
+    src: url('https://carlisten.genanntnoelke.de/src/fonts/RobotoCondensed/RobotoCondensed-Bold.woff2') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Roboto Condensed';
-    src: url('../fonts/RobotoCondensed/RobotoCondensed-BoldItalic.woff2') format('truetype');
+    src: url('https://carlisten.genanntnoelke.de/src/fonts/RobotoCondensed/RobotoCondensed-BoldItalic.woff2') format('truetype');
     font-weight: bold;
     font-style: italic;
 }
 
 body {
     margin: 0 auto;
+    font-family: 'Roboto Condensed', sans-serif !important;
 }
 
 div.container {
-    max-width: var(--site-widht);
+    max-width: var(--site-width);
     margin: 0 auto;
     font-size: var(--p-font-size);
     color: var(--text-color);
-    font-family: 'Roboto Condensed';
+    padding: 0 15px;
+}
+
+div.page-content {
+    padding: 25px 15px;
+}
+
+div.box {
+    border-radius: 5px;
+    border: 1px solid #003366;
+    padding: 10px 5px;
+    margin: 10px 0;
+}
+
+div.box > h5,
+biv.box > p {
+    margin: 0px 0;
 }
 
 p {
     font-size: var(--p-font-size);
     color: var(--text-color);
     line-height: calc(var(--p-font-size) + 2px);
-    
+    margin: 3px 0;
 }
 
 a {
@@ -96,8 +113,14 @@ nav {
 
 div#nav-bar-content {
     display: flex;
-    justify-content: space-between;    
+    justify-content: space-between;
     align-items: last baseline;
+}
+
+div.links {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
 }
 
 footer {
@@ -157,7 +180,7 @@ span.input-label {
 
 input:invalid {
     background-color: var(--danger-color-background);
-    border-color: var(--danger-color);    
+    border-color: var(--danger-color);
 }
 
 .input-l {

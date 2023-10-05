@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteLog "/rewrite.log"
+RewriteLogLevel 3
+RewriteRule ^(.*)$ controller.php [L]

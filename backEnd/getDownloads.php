@@ -2,7 +2,7 @@
 
 include_once 'auth.php';
 if(json_decode(auth(), true)['response'] !== 'success') {
-    include '../pages/403.html';    
+    include '../pages/403.php';
     header("HTTP/1.0 403 Forbidden");
     exit();
 }

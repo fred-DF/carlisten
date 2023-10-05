@@ -1,9 +1,7 @@
 <?php
 
 include_once 'auth.php';
-if(json_decode(auth(), true)['response'] !== 'success') {
-    exit(json_decode(auth(), true)['response']);
-}
+Auth::auth();
 
 if($_SERVER['REQUEST_METHOD'] == "POST") {
     if(!checkAdmin()) {
@@ -21,7 +19,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 // Durchsucht die website-settings.json nach einem Key und gibt das Value zurück => Einstellung wird gesucht und Wert der Einstellung wird zurückgegeben
 
 function getSetting ($searchKey) {
-    $jsonData = file_get_contents('../website-settings.json');
+    $jsonData = file_get_contents(__DIR__.'/../website-settings.json');
     $dataArray = json_decode($jsonData, true);
     foreach($dataArray as $key => $value) {
         if($key == $searchKey) {
@@ -31,8 +29,8 @@ function getSetting ($searchKey) {
     return null;
 }
 
-function getSettingPath ($searchKey, $path) {
-    $jsonData = file_get_contents($path.'/website-settings.json');
+function getSettingPath ($searchKey) {
+    $jsonData = file_get_contents(__DIR__.'/../website-settings.json');
     $dataArray = json_decode($jsonData, true);
     foreach($dataArray as $key => $value) {
         if($key == $searchKey) {

@@ -1,6 +1,7 @@
 <?php
 
 require_once '../vendor/autoload.php';
+require_once 'bootstrap.php';
 use Defuse\Crypto\Crypto;
 use Defuse\Crypto\Key;
 
@@ -11,6 +12,8 @@ include_once 'auth.php';
 if (json_decode(auth(), true)['response'] !== 'success') {
     exit(json_decode(auth(), true)['response']);
 }
+
+bootstrap::loadEnv();
 
 // Empfangen der Daten
 $data = json_decode(file_get_contents('php://input'), true);
@@ -24,7 +27,7 @@ if(isset($data['update'])) {
         $response = json_encode(['step' => 'verbindungsaufbau', 'secure' => $secure]);
         exit($response);
     } elseif(isset($data['updateData'])) {
-        $key = Key::loadFromAsciiSafeString(file_get_contents('key.txt'));
+        $key = Key::loadFromAsciiSafeString($_ENV['BANK_DATA_KEY']);
         $iban = Crypto::encrypt($data['iban'], $key);
         $bic = Crypto::encrypt($data['bic'], $key);
         $bank = Crypto::encrypt($data['bank'], $key);

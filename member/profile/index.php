@@ -3,7 +3,7 @@
 include_once '../../backEnd/auth.php';
 if (json_decode(auth(), true)['response'] !== 'success') {
     header("HTTP/1.0 403 Forbidden");
-    include '../../pages/403.html';
+    include '../../pages/403.php';
     exit();
 }
 

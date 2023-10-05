@@ -1,3 +1,9 @@
+<?php
+
+    require_once '../backEnd/bootstrap.php';
+    bootstrap::loadEnv();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +25,7 @@
         sich bitte an den Administrator der Website.
         
         Wir bedauern die Unannehmlichkeiten und hoffen, dass wir Ihnen bald helfen können, das Problem zu lösen.</p>
-        <a href="http://carlisten.genanntnoelke.de/login.html">
+        <a href="<?php echo $_ENV['APP_URL']; ?>/login.html">
             <button class="btn btn-outline-primary">
                 Anmelden
             </button>
