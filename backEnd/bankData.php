@@ -1,19 +1,14 @@
 <?php
 
-require_once '../vendor/autoload.php';
-require_once 'bootstrap.php';
+require_once __DIR__.'/../bootstrap.php';
 use Defuse\Crypto\Crypto;
 use Defuse\Crypto\Key;
 
 // Laden der Authentifizierungsfunktion
-include_once 'auth.php';
+
 
 // Überprüfen der Authentifizierung
-if (json_decode(auth(), true)['response'] !== 'success') {
-    exit(json_decode(auth(), true)['response']);
-}
-
-bootstrap::loadEnv();
+Auth::auth();
 
 // Empfangen der Daten
 $data = json_decode(file_get_contents('php://input'), true);
@@ -39,8 +34,8 @@ if(isset($data['update'])) {
         execute("UPDATE `bank_accounts` SET `IBAN`='$iban',`IBAN_clear`='$iban_clear',`BIC`='$bic',`bank`='$bank' WHERE `uID`='$uID'");
     }
 } elseif (isset($data['getData'])) {
-    if($data['getData'] == "admin" && isset($data['uID']) && checkAdmin()) {
-        $key = Key::loadFromAsciiSafeString(file_get_contents('key.txt'));
+    if($data['getData'] == "admin" && isset($data['uID']) && Auth::checkAdmin()) {
+        $key = Key::loadFromAsciiSafeString($_ENV['BANK_DATA_KEY']);
         $uID = $data['uID'];
         $bankData = select("SELECT `IBAN`, `BIC`, `bank` FROM `bank_accounts` WHERE `uID`='$uID' LIMIT 1")[0];
         $iban = Crypto::decrypt($bankData['IBAN'], $key);

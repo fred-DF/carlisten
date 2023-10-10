@@ -1,11 +1,7 @@
 <?php
 
-include_once '../../backEnd/auth.php';
-if (json_decode(auth(), true)['response'] !== 'success') {
-    header("HTTP/1.0 403 Forbidden");
-    include '../../pages/403.php';
-    exit();
-}
+include __DIR__."/../../bootstrap.php";
+Auth::auth();
 
 ?>
 <!DOCTYPE html>
@@ -22,7 +18,6 @@ if (json_decode(auth(), true)['response'] !== 'success') {
 
 $uID = $_SESSION['uID'];
 
-include_once '../../backEnd/pdo.php';
 $userData = select("SELECT * FROM `user` WHERE `ID`='$uID' LIMIT 1");
 if (empty($userData)) {
     echo "<h1>Ein Fehler ist Aufgetreten! <a href='../'>Zurück</a>";
@@ -65,7 +60,7 @@ foreach ($userData as $key => $value) {
 ?>
 
 <body>   
-    <?php require_once '../pages/nav-bar.php'; ?>
+    <?php require_once __DIR__.'/../../pages/nav-bar.php'; ?>
     <div class="container-sm">
         <h2 class="fw-bold"><?php echo $name = $value['title'] . " " . $value['first name'] . " " . $value['last name'] . " " . $value['second title']; ?></h2>
         <img src="<?php $profilePicUrl ?>" alt="">

@@ -1,7 +1,7 @@
 <nav>
-    <div class="container" id="nav-bar-content">
-        <a href="https://carlisten.genanntnoelke.de/member/" class="no-decoration">
-            <img src="https://carlisten.genanntnoelke.de/src/logos/Logo - Text - Weiss.svg" alt="">
+    <div class="nav-bar-content" id="nav-bar-content">
+        <a href="<?php echo getenv('APP_URL') ?>/member/home" class="no-decoration">
+            <img src="<?php echo getenv('APP_URL') ?>/src/logos/Logo - Text - Weiss.svg" alt="">
         </a>
         <div class="links">
             <a href="<?php echo getenv('APP_URL') ?>/member/events" class="no-decoration" style="color: white;">Veranstaltungen</a>

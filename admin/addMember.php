@@ -19,7 +19,7 @@ include '../backEnd/pdo.php';
     </div>
     <div style="height: 24px;"></div>
     <?php 
-        include 'nav-bar.html';
+        include 'nav-bar.php';
     ?>
     <div class="container-sm">
         <h1 class="fw-bold">Benutzer anlegen</h1>

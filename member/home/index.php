@@ -56,6 +56,9 @@
             <button class="btn btn-outline-primary">info@carlisten.de</button>
         </div>-->
     </div>
+    <?php
+    include __DIR__."/../../pages/footer.php";
+    ?>
 </body>
 
 </html>

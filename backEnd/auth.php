@@ -9,7 +9,7 @@ Class Auth {
             $res = select("SELECT `last_update` FROM `session_tokens` WHERE `uID`='$uID' && `token`='$token' LIMIT 1");
             if(empty($res)) {
                 header("HTTP/1.1 403");
-                exit();
+                exit("You're not Authorised or Authenticated - Please log in");
             }
         } elseif(isset($_COOKIE['token']) && isset($_COOKIE['uID'])) {
             $uID = $_COOKIE['uID'];
@@ -49,9 +49,7 @@ Class Auth {
 
     static public function checkAdmin ()
     {
-        if(json_decode(auth(), true)['response'] !== "success") {
-            return false;
-        }
+        Auth::auth();
         if(isset($_SESSION['auth'])) {
             $auth = $_SESSION['auth'];
             if((int) $auth == 2 || (int) $auth == 3) {

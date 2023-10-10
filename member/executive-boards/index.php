@@ -13,7 +13,7 @@
 <?php require_once __DIR__.'/../../pages/nav-bar.php'; ?>
     <div class="container page-content">
         <?php
-        include '../../backEnd/setting.php';
+        include __DIR__.'/../../backEnd/setting.php';
         // Banner
         if (getSettingPath("home_show_banner", "../..")) {
         ?>
@@ -116,6 +116,12 @@
             </div>
         </div>
     </div>
+<style>
+    div > img {
+        border-radius: 50%;
+        object-fit: cover;
+    }
+</style>
 </body>
 
 </html>

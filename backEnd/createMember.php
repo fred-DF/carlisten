@@ -1,10 +1,8 @@
 <?php
 
-include_once 'auth.php';
+require_once __DIR__.'/../bootstrap.php';
+Auth::checkAdmin();
 include_once 'sendWelcomeMail.php';
-if(!checkAdmin()) {
-    exit("Admin Rechte erforderlich");
-}
 
 if(isset($_GET['first_name']) && isset($_GET['last_name']) && isset($_GET['date_of_enter']) && isset($_GET['email'])) {
     if(isset($_GET['title'])) {

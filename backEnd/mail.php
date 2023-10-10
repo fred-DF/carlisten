@@ -1,10 +1,7 @@
 <?php
 
-error_reporting(E_ALL);
-include_once 'auth.php';
-if(!checkAdmin()) {
-    exit("Admin Rechte erforderlich");
-}
+require_once __DIR__.'/../bootstrap.php';
+Auth::checkAdmin();
 
 function sendMail ($to, $from, $subject, $message) {
     // Berechtigungsüberprüfung hier

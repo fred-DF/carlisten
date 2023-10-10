@@ -1,23 +1,21 @@
 <?php
-include_once '../backEnd/auth.php';
-if(!checkAdmin()) {
+include '../bootstrap.php';
+if(!Auth::checkAdmin()) {
     exit("Admin Rechte erforderlich");
 }
-
-error_reporting(E_ALL);
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    <link rel="stylesheet" href="../src/bootstrap/css/bootstrap.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/css/style.css">
     <title>Mitgliederverwaltung</title>
 </head>
 <body>    
     <?php
-        include_once 'nav-bar.html';
+        include_once 'nav-bar.php';
     ?>
     <div class="container">    
         <h1>Mitgliederverwaltung</h1>

@@ -52,7 +52,7 @@
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {                    
                     if (JSON.parse(xhr.responseText)['response'] == "success") {
-                        window.location = 'member/';
+                        window.location = 'member/home';
                     } else {  
                         if(JSON.parse(xhr.responseText)['response'] == "fail") {
                             document.getElementById('errorMsgBox').innerText = JSON.parse(xhr.responseText)['error'];

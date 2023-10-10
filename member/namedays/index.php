@@ -24,7 +24,6 @@
                 <?php
                 $month = "0";
 
-                include_once '../../backEnd/pdo.php';
                 $namedays = select("SELECT `ID`, `title`, `first name`, `last name`, `second title`, `name day`, `profile pic url` FROM `user` ORDER BY `user`.`name day` ASC");
                 $germanMonths = array(
                     '1' => 'Januar',

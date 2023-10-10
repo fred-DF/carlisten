@@ -1,4 +1,6 @@
 RewriteEngine On
-RewriteLog "/rewrite.log"
-RewriteLogLevel 3
-RewriteRule ^(.*)$ controller.php [L]
+RewriteBase /member/
+
+# Umleitung aller Anfragen zu controller.php, ausgenommen die Datei selbst
+RewriteCond %{REQUEST_URI} !^/member/controller\.php$
+RewriteRule ^(.*)$ controller.php?path=$1 [QSA,L]

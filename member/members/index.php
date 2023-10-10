@@ -1,3 +1,6 @@
+<?php
+    require_once __DIR__.'/../../bootstrap.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +15,7 @@
 <?php require_once __DIR__.'/../../pages/nav-bar.php'; ?>
     <div class="container page-content">
         <?php
-        include '../../backEnd/setting.php';
+        include __DIR__.'/../../backEnd/setting.php';
         // Banner
         if (getSettingPath("home_show_banner", "../..")) {
         ?>
@@ -49,9 +52,8 @@
             </div>
         </div>
     </div>
-    <script src="../../src/bootstrap/js/bootstrap.js"></script>
     <script src="search.js"></script>
-    <script src="members.js"></script>
+    <script src="/member/members/members.js"></script>
     <style>
         #user-avatar,
         .user-avatar {

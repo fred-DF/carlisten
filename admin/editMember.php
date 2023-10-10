@@ -6,8 +6,8 @@ if(!isset($_GET['uID'])) {
 }
 $uID = $_GET['uID'];
 
-include_once '../backEnd/auth.php';
-if(!checkAdmin()) {
+include '../bootstrap.php';
+if(!Auth::checkAdmin()) {
     exit("Admin Rechte erforderlich");
 }
 
@@ -56,7 +56,7 @@ foreach ($userData as $key => $value) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../src/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../src/css/style.css">
     <title>Mitgliederkartei bearbeiten</title>
 </head>    
 <body>
@@ -67,7 +67,7 @@ foreach ($userData as $key => $value) {
     </div>
     <div style="height: 24px;"></div>
     <?php 
-        include 'nav-bar.html';
+        include 'nav-bar.php';
     ?>
     <div class="container-sm">
         <h2 class="fw-bold"><?php echo $name = $value['title']." ".$value['first name']." ".$value['last name']." ".$value['second title']; ?></h2>

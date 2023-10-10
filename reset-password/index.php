@@ -78,7 +78,7 @@
                 if (xhr.status === 200) {
                     const response = JSON.parse(xhr.responseText);
                     if(response['response'] == 'success') {                        
-                        document.location = 'setPassword.php';
+                        document.location = 'reset-password/setPassword.php';
                     } else {
                         const alert = document.getElementById('alert_badge');
                         alert.innerText = response['error'];

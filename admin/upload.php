@@ -1,22 +1,20 @@
 <?php
-
-include '../backEnd/auth.php';
-if(!checkAdmin()) {
+include '../bootstrap.php';
+if(!Auth::checkAdmin()) {
     exit("Admin Rechte erforderlich");
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    <link rel="stylesheet" href="../src/bootstrap/css/bootstrap.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/css/style.css">
     <title>Datei Upload Verwaltung</title>
 </head>
 <body>
-    <?php include 'nav-bar.html'; ?>
+    <?php include 'nav-bar.php'; ?>
     <div class="container-sm">
         <h1>Datei Upload Verwaltung</h1>
         <button class="btn btn-primary" onclick="window.location = 'uploadFile.php';">

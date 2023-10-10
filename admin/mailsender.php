@@ -1,10 +1,8 @@
 <?php
-
-include '../backEnd/auth.php';
-if (!checkAdmin()) {
+include '../bootstrap.php';
+if(!Auth::checkAdmin()) {
     exit("Admin Rechte erforderlich");
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,13 +11,13 @@ if (!checkAdmin()) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../src/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../src/css/style.css">
     <title>Veranstaltungskalender</title>
 </head>
 
 <body>
     <?php
-    include 'nav-bar.html';
+    include 'nav-bar.php';
     ?>
     <div class="container-sm">
         <h1 class="my-3">E-Mail versand</h1>

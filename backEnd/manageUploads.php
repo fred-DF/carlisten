@@ -1,9 +1,7 @@
 <?php
 
-include_once 'auth.php';
-if(!checkAdmin()) {
-    exit("Admin Rechte erforderlich");
-}
+require_once __DIR__.'/../bootstrap.php';
+Auth::checkAdmin();
 
 if(isset($_GET['deleteFile']) && isset($_GET['path'])) {
     $file_path = $_GET['path'];

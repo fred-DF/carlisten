@@ -1,11 +1,7 @@
 <?php
-include_once 'auth.php';
-if(!checkAdmin()) {
-    exit("Admin Rechte erforderlich");
-}
 
-require_once '../vendor/autoload.php';
-
+require_once __DIR__.'/../bootstrap.php';
+Auth::checkAdmin();
 use Box\Spout\Writer\Common\Creator\WriterEntityFactory;
 use Box\Spout\Common\Entity\Row;
 

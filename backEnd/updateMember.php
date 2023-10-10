@@ -1,8 +1,9 @@
 <?php
 
-include_once 'auth.php';
+require_once __DIR__.'/../bootstrap.php';
+Auth::auth();
 if($_GET['uID'] !== $_SESSION['uID']) {
-  if(!checkAdmin()) {
+  if(!Auth::checkAdmin()) {
     exit("Berechtigung Fehlt");
   }
 }

@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+require_once __DIR__.'/../bootstrap.php';
 
 if(isset($_SESSION['check_code_attempts'])) {
     if($_SESSION['check_code_attempts'] > 3) {
@@ -12,7 +12,6 @@ if(isset($_SESSION['check_code_attempts'])) {
 }
 
 if(isset($_GET['code'])) {
-    include 'pdo.php';
     $code = $_GET['code'];
     $challenge = select("SELECT `ID`, `uID`, `name`, `created`, `done`, `created_by`, `email` FROM `register_challenges` WHERE `code`='$code' LIMIT 1");
     if(!empty($challenge)) {

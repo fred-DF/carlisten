@@ -1,13 +1,7 @@
 <?php
 
-error_reporting(E_ALL);
-
-include_once 'auth.php';
-if(json_decode(auth(), true)['response'] !== 'success') {
-    include '../pages/403.php';
-    header("HTTP/1.0 403 Forbidden");
-    exit();
-}
+require_once __DIR__.'/../bootstrap.php';
+Auth::auth();
 
 if(isset($_POST['password']) && isset($_SESSION['uID'])) {
     $password = hash('sha256', $_POST['password']);

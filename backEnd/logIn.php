@@ -7,7 +7,11 @@ if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['remem
     $username = $_POST['username'];
     $password = hash('sha256', $_POST['password']);   
     $remember_me = $_POST['rememberMe']; 
-    $user = select("SELECT `ID`, `password`, `authLevel` FROM `user` WHERE `username`='$username'")[0];
+    $user = select("SELECT `ID`, `password`, `authLevel` FROM `user` WHERE `username`='$username'");
+    if(count($user) !== 1) {
+        exit(json_encode(['response' => 'fail', 'error' => 'Passwort Falsch']));
+    }
+    $user = $user[0];
     if($password === $user['password']) {
         $token = bin2hex(random_bytes(32));
         $uID = $user['ID'];

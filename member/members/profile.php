@@ -1,11 +1,7 @@
 <?php
 
-include_once '../../backEnd/auth.php';
-if(json_decode(auth(), true)['response'] !== 'success') {
-    header("HTTP/1.0 403 Forbidden");
-    include '../../pages/403.php';
-    exit();
-}
+include_once __DIR__.'/../../bootstrap.php';
+Auth::auth();
 if(!isset($_POST['id'])) {
     header("Location: index.php");
     exit();

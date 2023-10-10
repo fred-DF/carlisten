@@ -1,11 +1,7 @@
 <?php
 
-include_once 'auth.php';
-if(json_decode(auth(), true)['response'] !== 'success') {
-    include '../pages/403.php';
-    header("HTTP/1.0 403 Forbidden");
-    exit();
-}
+require_once '../bootstrap.php';
+Auth::auth();
 
 include_once 'pdo.php';
 $downloads = select("SELECT `ID`, `name`, `file_name`, `path`, `category`, `size`, `upload_date`, `uploader`, `active` FROM `uploads` WHERE `active` <= CURDATE() ORDER BY `category`");

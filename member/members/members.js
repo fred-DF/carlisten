@@ -63,7 +63,7 @@ xhr.onload = function () {
             if (mitglied['profile pic url'] != '') {
                 var img = document.createElement('img');
                 img.classList.add('rounded-circle', 'object-fit-cover');
-                img.style = "height: 40px; width: 40px";
+                img.style = "height: 40px; width: 40px; object-fit: cover; border-radius: 50%";
                 img.setAttribute('src', mitglied['profile pic url']);
                 img.setAttribute('alt', mitglied['first name']);
                 td.appendChild(img);

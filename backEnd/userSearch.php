@@ -1,11 +1,7 @@
 <?php
 
-include_once 'auth.php';
-if(json_decode(auth(), true)['response'] !== 'success') {
-    exit(json_decode(auth(), true)['error']);
-}
-
-include_once 'pdo.php';
+require_once __DIR__.'/../bootstrap.php';
+Auth::auth();
 
 $pdo = connect();
 

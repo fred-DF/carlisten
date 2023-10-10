@@ -15,4 +15,7 @@ if(!getenv('DEBUG')) {
 ## Klassen Importieren
 require_once 'backEnd/auth.php';
 include_once 'backEnd/pdo.php';
-session_start();
+
+if(!isset($_SESSION)) {
+    session_start();
+}
