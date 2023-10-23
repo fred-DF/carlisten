@@ -60,16 +60,11 @@ foreach ($userData as $key => $value) {
     <title>Mitgliederkartei bearbeiten</title>
 </head>    
 <body>
-    <div class="container-fluid bg-primary-subtle position-fixed" style="z-index: 9999;">
-        <div class="container-sm">
-            <a href="member.php" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><- Zurück</a>
-        </div>
-    </div>
-    <div style="height: 24px;"></div>
     <?php 
         include 'nav-bar.php';
     ?>
-    <div class="container-sm">
+    <div style="height: 24px;"></div>
+    <div class="container">
         <h2 class="fw-bold"><?php echo $name = $value['title']." ".$value['first name']." ".$value['last name']." ".$value['second title']; ?></h2>
         <img src="<?php $profilePicUrl ?>" alt="">
         <h2>Name</h2>

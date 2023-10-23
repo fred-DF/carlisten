@@ -4,23 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="src/css/style.css">
     <title>Passwot zurücksetzen</title>
 </head>
 <body>
-    <div class="container-sm">
+    <nav>
+        <div class="container" id="nav-bar-content">
+            <img src="https://carlisten.genanntnoelke.de/src/logos/Logo - Text - Weiss.svg" alt="">
+            <div class="links">
+                <span></span>
+                <a href="login.html" class="no-decoration" style="color: white;">Mitgliederbereich</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
         <form id="form" class="mt-5">
             <div class="card mx-auto w-75">
-                <h5 class="card-header">Anmelden</h5>  
-                <div id="emailHelp" class="form-text mx-3 mt-3 mb-0">Eine E-Mail mit dem neuen Passwort wird an die im Profil hinterlegte E-Mail Adresse gesendet.</div>
-                <div class="alert-danger mx-3 my-0" id="errorMsgBox" role="alert">
+                <h1 class="card-header">Anmelden</h1>
+                <div>Geben Sie im untenstehenden Formular ihre E-Mail-Adresse ein. Daraufhin erhalten Sie eine E-Mail mit einem Code. Diesen müssen Sie dann auf der folgenden Seite eingeben, um ihr neues Passwort einzugeben.</div>
+                <div id="errorMsgBox" role="alert">
                 </div>
-                <div class="card-body">
-                    <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="email" placeholder="name@example.com">
-                        <label for="email">Email Adresse</label>
-                    </div>      
-                    <button type="submit" class="btn btn-primary">Passwort zurücksetzen</button>
+                <div id="password-reset-wrapper">
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                    <button type="submit" class="filled">Passwort zurücksetzen</button>
                 </div>
             </div>
         </form>
@@ -36,9 +42,7 @@
 
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                    document.getElementById('errorMsgBox').innerHTML = xhr.responseText;
-                    document.getElementById('errorMsgBox').classList.add("alert");
-                    document.getElementById('errorMsgBox').classList.add("mt-3");
+                    window.location = 'reset-password'
                 }
             };
 
@@ -51,5 +55,12 @@
         });
 
     </script>
+    <style>
+        #password-reset-wrapper {
+            display: flex;
+            flex-direction: column;
+            margin: 15px 0;
+        }
+    </style>
 </body>
 </html>

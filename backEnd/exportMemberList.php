@@ -5,12 +5,35 @@ Auth::checkAdmin();
 use Box\Spout\Writer\Common\Creator\WriterEntityFactory;
 use Box\Spout\Common\Entity\Row;
 
+$condition = '';
+if(isset($_GET['condition'])) {
+    $condition = "WHERE ";
+    if(isset($_GET['excludeDeath'])) {
+        $condition .= "!`death` ";
+    }
+    if(isset($_GET['requireMailShipping'])) {
+        if($condition == "WHERE ")
+            $condition .= "`typeMailing`='MAIL' ";
+        else
+            $condition .= "AND `typeMailing`='MAIL' ";
+    } elseif (isset($_GET['requireEMailShipping']))
+        if($condition == "WHERE ")
+            $condition .= "`typeMailing`='EMAIL' ";
+        else
+            $condition .= "AND `typeMailing`='EMAIL' ";
+}
+
 include_once 'pdo.php';
-$data = select("SELECT `ID`, `title`, `first name`, `last name`, `second title`, `name day`, `profile pic url`, `private_street`, `private_house_number`, `private_plz`, `private_city`, `private_country`, `private_telephone`, `private_mobile`, `private_web`, `private_email`, `professional_company`, `professional_job`, `professional_street`, `professional_housenumber`, `professional_plz`, `professional_city`, `professional_country`, `professional_telephone`, `professional_mobile`, `professional_web`, `professional_email`, `date_of_enter`, `username` FROM `user` ORDER BY `user`.`last name` ASC ");
+$data = select("SELECT `ID`, `title`, `first name`, `last name`, `second title`, `name day`, `profile pic url`, `private_street`, `private_house_number`, `private_plz`, `private_city`, `private_country`, `private_telephone`, `private_mobile`, `private_web`, `private_email`, `professional_company`, `professional_job`, `professional_street`, `professional_housenumber`, `professional_plz`, `professional_city`, `professional_country`, `professional_telephone`, `professional_mobile`, `professional_web`, `professional_email`, `date_of_enter`, `username` FROM `user`".$condition." ORDER BY `user`.`last name` ASC ");
+
+// Neue Spout Writer-Instanz erstellen
+// Den Content-Type setzen
+header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+header('Content-Disposition: attachment; filename="export.xlsx"');
 
 // Neue Spout Writer-Instanz erstellen
 $writer = WriterEntityFactory::createXLSXWriter();
-$writer->openToFile('php://output');
+$writer->openToBrowser('php://output');
 
 // Tabellenüberschriften schreiben
 $headerRow = WriterEntityFactory::createRowFromArray(['Anrede', 'Vorname', 'Nachname', 'Zweiter Titel', 'Namenstag', 'Straße', 'Hausnummer', 'PLZ', 'Stadt', 'Land', 'Telefon', 'Mobil', 'Webseite', 'E-Mail', 'Firma', 'Beruf', 'Straße', 'Hausnummer', 'PLZ', 'Stadt', 'Land', 'Telefon', 'Mobil', 'Webseite', 'E-Mail', 'Eintrittsdatum', 'Notiz', 'Benutzername']);

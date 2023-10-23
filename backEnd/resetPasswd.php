@@ -8,7 +8,7 @@ if(isset($_GET['email'])) {
     if(empty($user)) {
         exit("E-Mail Adresse nicht in der Datenbank gefunden");
     } elseif(count($user) < 7) {
-        exit("Mehere Konten mit Query Selector gefunden. Bitte nach Manuellem Reset Fragen");
+        exit("Mehrere Konten mit Query Selector gefunden. Bitte nach Manuellem Reset Fragen");
     }
     $code = mt_rand(100000, 999999);
     $uID = $user['ID'];

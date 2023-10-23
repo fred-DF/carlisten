@@ -6,7 +6,7 @@ if(isset($_SESSION['check_code_attempts'])) {
     if($_SESSION['check_code_attempts'] > 3) {
         exit(json_encode(['response' => 'error', 'error' => 'Zu viele Versuche']));
     }
-    //$_SESSION['check_code_attempts']++;
+    $_SESSION['check_code_attempts']++;
 } else {
     $_SESSION['check_code_attempts'] = 1;
 }

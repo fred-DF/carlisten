@@ -1,6 +1,6 @@
 <?php
 
-include '../backEnd/pdo.php';
+include '../bootstrap.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,23 +8,17 @@ include '../backEnd/pdo.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../src/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../src/css/style.css">
     <title>Mitgliederkartei bearbeiten</title>
 </head>    
 <body>
-    <div class="container-fluid bg-primary-subtle position-fixed" style="z-index: 9999;">
-        <div class="container-sm">
-            <a href="member.php" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><- Zurück</a>
-        </div>
-    </div>
-    <div style="height: 24px;"></div>
     <?php 
         include 'nav-bar.php';
     ?>
-    <div class="container-sm">
+    <div class="container">
         <h1 class="fw-bold">Benutzer anlegen</h1>
         <h2>Name</h2>
-        <div class="row g-2">
+        <div style="display: flex; gap: 5px">
             <div class="col-md">
                 <div class="form-floating">
                     <input type="text" class="form-control" id="title" placeholder="Titel">
@@ -66,19 +60,15 @@ include '../backEnd/pdo.php';
                 <div class="form-floating">
                     <input type="email" class="form-control" id="email" placeholder="E-Mail Adresse">
                     <label for="email">E-Mail Adresse *</label>
-                    <span>Eine E-Mail wird an den Empfänger dieser Adresse gesendet, mit der Aufforderung, die weiteren Daten einzutragen.</span>
-                </div>          
+                </div>
+                <span>Eine E-Mail wird an den Empfänger dieser Adresse gesendet, mit der Aufforderung, die weiteren Daten einzutragen.</span>
             </div>
             <div id="passwordResetErrorBox"></div>
         </div>
         <p>Alle mit * makierten Felder sind erforderlich</p>
         <div id="errorBox"></div>
-    </div>    
-    <div class="container-sm position-sticky bg-primary opacity-100 p-3 rounded row m-auto" style="z-index: 999999; bottom: 20px;">
-        <h2 class="text-white fw-bold m-0 col">Benutzer anlegen?</h2>
-        <button class="btn btn-light col-2" id="save">Fortfahren</button>
+        <button class="filled" id="save">Fortfahren</button>
     </div>
-    <script src="../src/bootstrap/js/bootstrap.js"></script>
     <script src="addMember.js"></script>   
 </body>
 </html>

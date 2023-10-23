@@ -48,11 +48,13 @@
                         for (var i = 0; i < downloads.length; i++) {
                             var category = downloads[i].category;
                             var uploads = downloads[i].uploads;
-                            html += '</div><br><div><h3>' + category + '</h3>'
+                            html += '</div><div><h3>' + category + '</h3>'
                             for (var j = 0; j < uploads.length; j++) {
+                                console.log(uploads, true);
                                 var name = uploads[j].name;
                                 var path = '../../' + uploads[j].path;
-                                html += '<a href="' + path + '" target="_blank" rel="noopener noreferrer" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">' + name + '</a> ';
+                                var size = (uploads[j].size / 1024 / 1000).toFixed(1) + ' MB';
+                                html += '<a href="' + path + '" target="_blank" rel="noopener noreferrer" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><button><b>' + name + '</b><br>' + size + '</button></a> ';
                             }
                         }
                         document.getElementById('links').innerHTML = html;
@@ -63,7 +65,23 @@
             displayAllDownloads();
         </script>
     </div>
+<style>
 
+    h3 {
+        margin: 8px 0 5px 0;
+    }
+
+    button {
+        padding: 10px 20px;
+        height: unset !important;
+        transition: all ease-in-out 0.2s;
+    }
+
+    button:hover {
+        background-color: #003366FF;
+        color: white;
+    }
+</style>
 <?php
 include __DIR__."/../../pages/footer.php";
 ?>

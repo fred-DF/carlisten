@@ -20,7 +20,8 @@
         <form id="form" class="mt-5">
             <div class="card mx-auto w-75">
                 <h1>Anmelden</h1>
-                <div class="alert-danger mx-3 mb-0" id="errorMsgBox" role="alert">
+                <div style="display: none; color: white; margin: 8px 0; padding: 10px 8px; background-color: red; border-radius: 3px; border: 2px solid rgba(255,255,255,0.32)" id="errorMsgBox" role="alert">
+                    Eine Anmeldung ist erforderlich um auf die angefragte Resource zuzugreifen.
                 </div>
                 <span class="input-label">E-Mail Adresse</span>
                 <input type="email" class="input-l" id="email" placeholder="name@example.com">
@@ -52,7 +53,12 @@
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {                    
                     if (JSON.parse(xhr.responseText)['response'] == "success") {
-                        window.location = 'member/home';
+                        const urlParams = new URLSearchParams(window.location.search);
+                        if (urlParams.has('redirect')) {
+                            window.location = urlParams.get('redirect');
+                        } else {
+                            window.location = 'member/home';
+                        }
                     } else {  
                         if(JSON.parse(xhr.responseText)['response'] == "fail") {
                             document.getElementById('errorMsgBox').innerText = JSON.parse(xhr.responseText)['error'];
@@ -74,6 +80,15 @@
             event.preventDefault();
             checkData();
         });
+
+        function isRequireLogInSet() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.has('requireLogIn');
+        }
+
+        if(isRequireLogInSet()) {
+            document.getElementById('errorMsgBox').style.display = 'block';
+        }
 
     </script>
 </body>

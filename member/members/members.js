@@ -34,7 +34,7 @@ xhr.onload = function () {
         var tr = document.createElement('tr');
         var th = document.createElement('th');
         th.setAttribute('scope', 'col');
-        th.innerHTML = 'Profilbild';
+        th.innerHTML = '';
         tr.appendChild(th);
         th = document.createElement('th');
         th.setAttribute('scope', 'col');

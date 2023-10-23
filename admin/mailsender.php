@@ -19,7 +19,7 @@ if(!Auth::checkAdmin()) {
     <?php
     include 'nav-bar.php';
     ?>
-    <div class="container-sm">
+    <div class="container">
         <h1 class="my-3">E-Mail versand</h1>
         <form id="mail">
             <select class="form-select form-select-lg mb-3" id="target" aria-label=".form-select-lg example">

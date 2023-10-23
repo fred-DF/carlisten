@@ -1,6 +1,6 @@
 <?php
 
-include 'pdo.php';
+require_once __DIR__.'/../bootstrap.php';
 $pdo = connect();
 
 if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['rememberMe'])) {
@@ -18,9 +18,8 @@ if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['remem
         if(!execute("UPDATE `session_tokens` SET `token`='$token' WHERE `uID`='$uID'")) {
             echo json_encode(['response' => 'fail', 'error' => 'Neuer Session Token konnte nicht hochgeladen werden']);         
         } else {            
-            ini_set('session.cookie_samesite', 'None');
-            ini_set('session.cookie_secure', 0);
-            session_start();
+            #ini_set('session.cookie_samesite', 'None');
+            #ini_set('session.cookie_secure', 0);
             session_regenerate_id(true);
             $_SESSION['token'] = $token;
             $_SESSION['uID'] = $uID;
@@ -31,8 +30,8 @@ if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['remem
             if($remember_me) {
                 $expiry = time() + (30 * 24 * 60 * 60);
                 $signature = hash_hmac('sha256', $token, '1c985d6299b008c4630d30dc44a1ef6f9b3294f17b6661e1f30a02d2b7407fec');
-                setcookie('token', $token . ':' . $signature, $expiry, '/', '', true, true);
-                setcookie('uID', $uID, $expiry, '/', '', true, true);
+                setcookie('token', $token . ':' . $signature, $expiry, '/', '', $_ENV['COOKIES_ONLY_SAME_SITE'], true);
+                setcookie('uID', $uID, $expiry, '/', '', $_ENV['COOKIES_ONLY_SAME_SITE'], true);
             }
             echo json_encode(['response' => 'success']);
         }

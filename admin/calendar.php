@@ -17,9 +17,9 @@ if(!Auth::checkAdmin()) {
     <?php
         include 'nav-bar.php';
     ?>
-    <div class="container-sm">
+    <div class="container">
         <h1>Veranstaltungskalender</h1>
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#event-modal">Veranstaltung einfügen</button>
+        <button class="btn btn-primary" onclick="document.querySelector('div.modal').dataset.shown =  'true';">Veranstaltung einfügen</button>
         <div class="row g-3 mt-2">
             <?php
                 include_once '../backEnd/pdo.php';
@@ -34,7 +34,7 @@ if(!Auth::checkAdmin()) {
                             <a class="a my-0" onclick="editEvent(<?php echo $value['ID']; ?>)">
                                 Bearbeiten</a>
                         </div>
-                    </div>   
+                    </div>
                     <?php
                 }
                 if(empty($events)) {
@@ -45,12 +45,12 @@ if(!Auth::checkAdmin()) {
             ?>            
         </div>
 
-        <div class="modal" tabindex="-1" id="event-modal">
+        <div class="modal" id="event-modal">
             <div class="modal-dialog modal-fullscreen">
                 <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Veranstaltung eintragen</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
                 </div>
                 <div class="modal-body">
                     <form id="event-form">
@@ -77,10 +77,10 @@ if(!Auth::checkAdmin()) {
                             <label class="form-check-label" for="registable">Anmeldbar</label>
                         </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Abbrechen</button>
-                    <button type="submit" class="btn btn-primary" id="createEvent" data-bs-dismiss="modal">Erstellen</button>
-                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Abbrechen</button>
+                        <button type="submit" class="btn btn-primary" id="createEvent" data-bs-dismiss="modal">Erstellen</button>
+                    </div>
                 </div>
                 </form>
             </div>
@@ -88,7 +88,6 @@ if(!Auth::checkAdmin()) {
 
 
     </div>
-    <script src="../src/bootstrap/js/bootstrap.js"></script>
     <script>
         function createEvent () {
             var title = document.getElementById('title').value;

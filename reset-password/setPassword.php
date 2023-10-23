@@ -14,42 +14,38 @@ $userData = json_decode($_SESSION['set_password_data'], 1);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../src/bootstrap/css/bootstrap.css">
-    <title>Passwort verstlegen</title>
+    <link rel="stylesheet" href="../src/css/style.css">
+    <title>Passwort festlegen</title>
 </head>
 <body>
-    <div class="container-sm mt-5">
-        <div class="alert alert-light">
-            <div class="position-relative m-4">
-                <div class="progress" role="progressbar" aria-label="Progress" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="height: 1px;">
-                    <div class="progress-bar" style="width: 50%"></div>
-                </div>
-                <button type="button" class="position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill" style="width: 2rem; height:2rem;">1</button>
-                <button type="button" class="position-absolute top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill" style="width: 2rem; height:2rem;">2</button>
-                <button type="button" class="position-absolute top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill" style="width: 2rem; height:2rem;">3</button>
+    <nav>
+        <div class="container" id="nav-bar-content">
+            <img src="https://carlisten.genanntnoelke.de/src/logos/Logo - Text - Weiss.svg" alt="">
+            <div class="links">
+                <span></span>
+                <a href="login.html" class="no-decoration" style="color: white;">Mitgliederbereich</a>
             </div>
-            <p>Hallo <strong><?php echo $userData['name'] ?></strong>. Bitte lege ein Passwort fest, um dich in zukunft Anzumelden. Falls du es mal vergessen solltest, kannst du es jederzeit zurücksetzten.</p>
-            <form id="password_form" class="">
-                <div class="form-floating w-100 mb-3">
-                    <input type="password" class="form-control" id="password" placeholder="Passwort">
-                    <label for="password">Passwort</label>
-                </div>                
-                <div class="form-floating w-100 mb-3">
-                    <input type="password" class="form-control" id="passwordReapeat" placeholder="Passwort">
-                    <label for="password">Password (wiederholen)</label>
-                </div>
-                <button type="submit" class="btn-primary btn w-100">Weiter</button>                
-                <div class="d-flex justify-content-center">
-                    <button class="btn btn-link" style="margin: 0 auto">Brauchst du Hilfe?</button>
-                </div>
-            </form>
         </div>
-        <div class="alert alert-danger" id="alert_badge" style="display: none;">
-        </div>
-        <script>
+    </nav>
+    <div class="container">
+        <h1>Passwort vergessen</h1>
+        <p style="margin: 15px 0">Hallo <strong><?php echo $userData['name'] ?></strong>. Legen Sie bitte ihr neues Passwort fest. Um höchstmögliche Sicherheit im Mitgliederbereich zu gewährleisten, bitten wir Sie ein sicheres Passwort zu wählen.</p>
+        <form id="password_form" class="">
+            <div class="form-floating w-100 mb-3">
+                <input type="password" class="form-control" id="password" placeholder="Passwort" required>
+            </div>
+            <div class="form-floating w-100 mb-3">
+                <input type="password" class="form-control" id="passwordRepeat" placeholder="Passwort (Wiederholen)" required>
+            </div>
+            <button type="submit" class="filled">Weiter</button>
+        </form>
+    </div>
+    <div class="alert alert-danger" id="alert_badge" style="display: none;">
+    </div>
+    <script>
         
         function setPassword () {
-            if(document.getElementById('passwordReapeat').value === document.getElementById('password').value) {
+            if(document.getElementById('passwordRepeat').value === document.getElementById('password').value) {
                 var password = document.getElementById('password').value;
             } else {
                 var alert_badge = document.getElementById('alert_badge');
@@ -65,7 +61,7 @@ $userData = json_decode($_SESSION['set_password_data'], 1);
                 if (xhr.status === 200) {
                     const response = JSON.parse(xhr.responseText);
                     if(response['response'] == 'success') {                        
-                        document.location = 'finish.php';
+                        document.location = '../login.html';
                     } else {
                         const alert = document.getElementById('alert_badge');
                         alert.innerText = response['error'];

@@ -1,7 +1,7 @@
 <?php
 
 Class Auth {
-    static public function auth ()
+    static public function auth ($resource = 'member/home')
     {
         if(isset($_SESSION['uID']) && isset($_SESSION['token'])) {
             $uID = $_SESSION['uID'];
@@ -30,7 +30,9 @@ Class Auth {
                 return json_encode(['response' => 'fail', 'error' => "FATAL: signature is'nt real", 'variant' => 'cookies']);
             }
         } else {
-            return json_encode(['response' => 'fail', 'error' => 'no data found']);
+            header('HTTP/1.1 403 No Permission to access');
+            header('Location: '.$_ENV['APP_URL'].'/login.html?requireLogIn&redirect='.$resource);
+            return die();
         }
     }
 

@@ -17,7 +17,7 @@ if(!Auth::checkAdmin()) {
 
 <body>
     <?php include 'nav-bar.php'; ?>
-    <div class="container-sm">
+    <div class="container">
         <form id="data">
             <input type="number" id="id" placeholder="Benutzer" class="form-control my-2">
             <button type="submit" class="btn btn-primary my-2">Daten sicher Erhalten</button>

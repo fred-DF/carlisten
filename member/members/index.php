@@ -36,12 +36,9 @@
         }
         ?>
         <h1>Mitgliederliste</h1>
-        <div class="input-group shadow-sm" style="z-index: 999;">
-            <div class="form-floating">
-                <input type="text" class="form-control" id="search" placeholder="Max Mustermann">
-                <label for="search">Suche nach Name, Beruf, usw.</label>
-            </div>
-            <button class="btn btn-primary" style="height: 58px;" type="submit">Suchen</button>
+        <div id="search-bar" style="z-index: 999;">
+            <input type="text" class="form-control" id="search" placeholder="Suche nach Name, Beruf, Adresse usw." autofocus>
+            <button class="btn btn-primary" type="submit">Suchen</button>
         </div>
         <ul class="list-group mx-2" style="translate: 0 -41px; display: none;" id="results"></ul>
         <div id="mitgliederliste"></div>
@@ -52,7 +49,7 @@
             </div>
         </div>
     </div>
-    <script src="search.js"></script>
+    <script src="/member/members/search.js"></script>
     <script src="/member/members/members.js"></script>
     <style>
         #user-avatar,
@@ -86,6 +83,48 @@
         }
 
         /* weitere Hintergrundfarben für die anderen Buchstaben */
+
+        table {
+            overflow-x: scroll;
+            width: 100%;
+        }
+
+        td {
+            padding: 5px 20px;
+            text-align: left;
+        }
+
+        th {
+            padding: 5px 20px;
+            text-align: left;
+        }
+
+        div#search-bar {
+            display: flex;
+            align-items: stretch;
+            justify-items: stretch;
+            border-radius: 15px;
+            margin-bottom: 25px;
+        }
+
+        div#search-bar > input, div#search-bar > button {
+            margin: unset;
+            border-radius: 0;
+            border: none;
+            padding: 10px 20px;
+        }
+
+        div#search-bar > input {
+            border-radius: 50px 0 0 50px;
+            border: 1px solid #003366;
+            width: 100%;
+        }
+
+        div#search-bar > button {
+            background-color: #003366;
+            border-radius: 0 20px 20px 0;
+            color: white;
+        }
     </style>
     <?php
     if (isset($_GET['openModal']) && isset($_GET['uID'])) {

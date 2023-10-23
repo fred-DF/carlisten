@@ -20,7 +20,7 @@ $uID = $_SESSION['uID'];
 
 $userData = select("SELECT * FROM `user` WHERE `ID`='$uID' LIMIT 1");
 if (empty($userData)) {
-    echo "<h1>Ein Fehler ist Aufgetreten! <a href='../'>Zurück</a>";
+    echo "<h1>Ein Fehler ist aufgetreten! <a href='../'>Zurück</a>";
     exit();
 }
 //var_dump($userData);
@@ -61,249 +61,82 @@ foreach ($userData as $key => $value) {
 
 <body>   
     <?php require_once __DIR__.'/../../pages/nav-bar.php'; ?>
-    <div class="container-sm">
-        <h2 class="fw-bold"><?php echo $name = $value['title'] . " " . $value['first name'] . " " . $value['last name'] . " " . $value['second title']; ?></h2>
+    <div class="container">
+        <h1>Profil bearbeiten:</h1>
         <img src="<?php $profilePicUrl ?>" alt="">
-        <h2>Name</h2>
-        <div class="row g-2">
-            <div class="col-md">
-                <div class="form-floating">
-                    <input type="text" class="form-control" id="titleInput" placeholder="Titel" <?php if (isset($title)) {
-                                                                                                    echo "value='" . $title . "'";
-                                                                                                } ?>>
-                    <label for="titleInput">Titel</label>
-                </div>
+        <span>Name:</span>
+        <div style="width: 600px; max-width: 100%; display: flex; flex-flow: column">
+            <div style="display: flex; gap: 5px; justify-items: center;">
+                <input type="text" class="form-control" id="titleInput" placeholder="Titel" <?php if (isset($title)) { echo "value='" . $title . "'";} ?>>
+                <input style="flex-grow: 2" type="text" class="form-control" id="firstNameInput" placeholder="Vorname" <?php if (isset($firstName)) {echo "value='" . $firstName . "'";} ?>>
+                <input style="flex-grow: 2" type="text" class="form-control" id="lastNameInput" placeholder="Nachname" <?php if (isset($title)) { echo "value='" . $lastName . "'"; } ?>>
+                <input type="text" class="form-control" id="secondTitleInput" placeholder="Nachgestellter Titel" <?php if (isset($title)) { echo "value='" . $secondTitle . "'"; } ?>>
             </div>
-            <div class="col-md-4">
-                <div class="form-floating">
-                    <input type="text" class="form-control" id="firstNameInput" placeholder="Vorname" <?php if (isset($firstName)) {
-                                                                                                            echo "value='" . $firstName . "'";
-                                                                                                        } ?>>
-                    <label for="firstNameInput">Vorname</label>
-                </div>
+            <span>Namenstag:</span>
+            <div style="display: flex; align-items: center; gap: 5px; width: 60px">
+                <input style="width: 15px!important; text-align: center" type="tel" maxlength="2" class="form-control" id="dayInput" placeholder="TT" <?php if (isset($nameDayDay)) { echo "value='" . $nameDayDay . "'"; } ?>>
+                <p>:</p>
+                <input style="width: 15px!important; text-align: center" type="tel" maxlength="2" class="form-control" id="monthInput" placeholder="MM" <?php if (isset($nameDayMonth)) { echo "value='" . $nameDayMonth . "'"; } ?>>
             </div>
-            <div class="col-md-4">
-                <div class="form-floating">
-                    <input type="text" class="form-control" id="lastNameInput" placeholder="Nachname" <?php if (isset($title)) {
-                                                                                                            echo "value='" . $lastName . "'";
-                                                                                                        } ?>>
-                    <label for="lastNameInput">Nachname</label>
+            <span>Adresse:</span>
+            <div style="display: flex; flex-direction: column;">
+                <div style="display: flex; gap: 5px">
+                    <input style="flex-grow: 11" type="text" class="form-control" id="privateStreet" placeholder="Straße" <?php if (isset($title)) { echo "value='" . $privateStreet . "'"; } ?>>
+                    <input style="flex-grow: 1" type="text" class="form-control" id="privateHouseNumber" placeholder="Hausnummer" <?php if (isset($title)) { echo "value='" . $privateHouseNumber . "'"; } ?>>
                 </div>
+                <div style="display: flex; gap: 5px">
+                    <input style="flex-grow: 1" type="number" class="form-control" id="privatePLZ" placeholder="PLZ" <?php if (isset($title)) { echo "value='" . $privatePLZ . "'"; } ?>>
+                    <input style="flex-grow: 9" type="text" class="form-control" id="privateCity" placeholder="Stadt" <?php if (isset($title)) { echo "value='" . $privateCity . "'"; } ?>>
+                </div>
+                <input type="text" class="form-control" id="privateCountry" placeholder="Land" <?php if (isset($title)) { echo "value='" . $privateCountry . "'"; } ?>>
             </div>
-            <div class="col-md">
-                <div class="form-floating">
-                    <input type="text" class="form-control" id="secondTitleInput" placeholder="Nachgestellter Titel" <?php if (isset($title)) {
-                                                                                                                            echo "value='" . $secondTitle . "'";
-                                                                                                                        } ?>>
-                    <label for="secondTitleInput">Nachgestellter Titel</label>
-                </div>
+            <span>Telefon:</span>
+            <div>
+                <input type="tel" class="form-control" id="privateMobile" placeholder="Mobil" <?php if (isset($title)) { echo "value='" . $privateMobile . "'"; } ?>>
+                <input type="tel" class="form-control" id="privateTelephone" placeholder="Telefon" <?php if (isset($title)) { echo "value='" . $privateTelephone . "'"; } ?>>
             </div>
-        </div>
-        <span class="form-text mt-3">
-            Namenstag
-        </span>
-        <div>
-            <div class="input-group">
-                <div class="form-floating">
-                    <input type="tel" maxlength="2" class="form-control" id="dayInput" placeholder="Nachgestellter Titel" <?php if (isset($nameDayDay)) {
-                                                                                                                                echo "value='" . $nameDayDay . "'";
-                                                                                                                            } ?>>
-                    <label for="dayInput">Tag (dd)</label>
-                </div>
-                <span class="input-group-text" id="basic-addon3">:</span>
-                <div class="form-floating">
-                    <input type="month" class="form-control" id="monthInput" placeholder="Nachgestellter Titel" <?php if (isset($nameDayMonth)) {
-                                                                                                                    echo "value='" . $nameDayMonth . "'";
-                                                                                                                } ?>>
-                    <label for="monthInput">Monat (mm)</label>
-                </div>
+            <span>E-Mail:</span>
+            <div>
+                <input type="email" class="form-control" id="privateEmail" placeholder="E-Mail" <?php if (isset($title)) { echo "value='" . $privateEmail . "'"; } ?>>
             </div>
-        </div>
-        <h2 class=" mt-3">Kontaktdaten</h2>
-        <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Private Kontaktdaten
-                    </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <div class="row g-2 mb-2">
-                            <div class="form-floating col-4">
-                                <input type="text" class="form-control" id="privateStreet" placeholder="Straße" <?php if (isset($title)) {
-                                                                                                                    echo "value='" . $privateStreet . "'";
-                                                                                                                } ?>>
-                                <label for="privateStreet">Straße</label>
-                            </div>
-                            <div class="form-floating col-2">
-                                <input type="text" class="form-control" id="privateHouseNumber" placeholder="Hausnummer" <?php if (isset($title)) {
-                                                                                                                                echo "value='" . $privateHouseNumber . "'";
-                                                                                                                            } ?>>
-                                <label for="privateHouseNumber">Hausnummer</label>
-                            </div>
-                        </div>
-                        <div class="row g-2 mb-2">
-                            <div class="form-floating col-1">
-                                <input type="number" class="form-control" id="privatePLZ" placeholder="PLZ" <?php if (isset($title)) {
-                                                                                                                echo "value='" . $privatePLZ . "'";
-                                                                                                            } ?>>
-                                <label for="privatePLZ">PLZ</label>
-                            </div>
-                            <div class="form-floating col-2">
-                                <input type="text" class="form-control" id="privateCity" placeholder="Stadt" <?php if (isset($title)) {
-                                                                                                                    echo "value='" . $privateCity . "'";
-                                                                                                                } ?>>
-                                <label for="privateCity">Stadt</label>
-                            </div>
-                            <div class="form-floating col-3">
-                                <input type="text" class="form-control" id="privateCountry" placeholder="Land" <?php if (isset($title)) {
-                                                                                                                    echo "value='" . $privateCountry . "'";
-                                                                                                                } ?>>
-                                <label for="privateCountry">Land</label>
-                            </div>
-                        </div>
-                        <div class="row g-2 mb-2">
-                            <div class="form-floating col-3">
-                                <input type="tel" class="form-control" id="privateMobile" placeholder="Mobil" <?php if (isset($title)) {
-                                                                                                                    echo "value='" . $privateMobile . "'";
-                                                                                                                } ?>>
-                                <label for="privateMobile">Mobil</label>
-                            </div>
-                            <div class="form-floating col-3">
-                                <input type="text" class="form-control" id="privateTelephone" placeholder="Telefon" <?php if (isset($title)) {
-                                                                                                                        echo "value='" . $privateTelephone . "'";
-                                                                                                                    } ?>>
-                                <label for="privateTelephone">Telefon</label>
-                            </div>
-                        </div>
-                        <div class="form-floating col-6 mb-2">
-                            <input type="url" class="form-control" id="privateWeb" placeholder="Web" <?php if (isset($title)) {
-                                                                                                            echo "value='" . $privateWeb . "'";
-                                                                                                        } ?>>
-                            <label for="privateWeb">Web</label>
-                        </div>
-                        <div class="form-floating col-6">
-                            <input type="email" class="form-control" id="privateEmail" placeholder="E-Mail" <?php if (isset($title)) {
-                                                                                                                echo "value='" . $privateEmail . "'";
-                                                                                                            } ?>>
-                            <label for="privateEmail">E-Mail</label>
-                        </div>
-                    </div>
-                </div>
+            <span>Beruf:</span>
+            <div style="display: flex; gap: 5px">
+                <input type="text" class="form-control" id="professionalCompany" placeholder="Firma" <?php if (isset($title)) { echo "value='" . $professionalCompany . "'"; } ?>>
+                <input type="text" class="form-control" id="professionalJob" placeholder="Beruf" <?php if (isset($title)) { echo "value='" . $professionalJob . "'"; } ?>>
             </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Berufliche Kontaktdaten
-                    </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <div class="row g-2 mb-2">
-                            <div class="form-floating col-6">
-                                <input type="text" class="form-control" id="professionalCompany" placeholder="Firma" <?php if (isset($title)) {
-                                                                                                                            echo "value='" . $professionalCompany . "'";
-                                                                                                                        } ?>>
-                                <label for="professionalCompany">Firma</label>
-                            </div>
-                            <div class="form-floating col-6">
-                                <input type="text" class="form-control" id="professionalJob" placeholder="Beruf" <?php if (isset($title)) {
-                                                                                                                        echo "value='" . $professionalJob . "'";
-                                                                                                                    } ?>>
-                                <label for="professionalJob">Beruf</label>
-                            </div>
-                        </div>
-                        <div class="row g-2 mb-2">
-                            <div class="form-floating col-10">
-                                <input type="text" class="form-control" id="professionalStreet" placeholder="Straße" <?php if (isset($title)) {
-                                                                                                                            echo "value='" . $professionalStreet . "'";
-                                                                                                                        } ?>>
-                                <label for="professionalStreet">Straße</label>
-                            </div>
-                            <div class="form-floating col-2">
-                                <input type="text" class="form-control" id="professionalHouseNumber" placeholder="Hausnummer" <?php if (isset($title)) {
-                                                                                                                                    echo "value='" . $professionalHouseNumber . "'";
-                                                                                                                                } ?>>
-                                <label for="professionalHouseNumber">Hausnummer</label>
-                            </div>
-                        </div>
-                        <div class="row g-2 mb-2">
-                            <div class="form-floating col-2">
-                                <input type="number" class="form-control" id="professionalPLZ" placeholder="PLZ" <?php if (isset($title)) {
-                                                                                                                        echo "value='" . $professionalPLZ . "'";
-                                                                                                                    } ?>>
-                                <label for="professionalPLZ">PLZ</label>
-                            </div>
-                            <div class="form-floating col-3">
-                                <input type="text" class="form-control" id="professionalCity" placeholder="Stadt" <?php if (isset($title)) {
-                                                                                                                        echo "value='" . $professionalCity . "'";
-                                                                                                                    } ?>>
-                                <label for="professionalCity">Stadt</label>
-                            </div>
-                            <div class="form-floating col-7">
-                                <input type="text" class="form-control" id="professionalCountry" placeholder="Land" <?php if (isset($title)) {
-                                                                                                                        echo "value='" . $professionalCountry . "'";
-                                                                                                                    } ?>>
-                                <label for="professionalCountry">Land</label>
-                            </div>
-                        </div>
-                        <div class="row g-2 mb-2">
-                            <div class="form-floating col-6">
-                                <input type="tel" class="form-control" id="professionalMobile" placeholder="Mobil" <?php if (isset($title)) {
-                                                                                                                        echo "value='" . $professionalMobile . "'";
-                                                                                                                    } ?>>
-                                <label for="professionalMobile">Mobil</label>
-                            </div>
-                            <div class="form-floating col-6">
-                                <input type="text" class="form-control" id="professionalTelephone" placeholder="Telefon" <?php if (isset($title)) {
-                                                                                                                                echo "value='" . $professionalTelephone . "'";
-                                                                                                                            } ?>>
-                                <label for="professionalTelephone">Telefon</label>
-                            </div>
-                            <div class="form-floating col-12 mb-2">
-                                <input type="url" class="form-control" id="professionalWeb" placeholder="Web" <?php if (isset($title)) {
-                                                                                                                    echo "value='" . $professionalWeb . "'";
-                                                                                                                } ?>>
-                                <label for="professionalWeb">Web</label>
-                            </div>
-                            <div class="form-floating col-12">
-                                <input type="email" class="form-control" id="professionalMail" placeholder="E-Mail" <?php if (isset($title)) {
-                                                                                                                        echo "value='" . $professionalEmail . "'";
-                                                                                                                    } ?>>
-                                <label for="professionalMail">E-Mail</label>
-                            </div>
-                        </div>
-                    </div>
+            <span>Beruf. Adresse:</span>
+            <div style="display: flex; flex-direction: column;">
+                <div style="display: flex; gap: 5px">
+                    <input style="flex-grow: 11" type="text" class="form-control" id="professionalStreet" placeholder="Straße" <?php if (isset($title)) { echo "value='" . $professionalStreet . "'"; } ?>>
+                    <input style="flex-grow: 1" type="text" class="form-control" id="professionalHouseNumber" placeholder="Hausnummer" <?php if (isset($title)) { echo "value='" . $professionalHouseNumber . "'"; } ?>>
                 </div>
+                <div style="display: flex; gap: 5px">
+                    <input style="flex-grow: 1" type="number" class="form-control" id="professionalPLZ" placeholder="PLZ" <?php if (isset($title)) { echo "value='" . $professionalPLZ . "'"; } ?>>
+                    <input style="flex-grow: 9" type="text" class="form-control" id="professionalCity" placeholder="Stadt" <?php if (isset($title)) { echo "value='" . $professionalCity . "'"; } ?>>
+                </div>
+                <input type="text" class="form-control" id="professionalCountry" placeholder="Land" <?php if (isset($title)) { echo "value='" . $professionalCountry . "'"; } ?>>
             </div>
-            <div class="row g-2 mt-3 mb-5">
-                <h2>Mitgliedschaft</h2>
-                <div class="form-floating mb-3">
-                    <input type="date" class="form-control" id="dateOfEntry" placeholder="Eintrittsdatum" <?php if (isset($title)) {
-                                                                                                                echo "value='" . $dateOfEnter . "'";
-                                                                                                            } ?>>
-                    <label for="dateOfEntry">Eintrittsdatum</label>
-                </div>
-                <h2>Information</h2>
-                <div class="form-floating mb-3">
-                    <textarea class="form-control form-control-lg" height="50px" aria-label="With textarea" id="text" placeholder="Text"><?php if (isset($title)) {
-                                                                                                                                                echo $note;
-                                                                                                                                            } ?></textarea>
-                    <label for="text">Text</label>
-                </div>
+            <span>Beruf. Telefon:</span>
+            <div>
+                <input type="tel" class="form-control" id="professionalMobile" placeholder="Mobil" <?php if (isset($title)) { echo "value='" . $professionalMobile . "'"; } ?>>
+                <input type="text" class="form-control" id="professionalTelephone" placeholder="Telefon" <?php if (isset($title)) { echo "value='" . $professionalTelephone . "'"; } ?>>
+            </div>
+            <span>Beruf. Website & Beruf. E-Mail:</span>
+            <input type="url" class="form-control" id="professionalWeb" placeholder="Web" <?php if (isset($title)) { echo "value='" . $professionalWeb . "'"; } ?>>
+            <input type="email" class="form-control" id="professionalMail" placeholder="E-Mail" <?php if (isset($title)) { echo "value='" . $professionalEmail . "'"; } ?>>
+            <span>Eintrittsdatum:</span>
+            <div>
+                <input type="date" class="form-control" id="dateOfEntry" placeholder="Eintrittsdatum" <?php if (isset($title)) { echo "value='" . $dateOfEnter . "'"; } ?>>
+            </div>
+            <a href="password.php">
+                <button class="btn btn-danger">Passwort ändern</button>
+            </a>
+            <a href="password.php">
+                <button class="btn btn-primary">Bankdaten ändern</button>
+            </a>
 
-                <a href="password.php">
-                    <button class="btn btn-danger">Passwort ändern</button>
-                </a>
-                <a href="password.php">
-                    <button class="btn btn-primary">Bankdaten ändern</button>
-                </a>
+            <button class="filled" style="width: 100%" id="save">Speichern</button>
             </div>
-        </div>
-        <div class="container-sm position-sticky bg-primary opacity-100 p-3 rounded row m-auto" style="z-index: 999999; bottom: 20px;">
-            <h2 class="text-white fw-bold m-0 col">Änderungen Speichern?</h2>
-            <button class="btn btn-light col-2" id="save">Speichern</button>
         </div>
         <script src="../../src/bootstrap/js/bootstrap.js"></script>
         <script src="editMember.js"></script>
@@ -342,6 +175,11 @@ foreach ($userData as $key => $value) {
 
             document.getElementById('save').addEventListener("click", sendFormData);
         </script>
+    <style>
+        span {
+            margin: 15px 0 5px 0;
+        }
+    </style>
 </body>
 
 </html>

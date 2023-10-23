@@ -3,7 +3,7 @@
         <div>
             <p>Gesellschaft Carlisten</p>
             <p>
-                Dr.Ditmar Erber<br>
+                Dr.Dietmar Erber<br>
                 Gartenstraße 5<br>
                 48143 Münster
             </p>

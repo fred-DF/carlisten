@@ -15,7 +15,7 @@ if(!Auth::checkAdmin()) {
 </head>
 <body>
     <?php include 'nav-bar.php'; ?>
-    <div class="container-sm">
+    <div class="container">
         <h1>Datei Upload Verwaltung</h1>
         <button class="btn btn-primary" onclick="window.location = 'uploadFile.php';">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg icon" viewBox="0 0 16 16">

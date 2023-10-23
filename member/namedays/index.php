@@ -45,7 +45,7 @@
                 ?>
                             <tr>
                                 <td colspan="3"><?php
-                                                echo "<strong>" . $germanMonths[ltrim(explode(';', $value['name day'])[0], '0')] . "</strong>";
+                                                echo "<h2>" . $germanMonths[ltrim(explode(';', $value['name day'])[0], '0')] . "</h2>";
                                                 ?></td>
                             </tr>
                         <?php
@@ -65,6 +65,20 @@
             </tbody>
         </table>
     </div>
+<style>
+    table > tbody > tr > td, table > thead > tr > th {
+        padding: 0 30px 0 0;
+        text-align: left;
+    }
+
+    table {
+        text-align: left;
+    }
+
+    h2 {
+        margin: 15px 0 5px 0;
+    }
+</style>
 </body>
 
 </html>

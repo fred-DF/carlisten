@@ -17,7 +17,7 @@ if(!Auth::checkAdmin()) {
     <?php
         include 'nav-bar.php';
     ?>
-    <div class="container-sm">
+    <div class="container">
         <h1 class="fw-bold">Dateien hochladen</h1>
         <form action="../backEnd/uploadFile.php" method="post" enctype="multipart/form-data">
             <div class="mb-3">

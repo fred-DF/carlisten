@@ -48,7 +48,7 @@ Mit Freundlichn Grüßen
 
                     ?>
                 </div>
-            <?php
+                <?php
             }
             if (empty($events)) {
             ?>

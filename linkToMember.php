@@ -2,8 +2,11 @@
 
 include 'bootstrap.php';
 
-if(json_decode(Auth::auth(), true)['response'] === "success") {
-    header("Location: member/");
-} else {
-    header("Location: login.html");
+if(isset($_COOKIE['token'])) {
+    if(!empty($_COOKIE['token'])) {
+        header('Location: member/home');
+        die();
+    }
 }
+header('Location: login.html');
+die();

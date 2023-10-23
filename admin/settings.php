@@ -17,7 +17,7 @@ if(!Auth::checkAdmin()) {
     <?php
         include 'nav-bar.php';
     ?>
-    <div class="container-sm mt-3">
+    <div class="container">
         <h1>Website Einstellungen</h1>
         <form action="">
             <h2>Startseite</h2>
