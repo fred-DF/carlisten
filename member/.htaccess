@@ -3,4 +3,6 @@ RewriteBase /member/
 
 # Umleitung aller Anfragen zu controller.php, ausgenommen die Datei selbst
 RewriteCond %{REQUEST_URI} !^/member/controller\.php$
+RewriteCond %{REQUEST_URI} !\.js$ [NC]
+RewriteCond %{REQUEST_URI} !\.css$ [NC]
 RewriteRule ^(.*)$ controller.php?path=$1 [QSA,L]
