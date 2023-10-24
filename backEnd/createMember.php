@@ -5,21 +5,9 @@ Auth::checkAdmin();
 include_once 'sendWelcomeMail.php';
 
 if(isset($_GET['first_name']) && isset($_GET['last_name']) && isset($_GET['date_of_enter']) && isset($_GET['email'])) {
-    if(isset($_GET['title'])) {
-        $title = $_GET['title'];
-    } else {
-        $title = '';
-    }
-    if(isset($_GET['second_title'])) {
-        $second_title = $_GET['second_title'];
-    } else {
-        $second_title = '';
-    }
-    if(isset($_GET['text'])) {
-        $text = $_GET['text'];
-    } else {
-        $text = '';
-    }
+    $title = $_GET['title'] ?? '';
+    $second_title = $_GET['second_title'] ?? '';
+    $text = $_GET['text'] ?? '';
     $first_name = $_GET['first_name'];
     $last_name = $_GET['last_name'];
     $date_of_enter = $_GET['date_of_enter'];
@@ -34,6 +22,7 @@ if(isset($_GET['first_name']) && isset($_GET['last_name']) && isset($_GET['date_
     $userData = select("SELECT `ID` FROM user WHERE `username`='$email'");
     $uID = $userData[0]['ID'];
     execute("INSERT INTO `bank_accounts`(`uID`, `IBAN`, `IBAN_clear`, `BIC`, `bank`) VALUES ('$uID','','','','')");
+    sendWelcomeMail($uID);
 } else {
     exit("required Data missing");
 }

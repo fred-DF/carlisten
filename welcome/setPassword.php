@@ -14,20 +14,12 @@ $userData = json_decode($_SESSION['set_password_data'], 1);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../src/bootstrap/css/bootstrap.css">
-    <title>Passwort verstlegen</title>
+    <link rel="stylesheet" href="../src/css/style.css">
+    <title>Passwort festlegen</title>
 </head>
 <body>
-    <div class="container-sm mt-5">
+    <div class="container">
         <div class="alert alert-light">
-            <div class="position-relative m-4">
-                <div class="progress" role="progressbar" aria-label="Progress" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="height: 1px;">
-                    <div class="progress-bar" style="width: 50%"></div>
-                </div>
-                <button type="button" class="position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill" style="width: 2rem; height:2rem;">1</button>
-                <button type="button" class="position-absolute top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill" style="width: 2rem; height:2rem;">2</button>
-                <button type="button" class="position-absolute top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill" style="width: 2rem; height:2rem;">3</button>
-            </div>
             <p>Hallo <strong><?php echo $userData['name'] ?></strong>. Bitte lege ein Passwort fest, um dich in zukunft Anzumelden. Falls du es mal vergessen solltest, kannst du es jederzeit zurücksetzten.</p>
             <form id="password_form" class="">
                 <div class="form-floating w-100 mb-3">
@@ -65,7 +57,7 @@ $userData = json_decode($_SESSION['set_password_data'], 1);
                 if (xhr.status === 200) {
                     const response = JSON.parse(xhr.responseText);
                     if(response['response'] == 'success') {                        
-                        document.location = 'finish.php';
+                        document.location = 'dataUpdate.php';
                     } else {
                         const alert = document.getElementById('alert_badge');
                         alert.innerText = response['error'];

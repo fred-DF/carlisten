@@ -4,25 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../src/bootstrap/css/bootstrap.css">
-    <title>Passwort verstlegen</title>
+    <link rel="stylesheet" href="../src/css/style.css">
+    <title>Passwort festlegen</title>
 </head>
 <body>
-    <div class="container-sm mt-5">
+    <div class="container">
         <div class="alert alert-light ">
-            <div class="position-relative m-4">
-                <div class="progress" role="progressbar" aria-label="Progress" aria-valuenow="50" aria-valuemin="0"
-                    aria-valuemax="100" style="height: 1px;">
-                    <div class="progress-bar" style="width: 0%"></div>
-                </div>
-                <button type="button" class="position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill"
-                    style="width: 2rem; height:2rem;">1</button>
-                <button type="button" class="position-absolute top-0 start-50 translate-middle btn btn-sm btn-secondary rounded-pill"
-                    style="width: 2rem; height:2rem;">2</button>
-                <button type="button"
-                    class="position-absolute top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill"
-                    style="width: 2rem; height:2rem;">3</button>
-            </div>
             <p>Bitte geben den 6-Stelligen Code aus der E-Mail unten ein. Danach sollst du ein Passwort festlegen und danach geht es los. Nach der Registration kannst du dich dann mit deiner E-Mail Adresse und deinem Festgelgeten Passwort anmelden.</p>
             <form id="code" class="my-3">
                 <input type="tel" class="form-control form-control-lg text-center" name="" id="input1" onkeyup="autoTab(event, this, 1)">
@@ -42,14 +29,36 @@
     <style>
         form#code {
             display: flex;
-            flex-grow: 15px;
+            gap: 15px;
             justify-content: center;
+            align-items: center;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #f6f6f6;
+            width: fit-content;
+            margin: 25px auto;
+        }
+
+        form#code > p {
+            font-size: 24px;
         }
 
         form#code > input {
-            height: 75px;
-            width: 50px;
-            margin: 0 8px;
+            border: none !important;
+            background-color: #e7e7e7;
+            padding: 15px 5px;
+            width: 25px;
+            text-align: center;
+        }
+
+        #alert_badge {
+            padding: 5px 15px;
+            background-color: #ff5656;
+            border-radius: 5px;
+            border: 2px solid #ff2c2c;
+            width: fit-content;
+            margin: 0 auto;
+            color: white;
         }
     </style>
     <script>

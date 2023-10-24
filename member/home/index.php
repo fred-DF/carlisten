@@ -33,6 +33,14 @@
         }
         ?>
         <?php
+        if(count(select("SELECT `first name`, `last name` FROM `user` WHERE `data_filled` && `ID`=".$_SESSION['uID'])) == 0) {
+            ?>
+        <div>
+            <h2>Bitte überprüfen Sie Ihre persönlichen Informationen</h2>
+            <p>Folgen Sie dem <a href="">Link</a> um Ihre Daten zu aktualisieren.</p>
+        </div>
+            <?php
+        }
         // Willkommensnachricht
         if (getSetting("home_show_welcome_message")) {
         ?>

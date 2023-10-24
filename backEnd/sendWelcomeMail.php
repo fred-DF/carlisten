@@ -42,7 +42,7 @@ function sendWelcomeMail ($user) {
                 }
 
                 .headbar {
-                    background-color: #0d6efd;
+                    background-color: #003366;
                     color: #fff;
                     font-weight: 700;
                     font-size: 24px;
@@ -53,7 +53,7 @@ function sendWelcomeMail ($user) {
 
                 .button {
                     display: inline-block;
-                    background-color: #0d6efd;
+                    background-color: #003366;
                     color: #fff;
                     font-weight: 700;
                     font-size: 16px;
@@ -63,7 +63,7 @@ function sendWelcomeMail ($user) {
                 }
 
                 .button:hover {
-                    background-color: #1d72e3;
+                    background-color: rgba(0,51,102,0.63);
                 }
 
                 .code-box {
@@ -77,15 +77,15 @@ function sendWelcomeMail ($user) {
                 </head>
                 <body>
                 <div class='headbar'>
-                <h2>Carlisten</h2>
+                <img src='https://carlisten.genanntnoelke.de/src/logos/Logo%20-%20Text%20-%20Weiss.svg' alt=''>
                 </div>
                 <div class='container'>
                 <p>Hallo {$name},</p>
-                <p>für Dich wurde so eben ein Account mit zugang zum neuen Mitglieder Bereich angelegt.</p>
+                <p>für Sie wurde so eben ein Account mit zugang zum neuen Mitglieder Bereich angelegt.</p>
                 <p>Um deinen Account freizuschalten, musst du auf der verlinkten Website folgenden Code eingeben.</p>
                 <p>Danach wirst du gebeten ein Passwort fest zulegen.</p>                
-                <div class='code-box'><pre>Code: {$code}</pre></div>
-                <p>Bitte schalte dein Account Zeitnah frei!</p>
+                <div class='code-box' style='text-align: center'><pre>Code: {$code}</pre></div>
+                <p>Bitte schalte dein Account zeitnah frei!</p>
                 <a href='https://carlisten.genanntnoelke.de/welcome'><button class='button'>Freischalten</button></a>
                 <p>Viele Grüße</p>
                 <p>Das Carlisten-Team</p>
@@ -131,7 +131,7 @@ function sendWelcomeMail ($user) {
                 }
 
                 .headbar {
-                    background-color: #0d6efd;
+                    background-color: #003366;
                     color: #fff;
                     font-weight: 700;
                     font-size: 24px;
@@ -142,7 +142,7 @@ function sendWelcomeMail ($user) {
 
                 .button {
                     display: inline-block;
-                    background-color: #0d6efd;
+                    background-color: #003366;
                     color: #fff;
                     font-weight: 700;
                     font-size: 16px;
@@ -152,7 +152,7 @@ function sendWelcomeMail ($user) {
                 }
 
                 .button:hover {
-                    background-color: #1d72e3;
+                    background-color: rgba(0,51,102,0.63);
                 }
 
                 .code-box {
@@ -166,22 +166,22 @@ function sendWelcomeMail ($user) {
                 </head>
                 <body>
                 <div class='headbar'>
-                <h2>Carlisten</h2>
+                <img src='https://carlisten.genanntnoelke.de/src/logos/Logo%20-%20Text%20-%20Weiss.svg' alt=''>
                 </div>
                 <div class='container'>
                 <p>Hallo {$name},</p>
-                <p>für Dich wurde so eben ein Account mit zugang zum neuen Mitglieder Bereich angelegt.</p>
+                <p>für Sie wurde so eben ein Account mit zugang zum neuen Mitglieder Bereich angelegt.</p>
                 <p>Um deinen Account freizuschalten, musst du auf der verlinkten Website folgenden Code eingeben.</p>
                 <p>Danach wirst du gebeten ein Passwort fest zulegen.</p>                
-                <div class='code-box'><pre>Code: {$code}</pre></div>
-                <p>Bitte schalte dein Account Zeitnah frei!</p>
+                <div class='code-box' style='text-align: center'><pre>Code: {$code}</pre></div>
+                <p>Bitte schalte dein Account zeitnah frei!</p>
                 <a href='https://carlisten.genanntnoelke.de/welcome'><button class='button'>Freischalten</button></a>
                 <p>Viele Grüße</p>
                 <p>Das Carlisten-Team</p>
                 </div>
                 </body>
                 </html>
-                "; 
+                ";
             echo sendMail($email, 'noreply@carlist.de', 'Account freischalten', $message);
         }
     }
