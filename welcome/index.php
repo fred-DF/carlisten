@@ -28,10 +28,7 @@
                 <input type="tel" class="form-control form-control-lg text-center" maxlength="1" name="" id="input4" onkeyup="autoTab(event, this, 4)">
                 <input type="tel" class="form-control form-control-lg text-center" maxlength="1" name="" id="input5" onkeyup="autoTab(event, this, 5)">
                 <input type="tel" class="form-control form-control-lg text-center" maxlength="1" name="" id="input6" onkeyup="autoTab(event, this, 6)">
-            </form>      
-            <div class="d-flex justify-content-center">
-                <button class="btn btn-link" style="margin: 0 auto">Brauchst du Hilfe?</button>
-            </div>
+            </form>
         </div>
         <div class="alert alert-danger" id="alert_badge" style="display: none;">
         </div>
