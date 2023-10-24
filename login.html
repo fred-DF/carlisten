@@ -18,25 +18,18 @@
     </nav>
     <div class="container">
         <form id="form" class="mt-5">
-            <div class="card mx-auto w-75">
+            <div class="card mx-auto w-75" style="margin-bottom: 30px">
                 <h1>Anmelden</h1>
                 <div style="display: none; color: white; margin: 8px 0; padding: 10px 8px; background-color: red; border-radius: 3px; border: 2px solid rgba(255,255,255,0.32)" id="errorMsgBox" role="alert">
                     Eine Anmeldung ist erforderlich um auf die angefragte Resource zuzugreifen.
                 </div>
                 <span class="input-label">E-Mail Adresse</span>
-                <input type="email" class="input-l" id="email" placeholder="name@example.com">
+                <input type="email" class="input-l" id="email" placeholder="name@example.com" style="margin-bottom: 15px">
                 <span class="input-label">Passwort</span>
-                <input type="password" class="input-l" id="password" placeholder="Password">
+                <input type="password" class="input-l" id="password" placeholder="Passwort">
             </div>
-            <input class="form-check-input" type="checkbox" value="" id="remember_me">
-            <label class="form-check-label" for="remember_me">
-                Angemeldet bleiben
-            </label>
-            <div class="col text-end">
-                <a href="resetPassword.php">Passwort vergessen?</a>
-            </div>
-            <button type="submit" class="filled">Anmelden</button>
-        </div>
+            <button type="submit" class="filled" style="margin-bottom: 30px">Anmelden</button>
+            <a href="resetPassword.php" style="margin-bottom: 30px">Passwort vergessen?</a>
         </form>
     </div>    
     <script>

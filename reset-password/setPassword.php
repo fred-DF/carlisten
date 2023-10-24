@@ -29,7 +29,14 @@ $userData = json_decode($_SESSION['set_password_data'], 1);
     </nav>
     <div class="container">
         <h1>Passwort vergessen</h1>
-        <p style="margin: 15px 0">Hallo <strong><?php echo $userData['name'] ?></strong>. Legen Sie bitte ihr neues Passwort fest. Um höchstmögliche Sicherheit im Mitgliederbereich zu gewährleisten, bitten wir Sie ein sicheres Passwort zu wählen.</p>
+        <p style="margin: 15px 0">Hallo <strong><?php echo $userData['name'] ?></strong>. Legen Sie bitte Ihr neues Passwort fest. Um höchstmögliche Sicherheit im Mitgliederbereich zu gewährleisten, bitten wir Sie, ein sicheres Passwort zu wählen.</p>
+        <p>Ein sicheres Passwort besteht aus:</p>
+        <ul>
+            <li>Mindestens acht Zeichen</li>
+            <li>Groß- und Klein-Buchstaben</li>
+            <li>Ziffern</li>
+            <li>Sonderzeichen</li>
+        </ul>
         <form id="password_form" class="">
             <div class="form-floating w-100 mb-3">
                 <input type="password" class="form-control" id="password" placeholder="Passwort" required>
