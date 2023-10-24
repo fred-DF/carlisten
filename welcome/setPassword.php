@@ -17,9 +17,18 @@ $userData = json_decode($_SESSION['set_password_data'], 1);
     <link rel="stylesheet" href="../src/css/style.css">
     <title>Passwort festlegen</title>
 </head>
-<body>
+<body><nav>
+    <div class="container" id="nav-bar-content">
+        <img src="https://carlisten.genanntnoelke.de/src/logos/Logo - Text - Weiss.svg" alt="">
+        <div class="links">
+            <span></span>
+            <a href="../login.html" class="no-decoration" style="color: white;">Mitgliederbereich</a>
+        </div>
+    </div>
+</nav>
     <div class="container">
         <div class="alert alert-light">
+            <h1>Passwort festlegen</h1>
             <p>Hallo <strong><?php echo $userData['name'] ?></strong>. Bitte lege ein Passwort fest, um dich in zukunft Anzumelden. Falls du es mal vergessen solltest, kannst du es jederzeit zurücksetzten.</p>
             <form id="password_form" class="">
                 <div class="form-floating w-100 mb-3">

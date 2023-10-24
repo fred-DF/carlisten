@@ -8,8 +8,18 @@
     <title>Passwort festlegen</title>
 </head>
 <body>
+    <nav>
+        <div class="container" id="nav-bar-content">
+            <img src="https://carlisten.genanntnoelke.de/src/logos/Logo - Text - Weiss.svg" alt="">
+            <div class="links">
+                <span></span>
+                <a href="../login.html" class="no-decoration" style="color: white;">Mitgliederbereich</a>
+            </div>
+        </div>
+    </nav>
     <div class="container">
         <div class="alert alert-light ">
+            <h1>Benutzerprofil vervollständigen</h1>
             <p>Bitte geben den 6-Stelligen Code aus der E-Mail unten ein. Danach sollst du ein Passwort festlegen und danach geht es los. Nach der Registration kannst du dich dann mit deiner E-Mail Adresse und deinem Festgelgeten Passwort anmelden.</p>
             <form id="code" class="my-3">
                 <input type="tel" class="form-control form-control-lg text-center" name="" id="input1" onkeyup="autoTab(event, this, 1)">

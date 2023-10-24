@@ -23,6 +23,15 @@ execute("INSERT INTO `session_tokens`(`uID`) VALUES ($uID)");
     <link rel="stylesheet" href="../src/css/style.css">
 </head>
 <body>
+<nav>
+    <div class="container" id="nav-bar-content">
+        <img src="https://carlisten.genanntnoelke.de/src/logos/Logo - Text - Weiss.svg" alt="">
+        <div class="links">
+            <span></span>
+            <a href="../login.html" class="no-decoration" style="color: white;">Mitgliederbereich</a>
+        </div>
+    </div>
+</nav>
     <div class="container">
         <form action="../backEnd/updateMemberDataWelcome.php" method="POST">
             <h1>Persönliche Daten vervollständigen</h1>
