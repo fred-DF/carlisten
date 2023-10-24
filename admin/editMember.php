@@ -68,45 +68,49 @@ foreach ($userData as $key => $value) {
         <h2 class="fw-bold"><?php echo $name = $value['title']." ".$value['first name']." ".$value['last name']." ".$value['second title']; ?></h2>
         <img src="<?php $profilePicUrl ?>" alt="">
         <h2>Name</h2>
-        <div class="row g-2">
-            <div class="col-md">
-                <div class="form-floating">
-                    <input type="text" class="form-control" id="titleInput" placeholder="Titel" <?php if(isset($title)) {echo "value='" . $title ."'";}?>>
-                    <label for="titleInput">Titel</label>
+        <div>
+            <div class="row g-2">
+                <div class="col-md">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="titleInput" placeholder="Titel" <?php if(isset($title)) {echo "value='" . $title ."'";}?>>
+                        <label for="titleInput">Titel</label>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-floating">
-                    <input type="text" class="form-control" id="firstNameInput" placeholder="Vorname" <?php if(isset($firstName)) {echo "value='" . $firstName ."'";}?>>
-                    <label for="firstNameInput">Vorname</label>
+                <div class="col-md-4">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="firstNameInput" placeholder="Vorname" <?php if(isset($firstName)) {echo "value='" . $firstName ."'";}?>>
+                        <label for="firstNameInput">Vorname</label>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-floating">
-                    <input type="text" class="form-control" id="lastNameInput" placeholder="Nachname" <?php if(isset($title)) {echo "value='" . $lastName ."'";}?>>
-                    <label for="lastNameInput">Nachname</label>
+                <div class="col-md-4">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="lastNameInput" placeholder="Nachname" <?php if(isset($title)) {echo "value='" . $lastName ."'";}?>>
+                        <label for="lastNameInput">Nachname</label>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md">
-                <div class="form-floating">
-                    <input type="text" class="form-control" id="secondTitleInput" placeholder="Nachgestellter Titel" <?php if(isset($title)) {echo "value='" . $secondTitle ."'";}?>>
-                    <label for="secondTitleInput">Nachgestellter Titel</label>
+                <div class="col-md">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="secondTitleInput" placeholder="Nachgestellter Titel" <?php if(isset($title)) {echo "value='" . $secondTitle ."'";}?>>
+                        <label for="secondTitleInput">Nachgestellter Titel</label>
+                    </div>
                 </div>
             </div>
         </div>
         <span class="form-text mt-3">
             Namenstag
         </span>
-        <div class="w-25">
-            <div class="input-group">
-                <div class="form-floating">
-                    <input type="text" class="form-control" id="dayInput" placeholder="Nachgestellter Titel" <?php if(isset($title)) {echo "value='" . $dateOfEnter ."'";}?>>
-                    <label for="dayInput">Tag</label>
-                </div>
-                <span class="input-group-text" id="basic-addon3">:</span>
-                <div class="form-floating">
-                    <input type="text" class="form-control" id="monthInput" placeholder="Nachgestellter Titel" <?php if(isset($title)) {echo "value='" . $dateOfEnter ."'";}?>>
-                    <label for="monthInput">Monat</label>
+        <div style="display: flex; justify-items: center">
+            <div>
+                <div class="input-group" style="width: 30px">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="dayInput" placeholder="Nachgestellter Titel" <?php if(isset($title)) {echo "value='" . $dateOfEnter ."'";}?>>
+                        <label for="dayInput">Tag</label>
+                    </div>
+                    <span class="input-group-text" id="basic-addon3">:</span>
+                    <div class="form-floating" style="width: 30px">
+                        <input type="text" class="form-control" id="monthInput" placeholder="Nachgestellter Titel" <?php if(isset($title)) {echo "value='" . $dateOfEnter ."'";}?>>
+                        <label for="monthInput">Monat</label>
+                    </div>
                 </div>
             </div>
         </div>

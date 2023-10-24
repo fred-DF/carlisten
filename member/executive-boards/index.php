@@ -122,10 +122,19 @@
         object-fit: cover;
     }
 
-    div#flex-wrapper > div > div {
-        background-color: #e7e7e7;
+    div#flex-wrapper > div > div > div {
+        background-color: #f5f5f5;
         padding: 25px;
         border-radius: 15px;
+        border: 1px solid lightgray;
+        display: flex;
+        flex-direction: column;
+    }
+
+    div#flex-wrapper > div > div > div > div {
+        display: flex;
+        gap: 5px;
+        flex-flow: row;
     }
 
     a {

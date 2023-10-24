@@ -8,7 +8,7 @@
     --danger-color-background: rgba(255, 63, 63, 0.305);
     --background-color-grey: #ededed;
     --nav-bar-color: var(--primary);
-    --p-font-size: 16px;
+    --p-font-size: 19px;
     --h1-font-size: 22px;
     --h1-font-weigth: 600;
     --space-s: 4px;
@@ -91,8 +91,8 @@ biv.box > p {
 p {
     font-size: var(--p-font-size);
     color: var(--text-color);
-    line-height: calc(var(--p-font-size) + 2px);
     margin: 3px 0;
+    line-height: 25px;
 }
 
 a {
