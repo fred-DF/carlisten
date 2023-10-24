@@ -25,7 +25,7 @@ if(!Auth::checkAdmin()) {
             </svg>    
             Mitglied hinzufügen
         </button>
-        <button class="btn btn-link" id="exportBtn">Mitglieder Exportieren</button>
+        <button class="btn btn-link" onclick="document.querySelector('div.modal').dataset.shown =  'true';">Mitglieder Exportieren</button>
         <table class="table mt-4">
             <thead class="table-head">
                 <tr>
@@ -65,6 +65,24 @@ if(!Auth::checkAdmin()) {
             </tbody>
         </table>
     </div>
+    <div class="modal" id="event-modal">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Benutzerliste exportieren</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
+                </div>
+                <div class="modal-body">
+                    <p>Wählen Sie eine option:</p>
+                    <div>
+                        <button id="withoutDeaths" onclick="downloadList('excludeDeath')">Ohne Verstorbene</button>
+                        <button id="withDeaths" onclick="downloadList()">Mit Verstorbenen</button>
+                        <button id="mail" onclick="downloadList('requireMailShipping')">Postversand</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
         function addMember () {
             window.location = 'addMember.php';            
@@ -77,9 +95,9 @@ if(!Auth::checkAdmin()) {
             window.location = 'editMember.php?uID=' + id;
         }
 
-        document.getElementById('exportBtn').addEventListener('click', function () {
+        function downloadList (type) {
             var xhr = new XMLHttpRequest();
-            xhr.open('GET', '../backEnd/exportMemberList.php', true);
+            xhr.open('GET', '../backEnd/exportMemberList.php?condition=' + type, true);
             xhr.responseType = 'blob';
 
             xhr.onload = function (e) {
@@ -95,7 +113,7 @@ if(!Auth::checkAdmin()) {
             };
 
             xhr.send();
-        });
+        }
     </script>
 </body>
 </html>
