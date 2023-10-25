@@ -43,10 +43,22 @@
         <ul class="list-group mx-2" style="translate: 0 -41px; display: none;" id="results"></ul>
         <div id="mitgliederliste"></div>
     </div>
-    <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModal" aria-hidden="true">
-        <div class="modal-dialog">
+    <div class="modal" id="user-modal">
+        <div class="modal-dialog modal-fullscreen">
             <div class="modal-content" id="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Veranstaltung eintragen</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Abbrechen</button>
+                    <button type="submit" class="btn btn-primary" id="createEvent" data-bs-dismiss="modal">Erstellen</button>
+                </div>
             </div>
+            </form>
         </div>
     </div>
     <script src="/member/members/search.js"></script>

@@ -1,10 +1,12 @@
 <?php
 
+require_once __DIR__.'/../bootstrap.php';
+
 function connect() {
-    $host = "mysql09.manitu.net";
-    $dbname = "db90833";
-    $user = "u90833";
-    $pass = "dv4JBwym4KgkSpP6";
+    $host = $_ENV['DB_HOST'];
+    $dbname = $_ENV['DB_NAME'];
+    $user = $_ENV['DB_USERNAME'];
+    $pass = $_ENV['DB_PASSWORD'];
 
     $dsn = "mysql:host=$host;dbname=$dbname;charset=utf8mb4";
 

@@ -39,15 +39,6 @@
         <?php
         }
         ?>
-        <div class="card">
-            <div class="row">
-                <div class="box">
-                    <h5>Veranstaltungskalender</h5>
-                    <p>Versende eine Teilnahmebestätigung direkt über die Website</p>
-                    <a href="#" class="btn btn-primary">Schau dich um!</a>
-                </div>
-            </div>
-        </div>
 <!--        <div class="mt-3">
             <button class="btn btn-primary">
                 <img src="../src/facebookBanner.svg" height="24px" width="auto" alt="">

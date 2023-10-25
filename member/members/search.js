@@ -178,15 +178,15 @@ searchInput.addEventListener('keyup', () => {
     }
 });
 
-// function loadModal (id) {
-//     const xhr = new XMLHttpRequest();
-//     xhr.open('POST', 'profile.php', true);
-//     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-//     xhr.onreadystatechange = function () {
-//         if (xhr.readyState === 4 && xhr.status === 200) {
-//             document.getElementById('modal-content').innerHTML = xhr.responseText;
-//             userModal.show();
-//         }
-//     };
-//     xhr.send('id=' + encodeURIComponent(id));
-// }
+function loadModal (id) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', '/member/members/profile.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            document.getElementById('modal-content').innerHTML = xhr.responseText;
+            document.getElementById('user-modal').dataset.shown = 'true';
+        }
+    };
+    xhr.send('id=' + encodeURIComponent(id));
+}

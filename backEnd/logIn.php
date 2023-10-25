@@ -3,10 +3,10 @@
 require_once __DIR__.'/../bootstrap.php';
 $pdo = connect();
 
-if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['rememberMe'])) {
+if(isset($_POST['username']) && isset($_POST['password'])) {
     $username = $_POST['username'];
     $password = hash('sha256', $_POST['password']);   
-    $remember_me = $_POST['rememberMe']; 
+    $remember_me = 0; # Veraltetes Feature - für funktion immer auf false gesetzt → keine Cookies Speichern
     $user = select("SELECT `ID`, `password`, `authLevel` FROM `user` WHERE `username`='$username'");
     if(count($user) !== 1) {
         exit(json_encode(['response' => 'fail', 'error' => 'Passwort Falsch']));

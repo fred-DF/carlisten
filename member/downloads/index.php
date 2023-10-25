@@ -53,7 +53,7 @@
                                 var name = uploads[j].name;
                                 var path = '../../' + uploads[j].path;
                                 var size = (uploads[j].size / 1024 / 1000).toFixed(1) + ' MB';
-                                html += '<a href="' + path + '" target="_blank" rel="noopener noreferrer" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><button style="display: block"><b>' + name + '</b><br>' + size + '</button></a> ';
+                                html += '<a href="' + path + '" target="_blank" rel="noopener noreferrer" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><button style="display: block"><b class="fileName">' + name + '</b><br><span class="fileSize">' + size + '</span></button></a> ';
                             }
                         }
                         document.getElementById('links').innerHTML = html;
@@ -74,12 +74,28 @@
         padding: 10px 20px;
         height: unset !important;
         transition: all ease-in-out 0.2s;
+        text-decoration: none;
     }
 
     button:hover {
         background-color: #003366FF;
         color: white;
     }
+
+    a {
+        text-decoration: none;
+    }
+
+    .fileSize, .fileName {
+        text-decoration: none;
+
+    }
+
+    .fileSize {
+        font-size: small;
+    }
+
+
 </style>
 <?php
 include __DIR__."/../../pages/footer.php";

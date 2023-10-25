@@ -188,6 +188,10 @@ button {
     gap: 5px;
 }
 
+.btn-close {
+    cursor: pointer;
+}
+
 button.filled {
     background-color: var(--primary);
     color: #ffffff;
@@ -310,4 +314,66 @@ div.modal-footer {
 
 .btn-close {
     border: none;
+}
+
+#hamburgerHide, #hamburgerShow {
+    display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+
+    #hamburgerShow {
+        display: block;
+    }
+
+    .container {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    #nav-bar-content {
+        max-width: calc(100% - 30px)!important;
+        margin: 0 auto;
+        flex-flow: column;
+    }
+
+    .logo-toggle-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        width: 100%;
+        z-index: 999 !important;
+    }
+
+    #nav-bar-content > .links {
+        display: flex;
+        /*opacity: 0;*/
+        pointer-events: none;
+        position: absolute;
+        top: calc(-100% - 65px);
+        width: 100%;
+        padding: 0 15px;
+        left: 0;
+        flex-flow: column;
+        z-index: 900 !important;
+        background-color: #002244;
+    }
+
+    #nav-bar-content > .links[data-shown='true'] {
+        margin: 15px 0;
+        display: flex;
+        top: 65px;
+        transition: all 0.5s ease-in-out;
+        pointer-events: unset;
+    }
+
+    #nav-bar-content > .links[data-shown='true'] > a, #hamburgerHide, #hamburgerShow {
+        font-size: var(--h1-font-size);
+        margin: 15px 0;
+    }
+
 }
