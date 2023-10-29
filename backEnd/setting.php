@@ -1,10 +1,10 @@
 <?php
 
-include_once 'auth.php';
+require_once __DIR__.'/../bootstrap.php';
 Auth::auth();
 
 if($_SERVER['REQUEST_METHOD'] == "POST") {
-    if(!checkAdmin()) {
+    if(!Auth::checkAdmin()) {
         exit("Admin Rechte erforderlich");
     }
     $json_data = file_get_contents('php://input');    

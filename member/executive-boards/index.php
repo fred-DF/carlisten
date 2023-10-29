@@ -43,7 +43,7 @@
                         <h3 class="card-title">Dr. Dietmar Erber</h3>
                         <span>Vorstand</span><br>
                         <div class="btn-group w-100 mt-2" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-primary">Profil</button>
+                            <button type="button" class="btn btn-primary" onclick="window.location = '/member/members'">Profil</button>
                             <button type="button" class="btn btn-outline-primary"><a href="mailto:vorstand@carlist.de" class="link link-dark link-underline-opacity-0">E-Mail</a></button>
                         </div>
                     </div>
@@ -141,6 +141,9 @@
         text-decoration: none;
     }
 </style>
+<?php
+include __DIR__."/../../pages/footer.php";
+?>
 </body>
 
 </html>

@@ -66,8 +66,8 @@ if(!Auth::checkAdmin()) {
                 <label for="home_welcome_message">Willkommens Nachricht</label>
             </div>
             <div class="form-check form-switch mb-3">
-                <input class="form-check-input" type="checkbox" role="switch" id="home_schow_welcome_message" checked>
-                <label class="form-check-label" for="home_schow_welcome_message">Willkommensnachricht anzeigen</label>
+                <input class="form-check-input" type="checkbox" role="switch" id="home_show_welcome_message" checked>
+                <label class="form-check-label" for="home_show_welcome_message">Willkommensnachricht anzeigen</label>
             </div>
             <hr>
             <h2>Veranstaltungen</h2>

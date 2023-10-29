@@ -180,6 +180,9 @@ foreach ($userData as $key => $value) {
             margin: 15px 0 5px 0;
         }
     </style>
+    <?php
+    include __DIR__."/../../pages/footer.php";
+    ?>
 </body>
 
 </html>

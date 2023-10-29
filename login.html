@@ -11,9 +11,7 @@
     <nav>
         <div class="container" id="nav-bar-content">
             <img src="https://carlisten.genanntnoelke.de/src/logos/Logo - Text - Weiss.svg" alt="">
-            <div class="links">
-                <a href="login.php" class="no-decoration" style="color: white;">Mitgliederbereich</a>
-            </div>
+            <a href="login.php" class="no-decoration" style="color: white;">Mitgliederbereich</a>
         </div>
     </nav>
     <div class="container">
@@ -54,12 +52,10 @@
                     } else {  
                         if(JSON.parse(xhr.responseText)['response'] == "fail") {
                             document.getElementById('errorMsgBox').innerText = JSON.parse(xhr.responseText)['error'];
-                            document.getElementById('errorMsgBox').classList.add("alert");
-                            document.getElementById('errorMsgBox').classList.add("mt-3");
+                            document.getElementById('errorMsgBox').style.display = 'block';
                         } else {
                             document.getElementById('errorMsgBox').innerText = 'Ein unbekannter Fehler ist aufgetreten';
-                            document.getElementById('errorMsgBox').classList.add("warning");
-                            document.getElementById('errorMsgBox').classList.add("mt-3");
+                            document.getElementById('errorMsgBox').style.display = 'block';
                         }            
                     }
                 }

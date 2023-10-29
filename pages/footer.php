@@ -1,5 +1,5 @@
 <footer>
-    <div>
+    <div id="footer-content">
         <div>
             <p>Gesellschaft Carlisten</p>
             <p>

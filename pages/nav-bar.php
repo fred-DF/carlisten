@@ -7,13 +7,15 @@
             <span id="hamburgerShow">☰</span>
             <span id="hamburgerHide">✕</span>
         </div>
+        <div id="nav-bar-color"></div>
         <div class="links" id="nav-links">
             <a href="<?php echo getenv('APP_URL') ?>/member/events" class="no-decoration" style="color: white;">Veranstaltungen</a>
             <a href="<?php echo getenv('APP_URL') ?>/member/downloads" class="no-decoration" style="color: white;">Downloads</a>
             <a href="<?php echo getenv('APP_URL') ?>/member/members" class="no-decoration" style="color: white;">Mitglieder</a>
             <a href="<?php echo getenv('APP_URL') ?>/member/executive-boards" class="no-decoration" style="color: white;">Vorstände</a>
             <a href="<?php echo getenv('APP_URL') ?>/member/namedays" class="no-decoration" style="color: white;">Namenstage</a>
-                        <?php
+            <a href="<?php echo getenv('APP_URL') ?>/member/profile" class="no-decoration"  style="color: white;">Mein Profil</a>
+            <?php
                             if ( Auth::checkAdmin() ) {
                         ?>
                     <a class="nav-link" style="color: #ffffff" href="../admin">Administration</a>

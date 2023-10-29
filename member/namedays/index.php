@@ -13,13 +13,6 @@
     <div class="container page-content">
         <h1>Namenstage</h1>
         <table class="table table-hover">
-            <thead>
-                <tr class="table-secondary">
-                    <th scope="col">Namenstag</th>
-                    <th scope="col">Name</th>
-                    <th scope="col"></th>
-                </tr>
-            </thead>
             <tbody>
                 <?php
                 $month = "0";
@@ -45,7 +38,7 @@
                 ?>
                             <tr>
                                 <td colspan="3"><?php
-                                                echo "<h2>" . $germanMonths[ltrim(explode(';', $value['name day'])[0], '0')] . "</h2>";
+                                                echo "<h3 style='margin: 30px 0 15px 0'>" . $germanMonths[ltrim(explode(';', $value['name day'])[0], '0')] . "</h3>";
                                                 ?></td>
                             </tr>
                         <?php
@@ -79,6 +72,9 @@
         margin: 15px 0 5px 0;
     }
 </style>
+<?php
+include __DIR__."/../../pages/footer.php";
+?>
 </body>
 
 </html>

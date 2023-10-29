@@ -80,6 +80,9 @@ Mit Freundlichn Grüßen
             }
         </style>
     </div>
+<?php
+include __DIR__."/../../pages/footer.php";
+?>
 </body>
 
 </html>

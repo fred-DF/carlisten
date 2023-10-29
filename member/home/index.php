@@ -23,8 +23,10 @@
                 <?php
                 if (getSetting("home_show_button")) {
                 ?>
-                    <hr>
-                    <a href="<?php echo getSetting("home_link_value"); ?>"><button class="btn btn-primary"><?php echo getSetting("home_button_value"); ?></button></a>
+                    <div>
+                        <hr>
+                        <a href="<?php echo getSetting("home_link_value"); ?>"><button class="btn btn-primary"><?php echo getSetting("home_button_value"); ?></button></a>
+                    </div>
                 <?php
                 }
 
@@ -39,12 +41,6 @@
         <?php
         }
         ?>
-<!--        <div class="mt-3">
-            <button class="btn btn-primary">
-                <img src="../src/facebookBanner.svg" height="24px" width="auto" alt="">
-            </button>
-            <button class="btn btn-outline-primary">info@carlisten.de</button>
-        </div>-->
     </div>
     <?php
     include __DIR__."/../../pages/footer.php";
