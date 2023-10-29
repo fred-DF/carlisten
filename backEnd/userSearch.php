@@ -13,6 +13,9 @@ if (isset($_POST['query'])) {
         `first name` LIKE "'.$query.'" OR 
         `last name` LIKE "'.$query.'" OR 
         `second title` LIKE "'.$query.'" OR 
+        CONCAT(`title`, " ", `first name`, " ", `last name`) LIKE "'.$query.'" OR
+        CONCAT(`title`, " ", `first name`, " ") LIKE "'.$query.'" OR
+        CONCAT(`first name`, " ", `last name`) LIKE "'.$query.'" OR
         `name day` LIKE "'.$query.'" OR 
         `profile pic url` LIKE "'.$query.'" OR 
         `private_street` LIKE "'.$query.'" OR 

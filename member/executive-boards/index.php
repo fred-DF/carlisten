@@ -39,12 +39,12 @@
             <div class="col-3 mb-5 mb-sm-0">
                 <div class="card" style=" height: calc(100% - 25%);">
                     <div class="card-body" style="translate: 0 -25%;">
-                        <img src="http://carlisten.de/0members/images/Dietmar_Erber_klein.jpg" alt="" class="rounded-circle object-fit-cover shadow-sm" style="height: 150px; width: 150px;">
+                        <img src="https://carlisten.de/0members/images/Dietmar_Erber_klein.jpg" alt="" class="rounded-circle object-fit-cover shadow-sm" style="height: 150px; width: 150px;">
                         <h3 class="card-title">Dr. Dietmar Erber</h3>
                         <span>Vorstand</span><br>
                         <div class="btn-group w-100 mt-2" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-primary" onclick="window.location = '/member/members'">Profil</button>
-                            <button type="button" class="btn btn-outline-primary"><a href="mailto:vorstand@carlist.de" class="link link-dark link-underline-opacity-0">E-Mail</a></button>
+                            <button type="button" class="btn btn-primary" onclick="window.location = '/member/members?openModal&uID=1'">Profil</button>
+                            <button type="button" class="btn btn-outline-primary"><a href="mailto:vorstand@carlisten.de" class="link link-dark link-underline-opacity-0">E-Mail</a></button>
                         </div>
                     </div>
                 </div>
@@ -52,12 +52,12 @@
             <div class="col-3 mb-3 mb-sm-0">
                 <div class="card" style=" height: calc(100% - 25%);">
                     <div class="card-body" style="translate: 0 -25%;">
-                        <img src="http://carlisten.de/0members/images/schulzewerner.jpg" alt="" class="rounded-circle object-fit-cover shadow-sm" style="height: 150px; width: 150px;">
+                        <img src="https://carlisten.de/0members/images/schulzewerner.jpg" alt="" class="rounded-circle object-fit-cover shadow-sm" style="height: 150px; width: 150px;">
                         <h3 class="card-title">Martin Schulze-Werner</h3>
                         <span>Vizepräsident</span><br>
                         <div class="btn-group w-100 mt-2" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-primary">Profil</button>
-                            <button type="button" class="btn btn-outline-primary"><a href="mailto:vorstand@carlist.de" class="link link-dark link-underline-opacity-0">E-Mail</a></button>
+                            <button type="button" class="btn btn-primary" onclick="window.location = '/member/members?openModal&uID=1'">Profil</button>
+                            <button type="button" class="btn btn-outline-primary"><a href="mailto:vizepraesident@carlisten.de" class="link link-dark link-underline-opacity-0">E-Mail</a></button>
                         </div>
                     </div>
                 </div>
@@ -65,12 +65,12 @@
             <div class="col-3 mb-3 mb-sm-0">
                 <div class="card" style=" height: calc(100% - 25%);">
                     <div class="card-body" style="translate: 0 -25%;">
-                        <img src="http://carlisten.de/0members/images/hueffer.jpg" alt="" class="rounded-circle object-fit-cover shadow-sm" style="height: 150px; width: 150px;">
+                        <img src="https://carlisten.de/0members/images/hueffer.jpg" alt="" class="rounded-circle object-fit-cover shadow-sm" style="height: 150px; width: 150px;">
                         <h3 class="card-title">Dr. Eduard Hüffer</h3>
                         <span>Schriftführer</span><br>
                         <div class="btn-group w-100 mt-2" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-primary">Profil</button>
-                            <button type="button" class="btn btn-outline-primary"><a href="mailto:vorstand@carlist.de" class="link link-dark link-underline-opacity-0">E-Mail</a></button>
+                            <button type="button" class="btn btn-primary" onclick="window.location = '/member/members?openModal&uID=1'">Profil</button>
+                            <button type="button" class="btn btn-outline-primary"><a href="mailto:schriftfuehrer@carlisten.de" class="link link-dark link-underline-opacity-0">E-Mail</a></button>
                         </div>
                     </div>
                 </div>
@@ -78,12 +78,12 @@
             <div class="col-3 mb-3 mb-sm-0">
                 <div class="card" style=" height: calc(100% - 25%);">
                     <div class="card-body" style="translate: 0 -25%;">
-                        <img src="http://carlisten.de/0members/images/knawek.jpg" alt="" class="rounded-circle object-fit-cover shadow-sm" style="height: 150px; width: 150px;">
+                        <img src="https://carlisten.de/0members/images/knawek.jpg" alt="" class="rounded-circle object-fit-cover shadow-sm" style="height: 150px; width: 150px;">
                         <h3 class="card-title">Martin Knawek</h3>
                         <span>Kassierer</span><br>
                         <div class="btn-group w-100 mt-2" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-primary">Profil</button>
-                            <button type="button" class="btn btn-outline-primary"><a href="mailto:vorstand@carlist.de" class="link link-dark link-underline-opacity-0">E-Mail</a></button>
+                            <button type="button" class="btn btn-primary" onclick="window.location = '/member/members?openModal&uID=1'">Profil</button>
+                            <button type="button" class="btn btn-outline-primary"><a href="mailto:kassierer@carlisten.de" class="link link-dark link-underline-opacity-0">E-Mail</a></button>
                         </div>
                     </div>
                 </div>
@@ -91,12 +91,12 @@
             <div class="col-3 mb-3 mb-sm-0">
                 <div class="card" style=" height: calc(100% - 25%);">
                     <div class="card-body" style="translate: 0 -25%;">
-                        <img src="http://carlisten.de/0members/images/PrinzLudger.JPG" alt="" class="rounded-circle object-fit-cover shadow-sm" style="height: 150px; width: 150px;">
+                        <img src="https://carlisten.de/0members/images/PrinzLudger.JPG" alt="" class="rounded-circle object-fit-cover shadow-sm" style="height: 150px; width: 150px;">
                         <h3 class="card-title">Ludger Prinz</h3>
                         <span>Gästewart</span><br>
                         <div class="btn-group w-100 mt-2" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-primary">Profil</button>
-                            <button type="button" class="btn btn-outline-primary"><a href="mailto:vorstand@carlist.de" class="link link-dark link-underline-opacity-0">E-Mail</a></button>
+                            <button type="button" class="btn btn-primary" onclick="window.location = '/member/members?openModal&uID=1'">Profil</button>
+                            <button type="button" class="btn btn-outline-primary"><a href="mailto:gaestewart@carlisten.de" class="link link-dark link-underline-opacity-0">E-Mail</a></button>
                         </div>
                     </div>
                 </div>
@@ -104,12 +104,12 @@
             <div class="col-3 mb-3 mb-sm-0">
                 <div class="card" style=" height: calc(100% - 25%);">
                     <div class="card-body" style="translate: 0 -25%;">
-                        <img src="http://carlisten.de/0members/images/Wulf.jpg" alt="" class="rounded-circle object-fit-cover shadow-sm" style="height: 150px; width: 150px;">
+                        <img src="https://carlisten.de/0members/images/Wulf.jpg" alt="" class="rounded-circle object-fit-cover shadow-sm" style="height: 150px; width: 150px;">
                         <h3 class="card-title">Rüdiger Wulf</h3>
                         <span>Hausdichter</span><br>
                         <div class="btn-group w-100 mt-2" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-primary">Profil</button>
-                            <button type="button" class="btn btn-outline-primary"><a href="mailto:vorstand@carlist.de" class="link link-dark link-underline-opacity-0">E-Mail</a></button>
+                            <button type="button" class="btn btn-primary" onclick="window.location = '/member/members?openModal&uID=1'">Profil</button>
+                            <button type="button" class="btn btn-outline-primary"><a href="mailto:hausdichter@carlisten.de" class="link link-dark link-underline-opacity-0">E-Mail</a></button>
                         </div>
                     </div>
                 </div>
