@@ -235,6 +235,10 @@ input:invalid {
 
 }
 
+.form-floating > input {
+    width: 100%;
+}
+
 .form-floating > label {
     position: absolute;
     top: -5px;
@@ -355,7 +359,8 @@ div.modal-footer {
     }
 
     .container {
-        max-width: 100vw;
+        max-width: calc(100vw - 30px);
+        margin: 0 15px;
         overflow: hidden;
     }
 

@@ -18,7 +18,7 @@
         </div>
     </nav>
     <div class="container">
-        <div class="alert alert-light ">
+        <div class="">
             <h1>Benutzerprofil vervollständigen</h1>
             <p>Bitte geben den 6-Stelligen Code aus der E-Mail unten ein. Danach sollst du ein Passwort festlegen und danach geht es los. Nach der Registration kannst du dich dann mit deiner E-Mail Adresse und deinem Festgelgeten Passwort anmelden.</p>
             <form id="code" class="my-3">

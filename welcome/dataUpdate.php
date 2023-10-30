@@ -35,7 +35,7 @@ execute("INSERT INTO `session_tokens`(`uID`) VALUES ($uID)");
     <div class="container">
         <form action="../backEnd/updateMemberDataWelcome.php" method="POST">
             <h1>Persönliche Daten vervollständigen</h1>
-            <p>Füllen Sie bitte alle Felder aus damit Wir Sie erreichen können. Die änderung hier erstzt den Kontakt mit dem Schriftwart.</p>
+            <p>Füllen Sie bitte alle Felder aus, damit wir Sie erreichen können. Die Änderung hier ersetzt den Kontakt mit dem Schriftwart.</p>
             <div>
                 <div style="display: flex; align-items: end; gap: 5px; margin: 15px 0">
                     <h2>1.</h2>

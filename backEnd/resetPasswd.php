@@ -22,7 +22,7 @@ if(isset($_GET['email'])) {
     }
     $passwd = bin2hex(random_bytes(4));
     $passwdHex = hash('sha256', $passwd);
-    $name   = $user['title']." ".$user['first name']." ".$user['last name']." ".$user['second title'];
+    $name   = $user['title']." ".$user['last name']." ".$user['second title'];
     $to = $_GET['email'];
     $subject = "Passwortänderung auf Carlisten.de";
    $message = "
@@ -85,7 +85,7 @@ if(isset($_GET['email'])) {
     <h2>Carlisten</h2>
     </div>
     <div class='container'>
-    <p>Hallo {$name},</p>
+    <p>Hallo Herr {$name},</p>
     <p>Ihr Passwort für den Mitgliederberreich der Carlisten-Hompage wurde zurückgesetzt.</p>
     <p>Legen Sie bitte Ihr neues Passwort mit folgendem Code fest.</p>
     <div class='code-box'><pre>{$code}</pre></div>
@@ -101,7 +101,7 @@ if(isset($_GET['email'])) {
 
     $headers = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-    $headers .= "From: noreply@carlisten.de" . "\r\n";
+    $headers .= "From: Carlisten <noreply@carlisten.de>" . "\r\n";
 
     if(!mail($to,$subject,$message,$headers)) {
         exit("mail() Error - pleas try again");
