@@ -29,8 +29,6 @@ foreach ($userData as $key => $value) {
     $firstName = $value['first name'];
     $lastName = $value['last name'];
     $secondTitle = $value['second title'];
-    $nameDayDay = explode(";", $value['name day'])[0];
-    $nameDayMonth = explode(";", $value['name day'])[1];
     $profilePicUrl = $value['profile pic url'];
     $privateStreet = $value['private_street'];
     $privateHouseNumber = $value['private_house_number'];
@@ -63,7 +61,6 @@ foreach ($userData as $key => $value) {
     <?php require_once __DIR__.'/../../pages/nav-bar.php'; ?>
     <div class="container">
         <h1>Profil bearbeiten</h1>
-        <span>Name:</span>
         <div>
             <div class="row g-2" style="flex-wrap: wrap">
                 <div class="inpt-0" style="flex: 1">
@@ -90,23 +87,6 @@ foreach ($userData as $key => $value) {
                     <div class="form-floating">
                         <input type="text" class="form-control" id="secondTitleInput" placeholder="Nachgestellter Titel" <?php if(isset($title)) {echo "value='" . $secondTitle ."'";}?>>
                         <label for="secondTitleInput">Nachgestellter Titel</label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <span class="form-text mt-3">
-            Namenstag
-        </span>
-        <div style="display: flex; justify-items: center;">
-            <div>
-                <div class="row" style="align-items: center">
-                    <div class="form-floating" style="width: 110px">
-                        <input style="text-align: center" maxlength="2" type="text" class="form-control" id="dayInput" placeholder="TT" <?php if(isset($title)) {echo "value='" . $dateOfEnter ."'";}?>>
-                        <label for="dayInput">Tag</label>
-                    </div>
-                    <div class="form-floating" style="width: 110px">
-                        <input style="text-align: center" maxlength="2" type="text" class="form-control" id="monthInput" placeholder="MM" <?php if(isset($title)) {echo "value='" . $dateOfEnter ."'";}?>>
-                        <label for="monthInput">Monat</label>
                     </div>
                 </div>
             </div>
