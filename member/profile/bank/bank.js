@@ -13,15 +13,11 @@ function updateBankData () {
     // Füge eine Callback-Funktion hinzu, um die Antwort des Servers zu verarbeiten
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            var response = JSON.parse(xhr.responseText);
-            if (response['error'] === "none") {
-                document.getElementById('modalBox').innerText = "Daten erfolgreich gespeichert";
-                document.getElementById('progress').innerHTML = "";
-                document.getElementById('progress').classList.remove("progress");
-                document.getElementById('modalText').innerText = "";
-                document.getElementById('btn').innerText = "Fertig";
+            var response = xhr.responseText;
+            document.getElementById('loader').style.display = 'none';
+            if (response === "success") {
+                document.getElementById('btn').innerText = "Speichern abgeschlossen";
                 document.getElementById('btn').dataset.bsDismiss = 'modal';
-
             } else {
                 document.getElementById('modalText').innerText = "Fehler beim Speichern";
             }
@@ -46,8 +42,8 @@ function updateBankData () {
  
 document.getElementById('bank_data').addEventListener('submit', function (e) {
     e.preventDefault();
-    document.getElementById('btn').disabled = true;
-    updateBankData();
+    document.getElementById('loader').style.display = 'inline-block';
+    setTimeout(updateBankData,1000)
 });
 
 function getBankData() {

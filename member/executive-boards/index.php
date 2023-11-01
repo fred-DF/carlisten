@@ -34,7 +34,6 @@
         }
         ?>
         <h1>Vorstand</h1>
-        <p>Hier haben wir für Sie die Geschichte der Carlisten, die Liedtexte vergangener Veranstaltungen usw. bereitgestellt. Wir werden die Seite Zug um Zug ergänzen.</p>
         <div id="flex-wrapper" class="row text-center" style="margin-top: 120px; display: flex; flex-wrap: wrap; gap: 25px; justify-items: stretch">
             <div class="col-3 mb-5 mb-sm-0">
                 <div class="card" style=" height: calc(100% - 25%);">

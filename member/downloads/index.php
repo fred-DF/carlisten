@@ -47,7 +47,7 @@
                         for (var i = 0; i < downloads.length; i++) {
                             var category = downloads[i].category;
                             var uploads = downloads[i].uploads;
-                            html += '</div><h3>' + category + '</h3><div style="display: flex; flex-flow: row; gap: 5px">'
+                            html += '</div><h3>' + category + '</h3><div style="display: flex; flex-flow: row; gap: 5px; overflow: scroll;">'
                             for (var j = 0; j < uploads.length; j++) {
                                 console.log(uploads, true);
                                 var name = uploads[j].name;

@@ -137,6 +137,12 @@
             border-radius: 0 20px 20px 0;
             color: white;
         }
+
+        @media only screen and (max-width: 600px) {
+            .hiddenOnMobile {
+                display: none;
+            }
+        }
     </style>
     <?php
     if (isset($_GET['openModal']) && isset($_GET['uID'])) {

@@ -254,7 +254,7 @@ input:invalid {
 }
 
 .input-l {
-    width: 100%;
+    width: calc(100% - 60px);
 }
 
 .loader {
@@ -315,7 +315,7 @@ div.modal-content {
     background-color: white;
     border-radius: 10px;
     border: 1px solid lightgray;
-    min-width: 600px;
+    width: 600px;
     display: flex;
     flex-flow: column;
 }
@@ -350,6 +350,7 @@ div.modal-footer {
 
 #hamburgerHide, #hamburgerShow {
     display: none;
+    cursor: pointer;
 }
 
 .alert {
@@ -414,7 +415,7 @@ div.modal-footer {
         position: absolute;
         top: calc(-100% - 65px);
         width: 100%;
-        padding: 0 15px;
+        padding: 30px 15px;
         left: 0;
         flex-flow: column;
         background-color: #002244;

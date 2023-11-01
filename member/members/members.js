@@ -43,10 +43,12 @@ xhr.onload = function () {
         th = document.createElement('th');
         th.setAttribute('scope', 'col');
         th.innerHTML = 'Telefon / E-Mail';
+        th.classList.add("hiddenOnMobile");
         tr.appendChild(th);
         th = document.createElement('th');
         th.setAttribute('scope', 'col');
         th.innerHTML = 'Beruf / Firma';
+        th.classList.add("hiddenOnMobile");
         tr.appendChild(th);
         th = document.createElement('th');
         th.setAttribute('scope', 'col');
@@ -79,6 +81,7 @@ xhr.onload = function () {
             td.innerHTML = mitglied['title'] + ' ' + mitglied['first name'] + ' ' + mitglied['last name'] + ' ' + mitglied['second title'];
             tr.appendChild(td);
             td = document.createElement('td');
+            td.classList.add("hiddenOnMobile");
             var telefonEmailText = '';
             var telefonNummern = 0;
             var emailAdressen = 0;
@@ -143,6 +146,7 @@ xhr.onload = function () {
             td.innerHTML = telefonEmailText;
             tr.appendChild(td);
             td = document.createElement('td');
+            td.classList.add("hiddenOnMobile");
             if (mitglied['professional_job'] != '' && mitglied['professional_company'] != '') {
                 td.innerHTML = mitglied['professional_job'] + ', ' + mitglied['professional_company'];
             } else if (mitglied['professional_job'] != '') {

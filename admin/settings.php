@@ -53,12 +53,6 @@ if(!Auth::checkAdmin()) {
                 <input class="form-check-input" type="checkbox" role="switch" id="home_show_banner" checked>
                 <label class="form-check-label" for="home_show_banner">Banner freischalten</label>
             </div>
-            <h5 class="mb-2">Vorschau</h5>
-            <div class="highlight border rounded p-3 bg-primary-subtle">
-                <h1>Titel</h1>
-                <p>Bla Bla Bla hier steht dann text aus der Textarea.</p>
-                <button class="btn btn-primary">Wert des Knopfes</button>
-            </div>
             <hr>
             <h4>Willkommens Nachricht</h4>
             <div class="form-floating mb-2">
@@ -100,26 +94,6 @@ if(!Auth::checkAdmin()) {
             <div class="form-check form-switch mb-3">
                 <input class="form-check-input" type="checkbox" role="switch" id="member_show_job" checked>
                 <label class="form-check-label" for="member_show_job">Beruf anzeigen</label>
-            </div>
-            <hr>
-            <h4>Vorstand</h4>
-            <div class="form-check form-switch mb-3">
-                <input class="form-check-input" type="checkbox" role="switch" id="executive-boards_show_link" checked>
-                <label class="form-check-label" for="executive-boards_show_link">Profil Link zeigen</label>
-            </div>
-            <hr>
-            <h4>Namenstage</h4>
-            <div class="form-check form-switch mb-3">
-                <input class="form-check-input" type="checkbox" role="switch" id="namedays_allow_remebers" checked>
-                <label class="form-check-label" for="namedays_allow_remebers">Erinnerungen erlauben</label>
-            </div>
-            <div class="form-check form-switch mb-3">
-                <input class="form-check-input" type="checkbox" role="switch" id="namedays_allows_search" checked>
-                <label class="form-check-label" for="namedays_allows_search">Sektion Suche anzeigen</label>
-            </div>
-            <div class="form-check form-switch mb-3">
-                <input class="form-check-input" type="checkbox" role="switch" id="namedays_show_next_namedays" checked>
-                <label class="form-check-label" for="namedays_show_next_namedays">Sektion 'Kommende Namenstage' anzeigen</label>
             </div>
         </form>
         <button class="btn btn-primary my-3" id="saveBtn">Speichern</button>

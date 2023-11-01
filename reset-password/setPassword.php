@@ -19,7 +19,7 @@ $userData = json_decode($_SESSION['set_password_data'], 1);
 </head>
 <body>
     <nav>
-        <div class="container" id="nav-bar-content">
+        <div class="container">
             <img src="https://carlisten.genanntnoelke.de/src/logos/Logo - Text - Weiss.svg" alt="">
             <div class="links">
                 <span></span>

@@ -32,6 +32,7 @@ if(isset($data['update'])) {
         $uID = $_SESSION['uID'];
 
         execute("UPDATE `bank_accounts` SET `IBAN`='$iban',`IBAN_clear`='$iban_clear',`BIC`='$bic',`bank`='$bank' WHERE `uID`='$uID'");
+        exit("success");
     }
 } elseif (isset($data['getData'])) {
     if($data['getData'] == "admin" && isset($data['uID']) && Auth::checkAdmin()) {

@@ -18,11 +18,14 @@ if(!Auth::checkAdmin()) {
 <body>
     <?php include 'nav-bar.php'; ?>
     <div class="container">
+        <h1>Bankdaten</h1>
         <form id="data">
-            <input type="number" id="id" placeholder="Benutzer" class="form-control my-2">
-            <button type="submit" class="btn btn-primary my-2">Daten sicher Erhalten</button>
+            <select id="userId">
+                <option value="" disabled>Person auswählen</option>
+            </select>
         </form>
-        <div id="response" class="alert alert-light my-2">
+        <hr>
+        <div id="response" class="alert-light my-2">
             <form id="bank_data">
                 <div class="row g-1">
                     <div class="form-floating mb-3 col-6">
@@ -42,9 +45,9 @@ if(!Auth::checkAdmin()) {
         </div>
     </div>
     <script>
-        document.getElementById('data').addEventListener('submit', (e) => {
+        document.getElementById('userId').addEventListener('input', (e) => {
             e.preventDefault();
-            const id = document.getElementById('id').value;
+            const id = document.getElementById('userId').value;
             var xhr = new XMLHttpRequest();
 
             // Definiere die HTTP-Methode und die URL
@@ -57,7 +60,11 @@ if(!Auth::checkAdmin()) {
             // Füge eine Callback-Funktion hinzu, um die Antwort des Servers zu verarbeiten
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4 && xhr.status === 200) {
-                    document.getElementById('response').innerText = xhr.responseText;
+                    const response = JSON.parse(xhr.responseText);
+                    document.getElementById('bic').value = response.bic;
+                    document.getElementById('bank').value = response.bank;
+                    document.getElementById('iban').value = response.iban;
+
                 }
             };
 
@@ -74,6 +81,27 @@ if(!Auth::checkAdmin()) {
             xhr.send(JSON.stringify(request));
 
         });
+
+        function loadUser () {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "../backEnd/getBankUser.php");
+
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    const users = JSON.parse(xhr.response);
+                    users.forEach(function (user) {
+                        let option = document.createElement("option");
+                        option.value = user.ID;
+                        option.innerText = user['title'] + " " + user['first name'] + " " + user['last name'] + " " + user['second title'];
+                        document.getElementById('userId').appendChild(option)
+                    });
+                }
+            };
+
+            xhr.send();
+        }
+
+        loadUser();
     </script>
 </body>
 
