@@ -220,7 +220,7 @@ foreach ($userData as $key => $value) {
                 </div>
                 <div class="row" style="display: none">
                     <div class="form-floating mb-3" style="flex: 1">
-                        <textarea style="wi" class="form-control form-control-lg" height="50px" aria-label="With textarea" id="text" placeholder="Text"><?php if(isset($title)) {echo $note;}?></textarea>
+                        <textarea style="wi" class="form-control form-control-lg" aria-label="With textarea" id="text" placeholder="Text"><?php if(isset($title)) {echo $note;}?></textarea>
                         <label for="text">Text</label>
                     </div>
                 </div>
@@ -310,7 +310,7 @@ foreach ($userData as $key => $value) {
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     const toastElList = document.querySelectorAll('.toast')
-                    if (xhr.responseText == "success") {
+                    if (xhr.responseText === "success") {
                         document.getElementById('save').classList.remove('btn-light');
                         document.getElementById('save').classList.add('btn-success');
                         document.getElementById('save').innerHTML = "Gespeichert";
