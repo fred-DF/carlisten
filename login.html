@@ -26,12 +26,13 @@
                 <span class="input-label">Passwort</span>
                 <input type="password" class="input-l" id="password" placeholder="Passwort">
             </div>
-            <button type="submit" class="filled" style="margin-bottom: 30px">Anmelden</button>
+            <button type="submit" class="filled" style="margin-bottom: 30px"><span id="loader" class="loader" style="display: none"></span>Anmelden</button>
             <a href="resetPassword.php" style="margin-bottom: 30px">Passwort vergessen?</a>
         </form>
     </div>    
     <script>
         function checkData () {
+            document.getElementById('loader').style.display = "inline-block";
             event.preventDefault();
             const username = document.getElementById('email').value;
             const passwd = document.getElementById('password').value;
@@ -41,7 +42,8 @@
 
 
             xhr.onreadystatechange = function () {
-                if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {                    
+                if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+
                     if (JSON.parse(xhr.responseText)['response'] == "success") {
                         const urlParams = new URLSearchParams(window.location.search);
                         if (urlParams.has('redirect')) {
@@ -49,7 +51,8 @@
                         } else {
                             window.location = 'member/home';
                         }
-                    } else {  
+                    } else {
+                        document.getElementById('loader').style.display = "none";
                         if(JSON.parse(xhr.responseText)['response'] == "fail") {
                             document.getElementById('errorMsgBox').innerText = JSON.parse(xhr.responseText)['error'];
                             document.getElementById('errorMsgBox').style.display = 'block';

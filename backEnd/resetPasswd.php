@@ -22,7 +22,7 @@ if(isset($_GET['email'])) {
     }
     $passwd = bin2hex(random_bytes(4));
     $passwdHex = hash('sha256', $passwd);
-    $name   = $user['title']." ".$user['last name']." ".$user['second title'];
+    $name   = $user['title']." ".$user['last name'];
     $to = $_GET['email'];
     $subject = "Passwortänderung auf Carlisten.de";
    $message = "
@@ -87,9 +87,8 @@ if(isset($_GET['email'])) {
     <div class='container'>
     <p>Hallo Herr {$name},</p>
     <p>Ihr Passwort für den Mitgliederberreich der Carlisten-Hompage wurde zurückgesetzt.</p>
-    <p>Legen Sie bitte Ihr neues Passwort mit folgendem Code fest.</p>
-    <div class='code-box'><pre>{$code}</pre></div>
-    <p>Bitte legen Sie Zeitnah Ihr neues Passwort fest.</p>
+    <p>Legen Sie bitte Ihr neues Passwort mit folgendem Code fest:</p>
+    <div class='code-box' style='text-align: center'><pre>{$code}</pre></div>
     <a href='https://carlisten.genanntnoelke.de/reset-password'><button class='button'>Passwort festlegen</button></a>
     <p>Viele Grüße</p>
     <p>Das Carlisten-Team</p>
@@ -107,5 +106,5 @@ if(isset($_GET['email'])) {
         exit("mail() Error - pleas try again");
     }
     execute("UPDATE `user` SET `password`='$passwdHex' WHERE `username`='$email'");
-    echo "Passwort zurückgesetzt - <a href='login.html'>Anmelden</a>";
+    echo "Passwort zurückgesetzt";
 }

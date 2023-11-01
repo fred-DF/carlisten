@@ -19,20 +19,22 @@ if(!Auth::checkAdmin()) {
     ?>
     <div class="container">
         <h1>Veranstaltungskalender</h1>
-        <button class="btn btn-primary" onclick="document.querySelector('div.modal').dataset.shown =  'true';">Veranstaltung einfügen</button>
+        <button class="filled" onclick="document.querySelector('div.modal').dataset.shown =  'true';">Veranstaltung einfügen</button>
         <div class="row g-3 mt-2">
             <?php
                 include_once '../backEnd/pdo.php';
                 $events = select("SELECT `ID`, `title`, `timestamp`, `location`, `shown`, `registable`, `participations` FROM `events`");
                 foreach ($events as $key => $value) {
                     ?>
-                    <div class="card col-4 mx-1" style="width: 18rem;" data-event-id='<?php echo $value['ID'] ?>'>
-                        <div class="card-body">
-                            <h3><?php echo $value['title']; ?></h3>
-                            <p class="my-0"><?php echo date("d,m,Y - H:i", strtotime($value['timestamp'])) ?> Uhr<br>
-                                <?php echo $value['location']; ?></p>
-                            <a class="a my-0" onclick="editEvent(<?php echo $value['ID']; ?>)">
-                                Bearbeiten</a>
+                    <div class="card" style="width: 18rem;" data-event-id='<?php echo $value['ID'] ?>'>
+                        <div class="card-body" style="display: flex; justify-content: space-between; align-items: flex-end">
+                            <div>
+                                <h3><?php echo $value['title']; ?></h3>
+                                <p class="my-0"><?php echo date("d,m,Y - H:i", strtotime($value['timestamp'])) ?> Uhr<br>
+                                    <?php echo $value['location']; ?></p>
+                            </div>
+                            <a class="a my-0" onclick="deleteEvent(<?php echo $value['ID']; ?>)">
+                                Veranstaltung löschen</a>
                         </div>
                     </div>
                     <?php
@@ -50,7 +52,7 @@ if(!Auth::checkAdmin()) {
                 <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Veranstaltung eintragen</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="document.getElementById('event-modal').dataset.shown = 'false';"> x </button>
                 </div>
                 <div class="modal-body">
                     <form id="event-form">
@@ -102,10 +104,43 @@ if(!Auth::checkAdmin()) {
             xhr.send();
         }
 
+        function deleteEvent (eventID) {
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET", "../backEnd/createEvent.php?deleteEvent&event-ID=" + eventID);
+            xhr.onreadystatechange = function () {
+                console.log(xhr.responseText);
+                window.location.reload();
+            }
+            xhr.send();
+        }
+
         document.getElementById('event-form').addEventListener('submit', (e) => {
             e.preventDefault();
             createEvent();
         });
+
     </script>
+    <style>
+
+        .row {
+            display: grid;
+            grid-template-columns: repeat(3, 350px);
+        }
+
+        .card-body {
+            background-color: #e7e7e7;
+            padding: 15px;
+            border-radius: 8px;
+            width: 100%;
+        }
+
+        .card-body  {
+            gap: 15px;
+        }
+
+        .card-body > div > h3 {
+            margin: 5px 0;
+        }
+    </style>
 </body>
 </html>

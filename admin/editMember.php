@@ -99,16 +99,15 @@ foreach ($userData as $key => $value) {
         <span class="form-text mt-3">
             Namenstag
         </span>
-        <div style="display: flex; justify-items: center">
+        <div style="display: flex; justify-items: center;">
             <div>
-                <div class="row" >
-                    <div class="form-floating" style="width: 35px">
-                        <input style="text-align: center" type="text" class="form-control" id="dayInput" placeholder="TT" <?php if(isset($title)) {echo "value='" . $dateOfEnter ."'";}?>>
+                <div class="row" style="align-items: center">
+                    <div class="form-floating" style="width: 110px">
+                        <input style="text-align: center" maxlength="2" type="text" class="form-control" id="dayInput" placeholder="TT" <?php if(isset($title)) {echo "value='" . $dateOfEnter ."'";}?>>
                         <label for="dayInput">Tag</label>
                     </div>
-                    <span class="input-group-text" id="basic-addon3">:</span>
-                    <div class="form-floating" style="width: 35px">
-                        <input style="text-align: center" type="text" class="form-control" id="monthInput" placeholder="MM" <?php if(isset($title)) {echo "value='" . $dateOfEnter ."'";}?>>
+                    <div class="form-floating" style="width: 110px">
+                        <input style="text-align: center" maxlength="2" type="text" class="form-control" id="monthInput" placeholder="MM" <?php if(isset($title)) {echo "value='" . $dateOfEnter ."'";}?>>
                         <label for="monthInput">Monat</label>
                     </div>
                 </div>
@@ -127,13 +126,13 @@ foreach ($userData as $key => $value) {
                                 <input type="text" class="form-control" id="privateStreet" placeholder="Straße" <?php if(isset($title)) {echo "value='" . $privateStreet ."'";}?>>
                                 <label for="privateStreet">Straße</label>
                             </div>
-                            <div class="form-floating col-2" style="width: 50px">
+                            <div class="form-floating col-2" style="width: 110px">
                                 <input type="text" class="form-control" id="privateHouseNumber" placeholder="Hausnummer" <?php if(isset($title)) {echo "value='" . $privateHouseNumber ."'";}?>>
                                 <label for="privateHouseNumber">Hausnummer</label>
                             </div>
                         </div>
                         <div class="row g-2 mb-2">
-                            <div class="form-floating col-1" style="width: 75px;">
+                            <div class="form-floating col-1" style="width: 130px;">
                                 <input type="number" class="form-control" id="privatePLZ" placeholder="PLZ" <?php if(isset($title)) {echo "value='" . $privatePLZ ."'";}?>>
                                 <label for="privatePLZ">PLZ</label>
                             </div>
@@ -159,13 +158,16 @@ foreach ($userData as $key => $value) {
                                 <label for="privateTelephone">Telefon</label>
                             </div>
                         </div>
-                        <div class="form-floating col-6 mb-2">
-                            <input type="url" class="form-control" id="privateWeb" placeholder="Web" <?php if(isset($title)) {echo "value='" . $privateWeb ."'";}?>>
-                            <label for="privateWeb">Web</label>
-                        </div>
-                        <div class="form-floating col-6">
-                            <input type="email" class="form-control" id="privateEmail" placeholder="E-Mail" <?php if(isset($title)) {echo "value='" . $privateEmail ."'";}?>>
-                            <label for="privateEmail">E-Mail</label>
+                        <div class="row">
+
+                            <div class="form-floating col-6 mb-2">
+                                <input type="url" class="form-control" id="privateWeb" placeholder="Web" <?php if(isset($title)) {echo "value='" . $privateWeb ."'";}?>>
+                                <label for="privateWeb">Web</label>
+                            </div>
+                            <div class="form-floating col-6">
+                                <input type="email" class="form-control" id="privateEmail" placeholder="E-Mail" <?php if(isset($title)) {echo "value='" . $privateEmail ."'";}?>>
+                                <label for="privateEmail">E-Mail</label>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -238,7 +240,7 @@ foreach ($userData as $key => $value) {
                 </div>
             </div>
             <h2>Mitgliedschaft</h2>
-            <div>
+            <div style="margin-bottom: 90px">
                 <div class="form-floating mb-3">
                     <input type="date" class="form-control" id="dateOfEntry" placeholder="Eintrittsdatum" <?php if(isset($title)) {echo "value='" . $dateOfEnter ."'";}?>>
                     <label for="dateOfEntry">Eintrittsdatum</label>
@@ -255,7 +257,13 @@ foreach ($userData as $key => $value) {
 
                     <button class="filled" onclick="resetPassword()" id="resetPassword">Passwort zurücksetzen</button>
                 </div>
-                <div id="passwordResetErrorBox"></div>
+                <div id="passwordResetErrorBox" ></div>
+            </div>
+            <div class="" style="position: fixed; bottom: 0; background-color: white; width: 100%;">
+                <div style="align-items: baseline; display: flex; gap: 15px">
+                    <p>Eingaben Speichern</p>
+                    <button class="filled" id="save">Speichern</button>
+                </div>
             </div>
         </div>
 
@@ -266,10 +274,7 @@ foreach ($userData as $key => $value) {
             flex-wrap: nowrap;
             align-items: center;
             width: 450px !important;
-        }
-
-        div.form-floating {
-            margin: 0 65px 0 0;
+            gap: 5px;
         }
 
         .inpt-0 {
@@ -292,9 +297,6 @@ foreach ($userData as $key => $value) {
 
     </style>
 
-    <div class="container-sm position-sticky bg-primary opacity-100 p-3 rounded row m-auto" style="z-index: 999999; bottom: 20px;">
-        <button class="filled" id="save">Speichern</button>
-    </div>
     <script src="../src/bootstrap/js/bootstrap.js"></script>
     <script src="editMember.js"></script>
     <script>

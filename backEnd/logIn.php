@@ -36,7 +36,7 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
             echo json_encode(['response' => 'success']);
         }
     } else {
-        echo json_encode(['response' => 'fail', 'error' => 'Passwort Falsch']);
+        echo json_encode(['response' => 'fail', 'error' => 'Eingabe falsch']);
     }
 } else {
     echo json_encode(['response' => 'fail', 'error' => 'Anfrage fehlerhaft', 'devLog' => 'POST parameter missing']);

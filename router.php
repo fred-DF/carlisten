@@ -17,7 +17,7 @@ if (strpos($request_uri, '/member/') === 0) {
     $path = substr($request_uri, 8);
     // Übergeben der verbleibenden URI als GET-Parameter an controller.php
     $_GET['path'] = $path;
-    include 'member/controller.php';
+    include __DIR__.'/member/controller.php';
 } else {
     // Andernfalls normale Datei/das normale Verzeichnis laden
     return false;

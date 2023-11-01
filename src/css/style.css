@@ -191,6 +191,7 @@ button {
     justify-content: center;
     align-items: center;
     gap: 5px;
+    cursor: pointer;
 }
 
 .btn-close {
@@ -206,6 +207,8 @@ button.filled:disabled {
     background-color: rgba(0, 51, 102, 0.53);
     transition: background-color 0.4s;
 }
+
+button:disabled.loader
 
 input[type=checkbox] {
     height: 15px;
@@ -236,7 +239,7 @@ input:invalid {
 }
 
 .form-floating > input {
-    width: 100%;
+    width: calc(100% - 63px);
 }
 
 .form-floating > label {
@@ -252,6 +255,26 @@ input:invalid {
 
 .input-l {
     width: 100%;
+}
+
+.loader {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #FFF;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 nav > div > .links > a:hover {
@@ -292,7 +315,7 @@ div.modal-content {
     background-color: white;
     border-radius: 10px;
     border: 1px solid lightgray;
-    min-width: 400px;
+    min-width: 600px;
     display: flex;
     flex-flow: column;
 }
