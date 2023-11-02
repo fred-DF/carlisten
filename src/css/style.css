@@ -208,8 +208,6 @@ button.filled:disabled {
     transition: background-color 0.4s;
 }
 
-button:disabled.loader
-
 input[type=checkbox] {
     height: 15px;
     width: 15px;
