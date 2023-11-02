@@ -66,6 +66,7 @@ if(isset($_GET['email'])) {
         padding: 10px 20px;
         border-radius: 4px;
         border: none;
+        margin: 15px 0;
     }
     
     .button:hover {
@@ -83,7 +84,7 @@ if(isset($_GET['email'])) {
     </head>
     <body>
     <div class='headbar'>
-    <h2>Carlisten</h2>
+    <img src='https://carlisten.genanntnoelke.de/src/logos/Logo%20-%20Text%20-%20Weiss.svg' alt=''>
     </div>
     <div class='container'>
     <p>Hallo Herr {$name},</p>
