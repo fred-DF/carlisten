@@ -14,7 +14,7 @@ $userData = select("SELECT `ID`, `title`, `first name`, `last name`, `second tit
 
 ?>
 <div class="modal-header">
-    <h5 class="modal-title"><div id="user-avatar" class="a" style="margin-right: 15px"><?php echo $userData['first name'][0] ?></div><?php echo $userData['title'].' '.$userData['first name'].' '.$userData['last name'].' '.$userData['second title'] ?></h5>
+    <h3 class="modal-title"><div id="user-avatar" class="a" style="margin-right: 15px"><?php echo $userData['first name'][0] ?></div><?php echo $userData['title'].' '.$userData['first name'].' '.$userData['last name'].' '.$userData['second title'] ?></h3>
     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="document.getElementById('user-modal').dataset.shown = 'false';">x</button>
 </div>
 <div class="modal-body">

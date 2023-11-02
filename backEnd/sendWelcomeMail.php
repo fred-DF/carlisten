@@ -175,7 +175,7 @@ function sendWelcomeMail ($user) {
                 <p>Um Ihren Account freizuschalten, gehen Sie bitte auf 'Freischalten' und geben folgenden Code ein:</p>   
                 <div class='code-box' style='text-align: center'><pre>Code: {$code}</pre></div>
                 <p>Danach legen Sie bitte ein Passwort fest.</p>
-                <a href='https://carlisten.genanntnoelke.de/welcome'><button class='button'>Freischalten</button></a>
+                <a href='https://carlisten.genanntnoelke.de/welcome' target='_blank'><button class='button'>Freischalten</button></a>
                 <p>Mit freundlichen Grüßen</p>
                 <p>Der Vorstand</p>
                 </div>
