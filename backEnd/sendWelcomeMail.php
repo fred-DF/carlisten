@@ -149,6 +149,7 @@ function sendWelcomeMail ($user) {
                     text-decoration: none;
                     padding: 10px 20px;
                     border: none;
+                    cursor: pointer;
                     border-radius: 4px;
                 }
             
