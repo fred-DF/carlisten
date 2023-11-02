@@ -2,14 +2,14 @@
 
 require_once __DIR__.'/../bootstrap.php';
 Auth::auth();
-if($_GET['uID'] !== $_SESSION['uID']) {
-  if(!Auth::checkAdmin()) {
-    exit("Berechtigung Fehlt");
-  }
-}
+//if($_GET['uID'] !== $_SESSION['uID']) {
+//  if(!Auth::checkAdmin()) {
+//    exit("Berechtigung Fehlt");
+//  }
+//}
 
 // Überprüfen, ob die GET-Parameter vorhanden sind
-if(isset($_GET['uID']) && isset($_GET['titleInput']) && isset($_GET['firstNameInput']) && isset($_GET['lastNameInput']) && isset($_GET['dayInput']) && isset($_GET['monthInput']) && isset($_GET['privateStreet']) && isset($_GET['privateHouseNumber']) && isset($_GET['privatePLZ']) && isset($_GET['privateCity']) && isset($_GET['privateCountry']) && isset($_GET['privateMobile']) && isset($_GET['privateEmail']) && isset($_GET['professionalCompany']) && isset($_GET['professionalJob']) && isset($_GET['professionalStreet']) && isset($_GET['professionalHouseNumber']) && isset($_GET['professionalPLZ']) && isset($_GET['professionalCity']) && isset($_GET['professionalCountry']) && isset($_GET['professionalMobile']) && isset($_GET['professionalMail'])) {
+if(isset($_GET['uID']) && isset($_GET['titleInput']) && isset($_GET['firstNameInput']) && isset($_GET['lastNameInput']) && isset($_GET['privateStreet']) && isset($_GET['privateHouseNumber']) && isset($_GET['privatePLZ']) && isset($_GET['privateCity']) && isset($_GET['privateCountry']) && isset($_GET['privateMobile']) && isset($_GET['privateEmail']) && isset($_GET['professionalCompany']) && isset($_GET['professionalJob']) && isset($_GET['professionalStreet']) && isset($_GET['professionalHouseNumber']) && isset($_GET['professionalPLZ']) && isset($_GET['professionalCity']) && isset($_GET['professionalCountry']) && isset($_GET['professionalMobile']) && isset($_GET['professionalMail'])) {
   
   // GET-Parameter in PHP-Variablen speichern
   $uID = $_GET['uID'];
@@ -17,8 +17,6 @@ if(isset($_GET['uID']) && isset($_GET['titleInput']) && isset($_GET['firstNameIn
   $firstNameInput = $_GET['firstNameInput'];
   $lastNameInput = $_GET['lastNameInput'];
   $secondTitleInput = $_GET['secondTitleInput'];
-  $dayInput = $_GET['dayInput'];
-  $monthInput = $_GET['monthInput'];
   $privateStreet = $_GET['privateStreet'];
   $privateHouseNumber = $_GET['privateHouseNumber'];
   $privatePLZ = $_GET['privatePLZ'];
@@ -48,7 +46,6 @@ if(isset($_GET['uID']) && isset($_GET['titleInput']) && isset($_GET['firstNameIn
         `first name`='$firstNameInput',
         `last name`='$lastNameInput',
         `second title`='$secondTitleInput',
-        `name day`='$monthInput;$dayInput',
         `profile pic url`='',
         `private_street`='$privateStreet',
         `private_house_number`='$privateHouseNumber',

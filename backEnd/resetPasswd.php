@@ -58,7 +58,7 @@ if(isset($_GET['email'])) {
 
     .button {
         display: inline-block;
-        background-color: #0d6efd;
+        background-color: #003366;
         color: #fff;
         font-weight: 700;
         font-size: 16px;
@@ -66,11 +66,11 @@ if(isset($_GET['email'])) {
         padding: 10px 20px;
         border-radius: 4px;
     }
-
+    
     .button:hover {
-        background-color: #1d72e3;
+        background-color: rgba(0,51,102,0.8);
     }
-
+    
     .code-box {
         background-color: #e8e8e8;
         border: 1px solid #ccc;

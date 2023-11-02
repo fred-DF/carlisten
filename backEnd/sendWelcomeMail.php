@@ -131,7 +131,7 @@ function sendWelcomeMail ($user) {
                 }
             
                 .headbar {
-                    background-color: #0d6efd;
+                    background-color: #003366;
                     color: #fff;
                     font-weight: 700;
                     font-size: 24px;
@@ -142,7 +142,7 @@ function sendWelcomeMail ($user) {
             
                 .button {
                     display: inline-block;
-                    background-color: #0d6efd;
+                    background-color: #003366;
                     color: #fff;
                     font-weight: 700;
                     font-size: 16px;
@@ -152,7 +152,7 @@ function sendWelcomeMail ($user) {
                 }
             
                 .button:hover {
-                    background-color: #1d72e3;
+                    background-color: rgba(0,51,102,0.8);
                 }
             
                 .code-box {
