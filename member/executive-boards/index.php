@@ -40,7 +40,7 @@
                     <div class="card-body" style="translate: 0 -25%;">
                         <img src="/src/img/vorstand.jpeg" alt="" class="rounded-circle object-fit-cover shadow-sm" style="height: 150px; width: 150px;">
                         <h3 class="card-title">Dr. Dietmar Erber</h3>
-                        <span>Vorstand</span><br>
+                        <span>Präsident</span><br>
                         <div class="btn-group w-100 mt-2" role="group" aria-label="Basic example">
                             <button type="button" class="btn btn-primary" onclick="window.location = '/member/members?openModal&uID=1'">Profil</button>
                             <button type="button" class="btn btn-outline-primary"><a href="mailto:vorstand@carlisten.de" class="link link-dark link-underline-opacity-0">E-Mail</a></button>
@@ -103,7 +103,7 @@
             <div class="col-3 mb-3 mb-sm-0">
                 <div class="card" style=" height: calc(100% - 25%);">
                     <div class="card-body" style="translate: 0 -25%;">
-                        <img src="/src/img/hausdichter.jpeg" alt="" class="rounded-circle object-fit-cover shadow-sm" style="height: 150px; width: 150px;">
+                        <img src="/src/img/hausdichter.jpeg" alt="" class="rounded-circle object-fit-cover shadow-sm" style="border-radius: 0; height: 150px; width: 150px;">
                         <h3 class="card-title">Rüdiger Wulf</h3>
                         <span>Hausdichter</span><br>
                         <div class="btn-group w-100 mt-2" role="group" aria-label="Basic example">

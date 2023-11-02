@@ -44,7 +44,7 @@ xhr.onload = function () {
         th.setAttribute('scope', 'col');
         th.innerHTML = 'Telefon / E-Mail';
         th.classList.add("hiddenOnMobile");
-        tr.appendChild(th);
+        // tr.appendChild(th);
         th = document.createElement('th');
         th.setAttribute('scope', 'col');
         th.innerHTML = 'Beruf / Firma';
@@ -60,6 +60,9 @@ xhr.onload = function () {
         mitgliederliste.forEach(function (mitglied) {
             var mitglied = JSON.parse(mitglied);
             tr = document.createElement('tr');
+            tr.addEventListener("click", () => {
+                loadModal(mitglied.ID);
+            });
             var td = document.createElement('td');
             td.setAttribute('scope', 'row');
             if (mitglied['profile pic url'] != '') {
@@ -72,7 +75,7 @@ xhr.onload = function () {
             } else {
                 var span = document.createElement('span');
                 span.classList.add('user-avatar');
-                span.style.backgroundColor = getRandomColor();
+                span.style.backgroundColor = '#003366';
                 span.innerHTML = mitglied['first name'][0];
                 td.appendChild(span);
             }
@@ -143,8 +146,8 @@ xhr.onload = function () {
             } else if (telefonNummern > 1 && emailAdressen > 1) {
                 telefonEmailText = telefonNummern + ' Nummern, ' + emailAdressen + ' E-Mails';
             }
-            td.innerHTML = telefonEmailText;
-            tr.appendChild(td);
+            // td.innerHTML = telefonEmailText;
+            // tr.appendChild(td);
             td = document.createElement('td');
             td.classList.add("hiddenOnMobile");
             if (mitglied['professional_job'] != '' && mitglied['professional_company'] != '') {

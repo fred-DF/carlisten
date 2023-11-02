@@ -17,17 +17,24 @@ Auth::auth();
     <?php require_once __DIR__.'/../../pages/nav-bar.php'; ?>
     <div class="container">
         <h1>Passwort ändern</h1>
+        <p>Ein sicheres Passwort besteht aus:</p>
+        <ul>
+            <li>Mindestens acht Zeichen</li>
+            <li>Groß- und Klein-Buchstaben</li>
+            <li>Ziffern</li>
+            <li>Sonderzeichen</li>
+        </ul>
         <form id="changePasswdForm" method="POST">
             <div>
-                <input type="password" class="form-control" id="password" placeholder="Passwort">
+                <input type="password" class="form-control  input-l" id="password" placeholder="Neues Passwort">
             </div>
             <div>
-                <input type="password" class="form-control" id="password2" placeholder="Password">
+                <input type="password" class="form-control input-l" id="password2" placeholder="Neues Passwort wiederholen">
             </div>
             <div>
                 <button class="filled">Ändern</button>
             </div>
-            <div class="alert mt-3 mb-0" id="feedback">
+            <div class="alert mt-3 mb-0" id="feedback" style="display: none">
             </div>
         </form>
     </div>
@@ -42,6 +49,7 @@ Auth::auth();
                 
                 xhr.onreadystatechange = function () {                    
                     if (xhr.readyState === 4 && xhr.status === 200) {
+                        document.getElementById('feedback').style.display = 'block';
                         if(JSON.parse(xhr.responseText)['response'] == "success") {
                             document.getElementById('feedback').classList.remove('alert-danger');
                             document.getElementById('feedback').classList.add('alert-success','alert');

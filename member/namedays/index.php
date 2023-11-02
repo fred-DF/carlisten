@@ -48,7 +48,7 @@
                         <tr>
                             <td><?php echo explode(';', $value['name day'])[1] . '.' . explode(';', $value['name day'])[0] ?></td>
                             <td><?php echo $value['title'] . ' ' . $value['first name'] . ' ' . $value['last name'] . ' ' . $value['second title']; ?></td>
-                            <td class="text-end"><a href="../members?openModal&uID=<?php echo $value['ID']; ?>">Profil</a></td>
+                            <td class="text-end"><a href="member/members?openModal&uID=<?php echo $value['ID']; ?>">> zum Profil</a></td>
                         </tr>
                 <?php
                     }

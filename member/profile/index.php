@@ -236,7 +236,7 @@ foreach ($userData as $key => $value) {
                     </a>
                 </div>
                 <div class="alert" style="margin: 25px 0">
-                    <p>Sie können, ohne eine E-Mail zu schreiben, Ihre Bankverbindung uns Mitteilen, und automatisch werden die neuen Kontodaten genutzt.</p>
+                    <p>Hier können Sie uns Ihre aktuelle Bankverbindung mitteilen. Eine gesonderte Info an den Kassenwart ist nicht notwendig.</p>
                     <div>
                         <hr>
                         <a href="/member/profile/bank">
@@ -283,7 +283,6 @@ foreach ($userData as $key => $value) {
 
     <div class="" style="position: fixed; bottom: 0; background-color: rgba(255,255,255,0); width: 100%; padding: 15px 0; backdrop-filter: blur(100px) grayscale(0.5); -webkit-backdrop-filter: blur(100px) grayscale(0.5);">
         <div style="align-items: baseline; display: flex; gap: 15px; max-width: var(--site-width); margin: 0 auto">
-            <p>Eingaben Speichern</p>
             <button class="filled" id="save">Speichern</button>
         </div>
     </div>

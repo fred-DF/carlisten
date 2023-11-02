@@ -20,15 +20,14 @@ $iban = select("SELECT `IBAN_clear` FROM `bank_accounts` WHERE `uID`='$uID' LIMI
 <body>
     <?php require_once __DIR__.'/../../../pages/nav-bar.php'; ?>
     <div class="container">
-        <h1>Deine Bankdaten</h1>
-        <p>Wenn Sie ihre Kontoverbindungen aktualisieren wollen, füllen Sie bitte IBAN, BIC und Bank aus. Ihre Daten kann nur der Vorstand in Klartext decodieren. Weder Sie noch Dritte!</p>
-        <p>Wenden Sie sich bei Fragen an den <a href="mailto:kassenwart@carlisten.de">Kassenwart</a>.</p>
+        <h1>Ihre Bankdaten</h1>
+        <p>Wenn Sie Ihre Kontoverbindungen aktualisieren wollen, füllen Sie bitte IBAN, BIC und Bank aus. Aus Datenschutzgründen können weder Sie noch sonstige Mitglieder Ihre aktuell eingegebene Bankverbindung einsehen. Ihre Bankdaten können ausschließlich durch den Präsidenten sowie den Kassenwart decodiert und eingesehen werden.</p>
+        <p>Bei Fragen wenden Sie sich bitte an den <a href="mailto:kassenwart@carlisten.de">Kassenwart</a>.</p>
         <div class=" -light">
             <h3>Aktuelle Kontoverbindung</h3>
-            <p>Nur der Kassenwart und der Vorstand kann die vollständige IBAN in Klartext decodieren. Für Sie oder Dritte ist das Technisch ohne den Geheimschlüssel nicht möglich. Deswegen können wir Ihnen die IBAN nur teilweise anzeigen.</p>
             <div class="form-floating">
                 <label for="bank">Aktuell hinterlegte IBAN</label>
-                <input type="text" class="form-control" id="ibanShorten" value="DE** **** **** **** <?php echo $iban; ?>" placeholder="IBAN" readonly>
+                <input type="text" class="form-control" id="ibanShorten" value="**** **** **** **** *<?php echo $iban; ?>" placeholder="IBAN" readonly>
             </div>
         </div>
         <div class=" -light" role="">

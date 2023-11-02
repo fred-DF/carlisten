@@ -18,7 +18,8 @@ $name = $user['first name'] . " " . $user['last name'];
 <?php require_once __DIR__.'/../../pages/nav-bar.php'; ?>
     <div class="container page-content">
         <h1>Veranstaltungskalender</h1>
-        <p>Jeden ersten Mittwoch im Monat findet ab 19:30 Uhr unser Stammtisch in der Schwemme des Zwei-Löwen-Klubs statt. Eine Anmeldung ist nicht erforderlich.</br>Die nächsten Veranstaltungen:</p>
+        <p>Jeden ersten Mittwoch im Monat findet ab 19:30 Uhr unser Stammtisch in der Schwemme des Zwei-Löwen-Klubs statt. Eine Anmeldung ist nicht erforderlich.</p>
+        <h3>Die nächsten Veranstaltungen:</h3>
         <div class="row">
             <?php
 

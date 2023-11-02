@@ -22,10 +22,10 @@ function displayResults(results) {
     th.setAttribute('scope', 'col');
     th.innerHTML = 'Name';
     tr.appendChild(th);
-    th = document.createElement('th');
-    th.setAttribute('scope', 'col');
-    th.innerHTML = 'Telefon / E-Mail';
-    tr.appendChild(th);
+    // th = document.createElement('th');
+    // th.setAttribute('scope', 'col');
+    // th.innerHTML = 'Telefon / E-Mail';
+    // tr.appendChild(th);
     th = document.createElement('th');
     th.setAttribute('scope', 'col');
     th.innerHTML = 'Beruf / Firma';
@@ -123,7 +123,7 @@ function displayResults(results) {
             telefonEmailText = telefonNummern + ' Nummern, ' + emailAdressen + ' E-Mails';
         }
         td.innerHTML = telefonEmailText;
-        tr.appendChild(td);
+        // tr.appendChild(td);
         td = document.createElement('td');
         if (mitglied['professional_job'] != '' && mitglied['professional_company'] != '') {
             td.innerHTML = mitglied['professional_job'] + ', ' + mitglied['professional_company'];

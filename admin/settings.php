@@ -47,53 +47,21 @@ if(!Auth::checkAdmin()) {
             </div> 
             <div class="form-check form-switch mb-2">
                 <input class="form-check-input" type="checkbox" role="switch" id="home_show_button" checked>
-                <label class="form-check-label" for="home_show_button">Knopf Anzeigen</label>
+                <label class="form-check-label" for="home_show_button">Knopf anzeigen</label>
             </div>
             <div class="form-check form-switch mb-3">
                 <input class="form-check-input" type="checkbox" role="switch" id="home_show_banner" checked>
                 <label class="form-check-label" for="home_show_banner">Banner freischalten</label>
             </div>
             <hr>
-            <h4>Willkommens Nachricht</h4>
+            <h4>Willkommens-Nachricht</h4>
             <div class="form-floating mb-2">
                 <textarea class="form-control" placeholder="Willkommens Nachricht" id="home_welcome_message" style="height: 100px"></textarea>
-                <label for="home_welcome_message">Willkommens Nachricht</label>
+                <label for="home_welcome_message">Willkommens-Nachricht</label>
             </div>
             <div class="form-check form-switch mb-3">
                 <input class="form-check-input" type="checkbox" role="switch" id="home_show_welcome_message" checked>
-                <label class="form-check-label" for="home_show_welcome_message">Willkommensnachricht anzeigen</label>
-            </div>
-            <hr>
-            <h2>Veranstaltungen</h2>
-            <div class="form-check form-switch mb-3">
-                <input class="form-check-input" type="checkbox" role="switch" id="calendar_allow_old_view" checked>
-                <label class="form-check-label" for="calendar_allow_old_view">alte Ansicht anbieten</label>
-            </div>
-            <div class="form-check form-switch mb-3">
-                <input class="form-check-input" type="checkbox" role="switch" id="calendar_allow_registration" checked>
-                <label class="form-check-label" for="calendar_allow_registration">An / Abmeldung Erlauben</label>
-            </div>
-            <div class="form-check form-switch mb-3">
-                <input class="form-check-input" type="checkbox" role="switch" id="calendar_send_remeber_emails" checked>
-                <label class="form-check-label" for="calendar_send_remeber_emails">Erinnerungs E-Mail an Teilnehmer Senden</label>
-            </div>
-            <hr>
-            <h4>Benutzer</h4>
-            <div class="form-check form-switch mb-3">
-                <input class="form-check-input" type="checkbox" role="switch" id="member_admins_edit_profile" checked>
-                <label class="form-check-label" for="member_admins_edit_profile">Adminestratoren dürfen Benutzerprofiele bearbeiten</label>
-            </div>
-            <div class="form-check form-switch mb-3">
-                <input class="form-check-input" type="checkbox" role="switch" id="member_show_profile_pic" checked>
-                <label class="form-check-label" for="member_show_profile_pic">Profielbilder anzeigen</label>
-            </div>
-            <div class="form-check form-switch mb-3">
-                <input class="form-check-input" type="checkbox" role="switch" id="member_show_data_short" checked>
-                <label class="form-check-label" for="member_show_data_short">Kontaktdaten kurzfassung anzeigen</label>
-            </div>
-            <div class="form-check form-switch mb-3">
-                <input class="form-check-input" type="checkbox" role="switch" id="member_show_job" checked>
-                <label class="form-check-label" for="member_show_job">Beruf anzeigen</label>
+                <label class="form-check-label" for="home_show_welcome_message">Willkommens-Nachricht anzeigen</label>
             </div>
         </form>
         <button class="btn btn-primary my-3" id="saveBtn">Speichern</button>

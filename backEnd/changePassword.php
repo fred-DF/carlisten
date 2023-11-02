@@ -10,7 +10,7 @@ if(isset($_POST['password']) && isset($_SESSION['uID'])) {
     if(execute("UPDATE `user` SET `password`='$password' WHERE `ID`='$uID'")) {
         exit(json_encode(['response' => 'success']));
     } else {
-        exit(json_encode(['response' => 'error', 'error' => 'Passwort konnte nicht in die Datenbank hochgeladen werden. Ein Möglicher Grund dafür ist dass es den selben Wert wie vorher ist.']));
+        exit(json_encode(['response' => 'error', 'error' => 'Ihr neues Passwort darf nicht mit dem altem Passwort übereinstimmen.']));
     }
 } else {
     exit(json_encode(['response' => 'error', 'error' => 'Kein Passwort übermittelt']));

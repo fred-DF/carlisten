@@ -14,12 +14,17 @@ $userData = select("SELECT `ID`, `title`, `first name`, `last name`, `second tit
 
 ?>
 <div class="modal-header">
-    <h3 class="modal-title"><div id="user-avatar" class="a" style="margin-right: 15px"><?php echo $userData['first name'][0] ?></div><?php echo $userData['title'].' '.$userData['first name'].' '.$userData['last name'].' '.$userData['second title'] ?></h3>
+    <h3 class="modal-title"><?php echo $userData['title'].' '.$userData['first name'].' '.$userData['last name'].' '.$userData['second title'] ?></h3>
     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="document.getElementById('user-modal').dataset.shown = 'false';">x</button>
 </div>
 <div class="modal-body">
-    <p><strong>Beigetreten</strong>: <?php echo date("d.m.Y", strtotime($userData['date_of_enter'])) ?><br>
-    <strong>Namenstag</strong>: <?php echo date("d.m", strtotime($userData['name day'])); ?></p>
+    <div style="display: flex; justify-content: space-between">
+        <div>
+            <p><strong>Beigetreten</strong>: <?php echo date("d.m.Y", strtotime($userData['date_of_enter'])) ?><br>
+            <strong>Namenstag</strong>: <?php echo date("d.m", strtotime($userData['name day'])); ?></p>
+        </div>
+        <div id="user-avatar" style="margin-right: 15px; height: 90px; width: 90px; font-size: 45px; display: flex; justify-content: center; align-items: center; background-color: #003366"><?php echo $userData['first name'][0] ?></div>
+    </div>
     <div style="display: flex; flex-wrap: wrap; gap: 25px">
         <div>
             <h2>Privat</h2>
