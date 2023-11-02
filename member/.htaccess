@@ -5,4 +5,5 @@ RewriteBase /member/
 RewriteCond %{REQUEST_URI} !^/member/controller\.php$
 RewriteCond %{REQUEST_URI} !\.js$ [NC]
 RewriteCond %{REQUEST_URI} !\.css$ [NC]
+RewriteCond %{REQUEST_URI} !\.php [NC]
 RewriteRule ^(.*)$ controller.php?path=$1 [QSA,L]
