@@ -47,7 +47,7 @@ if(isset($_GET['email'])) {
     }
 
     .headbar {
-        background-color: #0d6efd;
+        background-color: #003366;
         color: #fff;
         font-weight: 700;
         font-size: 24px;
@@ -65,6 +65,7 @@ if(isset($_GET['email'])) {
         text-decoration: none;
         padding: 10px 20px;
         border-radius: 4px;
+        border: none;
     }
     
     .button:hover {
