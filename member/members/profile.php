@@ -26,14 +26,14 @@ $userData = select("SELECT `ID`, `title`, `first name`, `last name`, `second tit
         <div id="user-avatar" style="margin-right: 15px; height: 90px; width: 90px; font-size: 45px; display: flex; justify-content: center; align-items: center; background-color: #003366"><?php echo $userData['first name'][0] ?></div>
     </div>
     <div style="display: flex; flex-wrap: wrap; gap: 25px">
-        <div>
+        <div style="flex: 1">
             <h2>Privat</h2>
             <p><?php if(!empty($userData['private_street'])) { echo $userData['private_street']." ";} ?>     <?php if(!empty($userData['private_house_number'])) { echo $userData['private_house_number'].",";} else { echo '';} ?><br>    <?php if(!empty($userData['private_plz'])) { echo $userData['private_plz'];} ?>     <?php if(!empty($userData['private_city'])) { echo $userData['private_city'];} ?><br>    <?php if(!empty($userData['private_country'])) { echo $userData['private_country'];} ?></p>
             <p><strong>Mobil</strong>: <?php if(!empty($userData['private_mobile'])) { echo $userData['private_mobile'];} ?><br><strong>Festnetz</strong>: <?php if(!empty($userData['private_telephone'])) { echo $userData['private_telephone'];} ?></p>
             <p><strong>Web</strong>: <?php if(!empty($userData['private_web'])) { echo $userData['private_web'];} ?><br><strong>Mail</strong>: <?php if(!empty($userData['private_email'])) { echo $userData['private_email'];} ?></p>
         </div>
         <hr>
-        <div>
+        <div style="flex: 1">
             <h2>Beruflich</h2>
             <p><?php if(!empty($userData['professional_job'])) { echo "<strong>".$userData['professional_job']."</strong> bei <strong>";} ?>    <?php if(!empty($userData['professional_company'])) { echo $userData['professional_company']."</strong>";} if(isset($userData['professional_company']) || isset($userData['professional_job'])) { echo "</br>"; } ?>    <?php if(!empty($userData['professional_street'])) { echo $userData['professional_street']." ";} ?>     <?php if(!empty($userData['professional_housenumber'])) { echo $userData['professional_housenumber'].",</br>";} ?>   <?php if(!empty($userData['professional_plz'])) { echo $userData['professional_plz'];} ?>     <?php if(!empty($userData['professional_city'])) { echo $userData['professional_city']."<br>";} ?>    <?php if(!empty($userData['professional_country'])) { echo $userData['professional_country'];} ?></p>
             <p><strong>Mobil</strong>: <?php if(!empty($userData['professional_mobile'])) { echo $userData['professional_mobile'];} ?><br><strong>Festnetz</strong>: <?php if(!empty($userData['professional_telephone'])) { echo $userData['professional_telephone'];} ?></p>
