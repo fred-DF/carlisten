@@ -55,7 +55,7 @@
                         <h3 class="card-title">Martin Schulze-Werner</h3>
                         <span>Vizepräsident</span><br>
                         <div class="btn-group w-100 mt-2" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-primary" onclick="window.location = '/member/members?openModal&uID=1'">Profil</button>
+                            <button type="button" class="btn btn-primary" onclick="window.location = '/member/members?openModal&uID=2'">Profil</button>
                             <button type="button" class="btn btn-outline-primary"><a href="mailto:vizepraesident@carlisten.de" class="link link-dark link-underline-opacity-0">E-Mail</a></button>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                         <h3 class="card-title">Dr. Eduard Hüffer</h3>
                         <span>Schriftführer</span><br>
                         <div class="btn-group w-100 mt-2" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-primary" onclick="window.location = '/member/members?openModal&uID=1'">Profil</button>
+                            <button type="button" class="btn btn-primary" onclick="window.location = '/member/members?openModal&uID=3'">Profil</button>
                             <button type="button" class="btn btn-outline-primary"><a href="mailto:schriftfuehrer@carlisten.de" class="link link-dark link-underline-opacity-0">E-Mail</a></button>
                         </div>
                     </div>
@@ -81,7 +81,7 @@
                         <h3 class="card-title">Martin Knawek</h3>
                         <span>Kassierer</span><br>
                         <div class="btn-group w-100 mt-2" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-primary" onclick="window.location = '/member/members?openModal&uID=1'">Profil</button>
+                            <button type="button" class="btn btn-primary" onclick="window.location = '/member/members?openModal&uID=4'">Profil</button>
                             <button type="button" class="btn btn-outline-primary"><a href="mailto:kassierer@carlisten.de" class="link link-dark link-underline-opacity-0">E-Mail</a></button>
                         </div>
                     </div>
@@ -94,7 +94,7 @@
                         <h3 class="card-title">Ludger Prinz</h3>
                         <span>Gästewart</span><br>
                         <div class="btn-group w-100 mt-2" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-primary" onclick="window.location = '/member/members?openModal&uID=1'">Profil</button>
+                            <button type="button" class="btn btn-primary" onclick="window.location = '/member/members?openModal&uID=5'">Profil</button>
                             <button type="button" class="btn btn-outline-primary"><a href="mailto:gaestewart@carlisten.de" class="link link-dark link-underline-opacity-0">E-Mail</a></button>
                         </div>
                     </div>
@@ -107,7 +107,7 @@
                         <h3 class="card-title">Rüdiger Wulf</h3>
                         <span>Hausdichter</span><br>
                         <div class="btn-group w-100 mt-2" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-primary" onclick="window.location = '/member/members?openModal&uID=1'">Profil</button>
+                            <button type="button" class="btn btn-primary" onclick="window.location = '/member/members?openModal&uID=6'">Profil</button>
                             <button type="button" class="btn btn-outline-primary"><a href="mailto:hausdichter@carlisten.de" class="link link-dark link-underline-opacity-0">E-Mail</a></button>
                         </div>
                     </div>
