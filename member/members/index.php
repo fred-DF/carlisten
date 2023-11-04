@@ -138,6 +138,13 @@
             color: white;
         }
 
+        div#user-avatar > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50px;
+        }
+
         @media only screen and (max-width: 600px) {
             .hiddenOnMobile {
                 display: none;
