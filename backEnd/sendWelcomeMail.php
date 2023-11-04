@@ -93,7 +93,7 @@ function sendWelcomeMail ($user) {
                 </body>
                 </html>
                 "; 
-            sendMail($email, 'noreply@carlist.de', 'Account freischalten', $message);
+            sendMail($email, 'noreply@'.$_ENV['MAIL_HOST'].'.de', 'Account freischalten', $message);
         }
     } else {
         $user = select("SELECT `ID`, `first name`, `last name`, `username` FROM `user` WHERE `ID`='$user'");
