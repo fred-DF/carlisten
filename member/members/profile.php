@@ -23,7 +23,7 @@ $userData = select("SELECT `ID`, `title`, `first name`, `last name`, `second tit
             <p><strong>Beigetreten</strong>: <?php echo date("d.m.Y", strtotime($userData['date_of_enter'])) ?><br>
             <strong>Namenstag</strong>: <?php echo date("d.m", strtotime($userData['name day'])); ?></p>
         </div>
-        <div id="user-avatar" style="margin-right: 15px; height: 90px; width: 90px; font-size: 45px; display: flex; justify-content: center; align-items: center; background-color: #003366"><?php echo $userData['first name'][0] ?></div>
+        <div id="user-avatar" style="margin-right: 15px; height: 90px; width: 90px; font-size: 45px; display: flex; justify-content: center; align-items: center; background-color: #003366"><?php if(!empty($userData['profile pic url'])) {echo "<img src='".$userData['profile pic url']."'>"; } else { echo $userData['first name'][0]; } ?></div>
     </div>
     <div style="display: flex; flex-wrap: wrap; gap: 25px">
         <div style="flex: 1">
