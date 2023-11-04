@@ -86,7 +86,7 @@ function sendWelcomeMail ($user) {
                 <p>Danach wirst du gebeten ein Passwort fest zulegen.</p>                
                 <div class='code-box' style='text-align: center'><pre>Code: {$code}</pre></div>
                 <p>Bitte schalte dein Account zeitnah frei!</p>
-                <a href='https://carlisten.genanntnoelke.de/welcome'><button class='button'>Freischalten</button></a>
+                <a href='https://carlisten.genanntnoelke.de/welcome'><button class='button'>Freischalten</button></a><br>
                 <a href='https://carlisten.genanntnoelke.de/welocme'>oder gehen Sie bitte auf https://carlisten.genanntnoelke.de/welcome falls der Link nicht funktniert</a>
                 <p>Viele Grüße</p>
                 <p>Das Carlisten-Team</p>
@@ -177,7 +177,7 @@ function sendWelcomeMail ($user) {
                 <p>Um Ihren Account freizuschalten, gehen Sie bitte auf 'Freischalten' und geben folgenden Code ein:</p>   
                 <div class='code-box' style='text-align: center'><pre>Code: {$code}</pre></div>
                 <p>Danach legen Sie bitte ein Passwort fest.</p>
-                <a href='https://carlisten.genanntnoelke.de/welcome' target='_blank'><button class='button'>Freischalten</button></a>
+                <a href='https://carlisten.genanntnoelke.de/welcome' target='_blank'><button class='button'>Freischalten</button></a><br>
                 <a href='https://carlisten.genanntnoelke.de/welocme'>oder gehen Sie bitte auf https://carlisten.genanntnoelke.de/welcome falls der Link nicht funktniert</a>
                 <p>Mit freundlichen Grüßen</p>
                 <p>Der Vorstand</p>
