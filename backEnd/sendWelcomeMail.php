@@ -87,6 +87,7 @@ function sendWelcomeMail ($user) {
                 <div class='code-box' style='text-align: center'><pre>Code: {$code}</pre></div>
                 <p>Bitte schalte dein Account zeitnah frei!</p>
                 <a href='https://carlisten.genanntnoelke.de/welcome'><button class='button'>Freischalten</button></a>
+                <a href='https://carlisten.genanntnoelke.de/welocme'>oder gehen Sie bitte auf https://carlisten.genanntnoelke.de/welcome falls der Link nicht funktniert</a>
                 <p>Viele Grüße</p>
                 <p>Das Carlisten-Team</p>
                 </div>
@@ -177,6 +178,7 @@ function sendWelcomeMail ($user) {
                 <div class='code-box' style='text-align: center'><pre>Code: {$code}</pre></div>
                 <p>Danach legen Sie bitte ein Passwort fest.</p>
                 <a href='https://carlisten.genanntnoelke.de/welcome' target='_blank'><button class='button'>Freischalten</button></a>
+                <a href='https://carlisten.genanntnoelke.de/welocme'>oder gehen Sie bitte auf https://carlisten.genanntnoelke.de/welcome falls der Link nicht funktniert</a>
                 <p>Mit freundlichen Grüßen</p>
                 <p>Der Vorstand</p>
                 </div>
