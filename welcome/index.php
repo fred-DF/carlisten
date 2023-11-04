@@ -11,10 +11,7 @@
     <nav>
         <div class="container">
             <img src="https://carlisten.genanntnoelke.de/src/logos/Logo - Text - Weiss.svg" alt="">
-            <div class="links">
-                <span></span>
-                <a href="../login.html" class="no-decoration" style="color: white;">Mitgliederbereich</a>
-            </div>
+            <a href="../login.html" class="no-decoration" style="color: white;">Mitgliederbereich</a>
         </div>
     </nav>
     <div class="container">
