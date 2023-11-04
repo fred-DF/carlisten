@@ -183,7 +183,7 @@ function sendWelcomeMail ($user) {
                 </body>
                 </html>
                 ";
-            echo sendMail($email, 'Carlisten <noreply@carlisten.de>', 'Account freischalten', $message);
+            echo sendMail($email, 'Carlisten <mitglieder@'.$_ENV['MAIL_HOST'].'>', 'Account freischalten', $message);
         }
     }
 }
