@@ -29,6 +29,7 @@ foreach ($userData as $key => $value) {
     $firstName = $value['first name'];
     $lastName = $value['last name'];
     $secondTitle = $value['second title'];
+    $nameday = str_split($value['name day'], 1);
     $profilePicUrl = $value['profile pic url'];
     $privateStreet = $value['private_street'];
     $privateHouseNumber = $value['private_house_number'];
@@ -88,6 +89,19 @@ foreach ($userData as $key => $value) {
                         <input type="text" class="form-control" id="secondTitleInput" placeholder="Nachgestellter Titel" <?php if(isset($title)) {echo "value='" . $secondTitle ."'";}?>>
                         <label for="secondTitleInput">Nachgestellter Titel</label>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <span>Namenstag:</span>
+            <div class="row">
+                <div class="form-floating">
+                    <input type="number" class="form-control" id="nameDayD" placeholder="DD" <?php if(isset($nameday[1])) {echo "value='" . $nameday[3].$nameday[4] ."'";}?> maxlength="2">
+                    <label for="secondTitleInput">DD</label>
+                </div>
+                <div class="form-floating">
+                    <input type="number" class="form-control" id="nameDayM" placeholder="MM" <?php if(isset($nameday[0])) {echo "value='" . $nameday[0].$nameday[1] ."'";}?> maxlength="2">
+                    <label for="secondTitleInput">MM</label>
                 </div>
             </div>
         </div>

@@ -39,10 +39,14 @@ $userData = json_decode($_SESSION['set_password_data'], 1);
                     <input type="password" class="form-control" id="passwordReapeat" placeholder="Passwort">
                     <label for="password">Password (wiederholen)</label>
                 </div>
-                <button type="submit" class="btn-primary btn w-100">Weiter</button>                
-                <div class="d-flex justify-content-center">
-                    <button class="btn btn-link" style="margin: 0 auto">Brauchst du Hilfe?</button>
-                </div>
+                <button type="submit" class="btn-primary btn w-100">Weiter</button>
+                <p>Ein sicheres Passwort besteht aus:</p>
+                <ul>
+                    <li>Mindestens acht Zeichen</li>
+                    <li>Groß- und Klein-Buchstaben</li>
+                    <li>Ziffern</li>
+                    <li>Sonderzeichen</li>
+                </ul>
             </form>
         </div>
         <div class="alert alert-danger" id="alert_badge" style="display: none;">

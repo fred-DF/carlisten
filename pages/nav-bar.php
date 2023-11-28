@@ -18,7 +18,7 @@
             <?php
                             if ( Auth::checkAdmin() ) {
                         ?>
-                    <a class="nav-link" style="color: #ffffff" href="../admin">Administration</a>
+                    <a class="nav-link" style="color: #ffffff" href="/admin">Administration</a>
                 <?php
                             }
                         ?>

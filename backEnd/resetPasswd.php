@@ -91,7 +91,7 @@ if(isset($_GET['email'])) {
     <p>Ihr Passwort für den Mitgliederberreich der Carlisten-Hompage wurde zurückgesetzt.</p>
     <p>Legen Sie bitte Ihr neues Passwort mit folgendem Code fest:</p>
     <div class='code-box' style='text-align: center'><pre>{$code}</pre></div>
-    <a href='https://carlisten.genanntnoelke.de/reset-password'><button class='button'>Passwort festlegen</button></a>
+    <a href='https://carlisten.genanntnoelke.de/reset-password'>> Passwort festlegen</a>
     <p>Viele Grüße</p>
     <p>Das Carlisten-Team</p>
     </div>

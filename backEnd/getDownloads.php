@@ -4,7 +4,7 @@ require_once '../bootstrap.php';
 Auth::auth();
 
 include_once 'pdo.php';
-$downloads = select("SELECT `ID`, `name`, `file_name`, `path`, `category`, `size`, `upload_date`, `uploader`, `active` FROM `uploads` WHERE `active` <= CURDATE() ORDER BY `category`");
+$downloads = select("SELECT `ID`, `name`, `file_name`, `path`, `category`, `size`, `upload_date`, `uploader`, `active` FROM `uploads` WHERE `active` <= CURDATE() ORDER BY `category` ASC, `uploads`.`name` DESC;");
 $json = array();
 $current_category = '';
 foreach ($downloads as $key => $value) {
