@@ -96,8 +96,8 @@ foreach ($userData as $key => $value) {
             <span>Namenstag:</span>
             <div class="row">
                 <div class="form-floating">
-                    <input type="number" class="form-control" id="nameDayD" placeholder="DD" <?php if(isset($nameday[1])) {echo "value='" . $nameday[3].$nameday[4] ."'";}?> maxlength="2">
-                    <label for="secondTitleInput">DD</label>
+                    <input type="number" class="form-control" id="nameDayD" placeholder="TT" <?php if(isset($nameday[1])) {echo "value='" . $nameday[3].$nameday[4] ."'";}?> maxlength="2">
+                    <label for="secondTitleInput">TT</label>
                 </div>
                 <div class="form-floating">
                     <input type="number" class="form-control" id="nameDayM" placeholder="MM" <?php if(isset($nameday[0])) {echo "value='" . $nameday[0].$nameday[1] ."'";}?> maxlength="2">
@@ -225,13 +225,15 @@ foreach ($userData as $key => $value) {
                 </div>
             </div>
             <h3>Mitgliedschaft</h3>
-            <div style="margin-bottom: 90px;">
-                <div class="row">
-                    <div class="form-floating mb-3" style="flex: 1">
-                        <input type="date" class="form-control" id="dateOfEntry" placeholder="Eintrittsdatum" <?php if(isset($title)) {echo "value='" . $dateOfEnter ."'";}?>>
-                        <label for="dateOfEntry">Eintrittsdatum</label>
-                    </div>
+            <div class="row">
+                <div class="form-floating mb-3" style="flex: 1">
+                    <input type="date" class="form-control" id="dateOfEntry" placeholder="Eintrittsdatum" <?php if(isset($title)) {echo "value='" . $dateOfEnter ."'";}?>>
+                    <label for="dateOfEntry">Eintrittsdatum</label>
                 </div>
+            </div
+            <div style="margin-bottom: 90px;">
+
+                <h3>Anmeldedaten</h3>
                 <div class="row" style="display: none">
                     <div class="form-floating mb-3" style="flex: 1">
                         <textarea style="wi" class="form-control form-control-lg" aria-label="With textarea" id="text" placeholder="Text"><?php if(isset($title)) {echo $note;}?></textarea>
@@ -244,9 +246,13 @@ foreach ($userData as $key => $value) {
                         <label for="text">Anmeldename</label>
                     </div>
                 </div>
-                <div>
+                <div style="margin-bottom: 50px">
+
+                    <div style="align-items: baseline; display: flex; gap: 15px; max-width: var(--site-width); margin: 20px auto; margin-bottom: 50px">
+                        <button class="filled" id="save">Meine Profildaten speichern</button>
+                    </div>
                     <a href="password.php">
-                        <button class="filled">Passwort ändern</button>
+                        <button>Passwort ändern</button>
                     </a>
                 </div>
                 <div class="alert" style="margin: 25px 0">
@@ -259,6 +265,7 @@ foreach ($userData as $key => $value) {
                     </div>
                 </div>
             </div>
+
         </div>
         <style>
 
@@ -296,9 +303,6 @@ foreach ($userData as $key => $value) {
     </div>
 
     <div class="" style="position: fixed; bottom: 0; background-color: rgba(255,255,255,0); width: 100%; padding: 15px 0; backdrop-filter: blur(100px) grayscale(0.5); -webkit-backdrop-filter: blur(100px) grayscale(0.5);">
-        <div style="align-items: baseline; display: flex; gap: 15px; max-width: var(--site-width); margin: 0 auto">
-            <button class="filled" id="save">Speichern</button>
-        </div>
     </div>
     <?php
     include __DIR__."/../../pages/footer.php";
