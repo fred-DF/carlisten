@@ -14,7 +14,7 @@
             <a class="nav-link no-decoration" href="<?php echo $_ENV['APP_URL'] ?>/admin/upload.php" style="color: white;">Dateiupload</a>
             <a class="nav-link no-decoration" href="<?php echo $_ENV['APP_URL'] ?>/admin/calendar.php" style="color: white;">Veranstaltungskalender</a>
             <a class="nav-link no-decoration" href="<?php echo $_ENV['APP_URL'] ?>/admin/bank.php" style="color: white;">Bankdaten</a>
-            <a class="nav-link no-decoration" href="<?php echo $_ENV['APP_URL'] ?>/admin/settings.php" style="color: white;">Website Einstellungen</a>
+            <a class="nav-link no-decoration" href="<?php echo $_ENV['APP_URL'] ?>/admin/settings.php" style="color: white;">Website-Text</a>
         </div>
     </div>
 </nav>

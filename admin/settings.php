@@ -21,7 +21,7 @@ if(!Auth::checkAdmin()) {
         <h1>Website Einstellungen</h1>
         <form action="">
             <h2>Startseite</h2>
-            <h4>Banner</h4>
+            <!--<h4>Banner</h4>
             <div class="form-floating mb-2">
                 <textarea class="form-control" placeholder="Inhalt des Banners" id="home_banner_text" style="height: 100px"></textarea>
                 <label for="home_banner_text">Inhalt des Banners</label>
@@ -53,10 +53,10 @@ if(!Auth::checkAdmin()) {
                 <input class="form-check-input" type="checkbox" role="switch" id="home_show_banner" checked>
                 <label class="form-check-label" for="home_show_banner">Banner freischalten</label>
             </div>
-            <hr>
+            <hr>-->
             <h4>Willkommens-Nachricht</h4>
             <div class="form-floating mb-2">
-                <textarea class="form-control" placeholder="Willkommens Nachricht" id="home_welcome_message" style="height: 100px"></textarea>
+                <textarea class="form-control" placeholder="Willkommens Nachricht" id="home_welcome_message" style="height: 100px; width: 100%"></textarea>
                 <label for="home_welcome_message">Willkommens-Nachricht</label>
             </div>
             <div class="form-check form-switch mb-3">

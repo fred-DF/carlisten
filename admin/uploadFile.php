@@ -26,21 +26,28 @@ if(!Auth::checkAdmin()) {
             </div>
 
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" name="name" placeholder="name@example.com" required>
+                <input type="text" class="form-control" id="floatingInput" name="name" placeholder="Jahr" required>
                 <label for="floatingInput">Name des Uploads</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" name="category" placeholder="name@example.com" required>
+<!--                <input type="text" class="form-control" id="floatingInput" name="category" placeholder="name@example.com" required>-->
+                <select name="category" id="floatingInput">
+                    <option value="Grünkohl">Grünkohl</option>
+                    <option value="Fastenfischessen">Fastenfischessen</option>
+                    <option value="Dicke-Bohnen-Essen">Dicke-Bohnen-Essen</option>
+                    <option value="Wildessen mit Damen">Wildessen mit Damen</option>
+                    <option value="Allgemein">Allgemein</option>
+                </select>
                 <label for="floatingInput">Kategorie</label>
             </div>
             <div class="form-floating mb-3">
                 <input type="date" class="form-control" id="floatingInput" name="Erscheint am" name="active" placeholder="name@example.com" required>
                 <label for="floatingInput">Erscheint am</label>
             </div>
-            <button type="submit" class="btn btn-primary" onclick="form.classList.add('was-validated');">Hochladen und Indizieren</button>
+            <button type="submit" class="btn btn-primary" onclick="form.classList.add('was-validated');">Hochladen und indizieren</button>
         </form>    
         <div class="alert mt-3" if="feedback" role="alert">
-            Uplaod erflogreich
+            Upload erfolgreich
             <hr>
             <a href="upload.php"><button class="btn btn-success">zur Dateiverwaltung</button></a>
         </div>

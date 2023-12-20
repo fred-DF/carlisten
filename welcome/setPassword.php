@@ -29,7 +29,7 @@ $userData = json_decode($_SESSION['set_password_data'], 1);
     <div class="container">
         <div>
             <h1>Passwort festlegen</h1>
-            <p>Hallo <strong><?php echo $userData['name'] ?></strong>. Bitte lege ein Passwort fest, um dich in zukunft Anzumelden. Falls du es mal vergessen solltest, kannst du es jederzeit zurücksetzten.</p>
+            <p>Hallo Herr <strong><?php echo $userData['name'] ?></strong>. Bitte lege ein Passwort fest, um dich in zukunft Anzumelden. Falls du es mal vergessen solltest, kannst du es jederzeit zurücksetzten.</p>
             <form id="password_form" class="">
                 <div class="form-floating w-100 mb-3">
                     <input type="password" class="form-control" id="password" placeholder="Passwort">

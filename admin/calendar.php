@@ -20,7 +20,7 @@ if(!Auth::checkAdmin()) {
     <div class="container">
         <h1>Veranstaltungskalender</h1>
         <button class="filled" onclick="document.querySelector('div.modal').dataset.shown =  'true';">Veranstaltung einfügen</button>
-        <div class="row g-3 mt-2">
+        <div class="row g-3 mt-2" style="gap: 15px">
             <?php
                 include_once '../backEnd/pdo.php';
                 $events = select("SELECT `ID`, `title`, `timestamp`, `location`, `shown`, `registable`, `participations` FROM `events`");
@@ -30,7 +30,7 @@ if(!Auth::checkAdmin()) {
                         <div class="card-body" style="display: flex; justify-content: space-between; align-items: flex-end">
                             <div>
                                 <h3><?php echo $value['title']; ?></h3>
-                                <p class="my-0"><?php echo date("d,m,Y - H:i", strtotime($value['timestamp'])) ?> Uhr<br>
+                                <p class="my-0"><?php echo date("d.m.Y H:i", strtotime($value['timestamp'])) ?> Uhr<br>
                                     <?php echo $value['location']; ?></p>
                             </div>
                             <a class="a my-0" onclick="deleteEvent(<?php echo $value['ID']; ?>)">
@@ -61,22 +61,22 @@ if(!Auth::checkAdmin()) {
                             <label for="title">Titel der Veranstaltung</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="name" class="form-control" id="location" placeholder="Titel der Veranstaltung" required>
+                            <input type="name" class="form-control" id="location" placeholder="Veranstaltungsort" required>
                             <label for="location">Veranstaltungsort</label>
                         </div>
                         <div class="input-group">
                             <div class="form-floating mb-3">
                                 <input type="date" class="form-control" id="date" placeholder="Tag der Veranstaltung" required>
-                                <label for="date">Veranstatlungstag</label>
+                                <label for="date">Veranstaltungstag</label>
                             </div>
                             <div class="form-floating mb-3">
                                 <input type="time" class="form-control" id="time" placeholder="Tag der Veranstaltung" required>
-                                <label for="time">Veranstatlungszeit</label>
+                                <label for="time">Veranstaltungszeit</label>
                             </div>
                         </div>    
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" role="switch" id="registable" checked>
-                            <label class="form-check-label" for="registable">Anmeldbar</label>
+                            <label class="form-check-label" for="registable">E-Mail-Anmeldung für Mitglieder möglich</label>
                         </div>
                 </div>
                     <div class="modal-footer">
@@ -100,18 +100,21 @@ if(!Auth::checkAdmin()) {
             xhr.open("GET", "../backEnd/createEvent.php?title=" + title + "&location=" + location + "&date=" + date + "&registable=" + registable);
             xhr.onreadystatechange = function () {
                 console.log(xhr.responseText);
+                window.location.reload();
             }
             xhr.send();
         }
 
         function deleteEvent (eventID) {
-            let xhr = new XMLHttpRequest();
-            xhr.open("GET", "../backEnd/createEvent.php?deleteEvent&event-ID=" + eventID);
-            xhr.onreadystatechange = function () {
-                console.log(xhr.responseText);
-                window.location.reload();
+            if(confirm("Veranstaltung wirklich löschen?")) {
+                let xhr = new XMLHttpRequest();
+                xhr.open("GET", "../backEnd/createEvent.php?deleteEvent&event-ID=" + eventID);
+                xhr.onreadystatechange = function () {
+                    console.log(xhr.responseText);
+                    window.location.reload();
+                }
+                xhr.send();
             }
-            xhr.send();
         }
 
         document.getElementById('event-form').addEventListener('submit', (e) => {

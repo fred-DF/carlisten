@@ -16,8 +16,8 @@
         </div>
         <div>
             <p>Rechtliches</p>
-            <a href="carlisten.genanntnoelke.de/impressum/index.html" class="no-decoration">Impressum</a><br>
-            <a href="impressum/index.html" class="no-decoration">Datenschutz</a>
+            <a href="/impressum" class="no-decoration">Impressum</a><br>
+            <a href="/impressum/datenschutz" class="no-decoration">Datenschutz</a>
         </div>
     </div>
 </footer>
