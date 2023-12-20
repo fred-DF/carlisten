@@ -29,7 +29,7 @@ $name = $user['first name'] . " " . $user['last name'];
             foreach ($events as $value) {
                 $mail_text = "Sehr geehrte Herren, %0A%0A
 ich, " . $name . ", melde mich hiermit bei der Veranstaltung " . $value['title'] . " am " . date("d.m.Y", strtotime($value['timestamp'])) . " an. %0A%0A
-Mit freundlichen Grüßen
+Mit freundlichen Grüßen %0A
 " . $name;
                 $subject = "Anmeldung: " . $value['title'] . " am " . date("d.m.Y", strtotime($value['timestamp']));
             ?>
