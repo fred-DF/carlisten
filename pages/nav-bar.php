@@ -16,6 +16,7 @@
             <a href="<?php echo getenv('APP_URL') ?>/member/namedays" class="no-decoration" style="color: white;">Namenstage</a>
             <a href="<?php echo getenv('APP_URL') ?>/member/profile" class="no-decoration"  style="color: white;">Mein Profil</a>
             <?php
+            require_once __DIR__.'/../bootstrap.php';
                             if ( Auth::checkAdmin() ) {
                         ?>
                     <a class="nav-link" style="color: #ffffff" href="/admin">Administration</a>

@@ -1,4 +1,5 @@
 <?php
+
 $uID = $_SESSION['uID'];
 $user = select("SELECT `title`, `first name`, `last name`, `second title` FROM `user` WHERE `ID`='$uID'")[0];
 $name = $user['first name'] . " " . $user['last name'];
@@ -26,12 +27,11 @@ $name = $user['first name'] . " " . $user['last name'];
             $events = select("SELECT `title`, `timestamp`, `location`, `shown`, `registable` FROM `events`");
 
             foreach ($events as $value) {
-                $mail_text = "Sehr geehrte Herren,
-ich, " . $name . " melde mich hiermit bei der Veranstaltung " . $value['title'] . " am " . date("d.m.Y", strtotime($value['timestamp'])) . " an.
-
-Mit Freundlichn Grüßen
+                $mail_text = "Sehr geehrte Herren, %0A%0A
+ich, " . $name . ", melde mich hiermit bei der Veranstaltung " . $value['title'] . " am " . date("d.m.Y", strtotime($value['timestamp'])) . " an. %0A%0A
+Mit freundlichen Grüßen
 " . $name;
-                $subject = "Anmeldung: " . $value['title'];
+                $subject = "Anmeldung: " . $value['title'] . " am " . date("d.m.Y", strtotime($value['timestamp']));
             ?>
                 <div class="card" style="width: 18rem;">
                     <h3 class="card-title"><?php echo $value['title']; ?></h3>
@@ -43,7 +43,7 @@ Mit Freundlichn Grüßen
 
                     if ($value['registable']) {
                     ?>
-                        <a href="mailto:veranstaltung@carlisten.de?subject=<?php echo urlencode($subject); ?>&body=<?php echo urlencode($mail_text); ?>" class="w-100 btn btn-primary">Anmeldung</a>
+                        <a href="mailto:veranstaltung@carlisten.de?subject=<?php echo $subject; ?>&body=<?php echo $mail_text; ?>" class="w-100 btn btn-primary">Anmeldung</a>
                     <?php
                     }
 
