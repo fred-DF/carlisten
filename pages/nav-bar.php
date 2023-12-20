@@ -15,6 +15,7 @@
             <a href="<?php echo getenv('APP_URL') ?>/member/executive-boards" class="no-decoration" style="color: white;">Vorstand</a>
             <a href="<?php echo getenv('APP_URL') ?>/member/namedays" class="no-decoration" style="color: white;">Namenstage</a>
             <a href="<?php echo getenv('APP_URL') ?>/member/profile" class="no-decoration"  style="color: white;">Mein Profil</a>
+            <a href="/" class="no-decoration" style="color: white;">Abmelden</a>
             <?php
             require_once __DIR__.'/../bootstrap.php';
                             if ( Auth::checkAdmin() ) {

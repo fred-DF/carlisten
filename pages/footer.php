@@ -1,7 +1,6 @@
 <footer>
     <div id="footer-content">
         <div>
-            <img src="http://localhost:8000/src/logos/Logo%20-%20Text%20-%20Blau.svg" alt="">
             <p>Gesellschaft Carlisten</p>
             <p>
                 Dr.Dietmar Erber<br>
