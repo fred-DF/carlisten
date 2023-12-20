@@ -152,8 +152,9 @@ footer > div {
 }
 
 div.links {
-    width: 75%;
+    /*width: 75%;*/
     display: flex;
+    gap: 15px;
     justify-content: space-between;
 }
 
