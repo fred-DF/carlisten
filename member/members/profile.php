@@ -11,6 +11,9 @@ $id = $_POST['id'];
 include_once '../../backEnd/pdo.php';
 $userData = select("SELECT `ID`, `title`, `first name`, `last name`, `second title`, `name day`, `profile pic url`, `private_street`, `private_house_number`, `private_plz`, `private_city`, `private_country`, `private_telephone`, `private_mobile`, `private_web`, `private_email`, `professional_company`, `professional_job`, `professional_street`, `professional_housenumber`, `professional_plz`, `professional_city`, `professional_country`, `professional_telephone`, `professional_mobile`, `professional_web`, `professional_email`, `date_of_enter`, `note`, `username` FROM `user` WHERE `ID`='$id'")[0];
 
+if(empty($userData['name day'])) {
+    $userData['name day'] = '--;--';
+}
 
 ?>
 <div class="modal-header">
@@ -21,7 +24,7 @@ $userData = select("SELECT `ID`, `title`, `first name`, `last name`, `second tit
     <div style="display: flex; justify-content: space-between">
         <div>
             <p><strong>Beigetreten</strong>: <?php echo date("d.m.Y", strtotime($userData['date_of_enter'])) ?><br>
-            <strong>Namenstag</strong>: <?php echo date("d.m", strtotime($userData['name day'])); ?></p>
+            <strong>Namenstag</strong>: <?php echo explode(';', $userData['name day'])[1] . '.' . explode(';', $userData['name day'])[0]; ?></p>
         </div>
         <div id="user-avatar" style="margin-right: 15px; height: 90px; width: 90px; font-size: 45px; display: flex; justify-content: center; align-items: center; background-color: #003366"><?php if(!empty($userData['profile pic url'])) {echo "<img src='".$userData['profile pic url']."'>"; } else { echo $userData['first name'][0]; } ?></div>
     </div>
@@ -35,7 +38,7 @@ $userData = select("SELECT `ID`, `title`, `first name`, `last name`, `second tit
         <hr>
         <div style="flex: 1; align-items: start">
             <h2>Beruflich</h2>
-            <p><?php if(!empty($userData['professional_job'])) { echo "<strong>".$userData['professional_job']."</strong> bei <strong>";} ?>    <?php if(!empty($userData['professional_company'])) { echo $userData['professional_company']."</strong>";} if(isset($userData['professional_company']) || isset($userData['professional_job'])) { echo "</br>"; } ?>    <?php if(!empty($userData['professional_street'])) { echo $userData['professional_street']." ";} ?>     <?php if(!empty($userData['professional_housenumber'])) { echo $userData['professional_housenumber'].",</br>";} ?>   <?php if(!empty($userData['professional_plz'])) { echo $userData['professional_plz'];} ?>     <?php if(!empty($userData['professional_city'])) { echo $userData['professional_city']."<br>";} ?>    <?php if(!empty($userData['professional_country'])) { echo $userData['professional_country'];} ?></p>
+            <p><?php if(!empty($userData['professional_job'])) { echo "<strong>".$userData['professional_job']."</strong> bei <strong>";} ?>    <?php if(!empty($userData['professional_company'])) { echo $userData['professional_company']."</strong>";} if(isset($userData['professional_company']) || isset($userData['professional_job'])) { echo "</br>"; } ?>    <?php if(!empty($userData['professional_street'])) { echo $userData['professional_street']." ";} ?>     <?php if(!empty($userData['professional_housenumber'])) { echo $userData['professional_housenumber']."</br>";} ?>   <?php if(!empty($userData['professional_plz'])) { echo $userData['professional_plz'];} ?>     <?php if(!empty($userData['professional_city'])) { echo $userData['professional_city']."<br>";} ?>    <?php if(!empty($userData['professional_country'])) { echo $userData['professional_country'];} ?></p>
             <p><strong>Mobil</strong>: <?php if(!empty($userData['professional_mobile'])) { echo $userData['professional_mobile'];} ?><br><strong>Festnetz</strong>: <?php if(!empty($userData['professional_telephone'])) { echo $userData['professional_telephone'];} ?></p>
             <p><strong>Web</strong>: <?php if(!empty($userData['professional_web'])) { echo $userData['professional_web'];} ?><br><strong>Mail</strong>: <?php if(!empty($userData['professional_email'])) { echo $userData['professional_email'];} ?></p>
         </div>
