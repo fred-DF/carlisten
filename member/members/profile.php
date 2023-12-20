@@ -31,7 +31,7 @@ if(empty($userData['name day'])) {
     <div style="display: flex; flex-wrap: wrap; gap: 25px">
         <div style="flex: 1; align-items: start">
             <h2>Privat</h2>
-            <p><?php if(!empty($userData['private_street'])) { echo $userData['private_street']." ";} ?>     <?php if(!empty($userData['private_house_number'])) { echo $userData['private_house_number'].",";} else { echo '';} ?><br>    <?php if(!empty($userData['private_plz'])) { echo $userData['private_plz'];} ?>     <?php if(!empty($userData['private_city'])) { echo $userData['private_city'];} ?><br>    <?php if(!empty($userData['private_country'])) { echo $userData['private_country'];} ?></p>
+            <p><?php if(!empty($userData['private_street'])) { echo $userData['private_street']." ";} ?>     <?php if(!empty($userData['private_house_number'])) { echo $userData['private_house_number'];} else { echo '';} ?><br>    <?php if(!empty($userData['private_plz'])) { echo $userData['private_plz'];} ?>     <?php if(!empty($userData['private_city'])) { echo $userData['private_city'];} ?><br>    <?php if(!empty($userData['private_country'])) { echo $userData['private_country'];} ?></p>
             <p><strong>Mobil</strong>: <?php if(!empty($userData['private_mobile'])) { echo $userData['private_mobile'];} ?><br><strong>Festnetz</strong>: <?php if(!empty($userData['private_telephone'])) { echo $userData['private_telephone'];} ?></p>
             <p><strong>Web</strong>: <?php if(!empty($userData['private_web'])) { echo $userData['private_web'];} ?><br><strong>Mail</strong>: <?php if(!empty($userData['private_email'])) { echo $userData['private_email'];} ?></p>
         </div>
