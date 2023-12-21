@@ -18,7 +18,7 @@ if(isset($_GET['first_name']) && isset($_GET['last_name']) && isset($_GET['date_
     if(!empty(select("SELECT `ID` FROM `user` WHERE `username`='$email'"))) {
         exit("<div class='alert alert-warning' role='alert'><p>Es exestiert bereits ein Benutzer mit der selben E-Mail Adresse</p></div>");
     }
-    execute("INSERT INTO `user`(`title`, `first name`, `last name`, `second title`, `date_of_enter`, `note`, `username`, `password`) VALUES ('$title','$first_name','$last_name','$second_title','$date_of_enter','$text','$email','$passwdHex')");
+    execute("INSERT INTO `user`(`title`, `first name`, `last name`, `second title`, `name day`, `date_of_enter`, `note`, `username`, `password`) VALUES ('$title','$first_name','$last_name','$second_title','--;--','$date_of_enter','$text','$email','$passwdHex')");
     $userData = select("SELECT `ID` FROM user WHERE `username`='$email'");
     $uID = $userData[0]['ID'];
     execute("INSERT INTO `bank_accounts`(`uID`, `IBAN`, `IBAN_clear`, `BIC`, `bank`) VALUES ('$uID','','','','')");
