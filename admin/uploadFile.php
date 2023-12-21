@@ -18,16 +18,15 @@ if(!Auth::checkAdmin()) {
         include 'nav-bar.php';
     ?>
     <div class="container">
-        <h1 class="fw-bold">Dateien hochladen</h1>
+        <h1 class="fw-bold">Datei hochladen</h1>
         <form action="../backEnd/uploadFile.php" method="post" enctype="multipart/form-data">
-            <div class="mb-3">
-                <label for="formFile" class="form-label">1x Textdokument gleichzeitig</label>
-                <input class="form-control" name="fileToUpload" type="file" id="formFile" required>
+            <div class="form-floating">
+                <label for="formFile" class="form-label">Bitte wähle ein PDF</label>
+                <input class="form-control" name="fileToUpload" type="file" id="formFile" accept="application/pdf" required>
             </div>
-
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="floatingInput" name="name" placeholder="Jahr" required>
-                <label for="floatingInput">Name des Uploads</label>
+                <label for="floatingInput">Name des Uploads (meistens das Jahr - Bsp.: 2023)</label>
             </div>
             <div class="form-floating mb-3">
 <!--                <input type="text" class="form-control" id="floatingInput" name="category" placeholder="name@example.com" required>-->
@@ -40,17 +39,8 @@ if(!Auth::checkAdmin()) {
                 </select>
                 <label for="floatingInput">Kategorie</label>
             </div>
-            <div class="form-floating mb-3">
-                <input type="date" class="form-control" id="floatingInput" name="Erscheint am" name="active" placeholder="name@example.com" required>
-                <label for="floatingInput">Erscheint am</label>
-            </div>
-            <button type="submit" class="btn btn-primary" onclick="form.classList.add('was-validated');">Hochladen und indizieren</button>
-        </form>    
-        <div class="alert mt-3" if="feedback" role="alert">
-            Upload erfolgreich
-            <hr>
-            <a href="upload.php"><button class="btn btn-success">zur Dateiverwaltung</button></a>
-        </div>
+            <button type="submit" class="filled" onclick="form.classList.add('was-validated');">Hochladen und indizieren</button>
+        </form>
     </div>        
     <script>
         const form = document.querySelector('form');
@@ -61,11 +51,11 @@ if(!Auth::checkAdmin()) {
             const xhr = new XMLHttpRequest();
             xhr.open('POST', form.action, true);
             xhr.onload = function() {
-                if(JSON.stringify(xhr.responseText)['success']) {
-                    document.getElementById('feedback').classList.add('alert-success');
-                } else {                    
-                    document.getElementById('feedback').classList.add('alert-danger');
-                    document.getElementById('feedback').innerText = "Ein fehler ist aufgetreten";
+                if(JSON.parse(xhr.responseText)['success']) {
+                    window.location = 'upload.php?uploadSuccess'
+                } else {
+                    console.log("[Upload] Es ist ein Fehler aufgetreten: " + xhr.responseText)
+                    alert("Es ist ein Fehler aufgetreten")
                 }
             };
             xhr.send(formData);

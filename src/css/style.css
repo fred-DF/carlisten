@@ -177,13 +177,14 @@ div#footer-content > div > p:first-of-type {
 input, button, textarea, select {
     padding: 15px 30px;
     border: 1.5px solid var(--primary);
-    border-radius: 2px;
+    border-radius: 2px !important;
     background-color: transparent;
     color: var(--primary);
     margin: var(--space-m) 0;
     margin-top: var(--space-s);
     line-height: 19px !important;
     font-size: var(--p-font-size);
+    -webkit-appearance: none
 }
 
 button {

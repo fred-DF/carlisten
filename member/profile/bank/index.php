@@ -4,7 +4,12 @@ include_once __DIR__.'/../../../bootstrap.php';
 Auth::auth();
 
 $uID = $_SESSION['uID'];
-$iban = select("SELECT `IBAN_clear` FROM `bank_accounts` WHERE `uID`='$uID' LIMIT 1")[0]['IBAN_clear'];
+$iban = select("SELECT `IBAN_clear` FROM `bank_accounts` WHERE `uID`='$uID' LIMIT 1");
+if(empty($iban)) {
+    $ibanEmpty = 1;
+} else {
+    $iban = $iban[0]['IBAN_clear'];
+}
 
 ?>
 <!DOCTYPE html>
@@ -20,6 +25,17 @@ $iban = select("SELECT `IBAN_clear` FROM `bank_accounts` WHERE `uID`='$uID' LIMI
 <body>
     <?php require_once __DIR__.'/../../../pages/nav-bar.php'; ?>
     <div class="container">
+        <?php
+
+        if(isset($ibanEmpty)) {
+            ?>
+        <p>Für Sie wurde das Bankdaten-Tool noch nicht aktiviert. Wenden Sie sich bitte diesbezüglich an <a
+                    href="mailto:Frederik Nölke [Siteadmin für Carlisten.de] <frederik@genanntnoelke.de>?subject=[Carlisten.de] Aktivierung: Bankdaten Tool">Frederik Nölke</a>.</p>
+        <?php
+            die();
+        }
+
+        ?>
         <h1>Ihre Bankdaten</h1>
         <p>Wenn Sie Ihre Kontoverbindungen aktualisieren wollen, füllen Sie bitte IBAN, BIC und Bank aus. Aus Datenschutzgründen können weder Sie noch sonstige Mitglieder Ihre aktuell eingegebene Bankverbindung einsehen. Ihre Bankdaten können ausschließlich durch den Präsidenten sowie den Kassenwart decodiert und eingesehen werden.</p>
         <p>Bei Fragen wenden Sie sich bitte an den <a href="mailto:kassenwart@carlisten.de">Kassenwart</a>.</p>
@@ -67,7 +83,7 @@ $iban = select("SELECT `IBAN_clear` FROM `bank_accounts` WHERE `uID`='$uID' LIMI
             e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
         });
     </script>
-    <script src="<?php echo $_ENV['APP_URL'] ?>/member/profile/bank/bank.js"></script>
+    <script src="/member/profile/bank/bank.js"></script>
 </body>
 
 </html>

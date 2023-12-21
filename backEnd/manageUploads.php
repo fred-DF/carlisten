@@ -5,10 +5,11 @@ Auth::checkAdmin();
 
 if(isset($_GET['deleteFile']) && isset($_GET['path'])) {
     $file_path = $_GET['path'];
-    if(file_exists("../" . $file_path)) {
+    echo __DIR__."/../" . $file_path;
+    if(file_exists(__DIR__."/../" . $file_path)) {
         $unlink = unlink('../' . $file_path);
     } else {
-        echo "File dosent exists";
+        echo "File doesn't exists";
     }
     include_once 'pdo.php';
     $path = $_GET['path'];

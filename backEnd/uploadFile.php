@@ -7,7 +7,6 @@ $userID = $_SESSION['uID'];
 $file = $_FILES['fileToUpload'];
 $category = $_POST['category'];
 $name = $_POST['name'];
-$active = $_POST['active'];
 $fileSize = filesize($file['tmp_name']);
 $path = '../uploads/' . $category . "/";
 
@@ -22,7 +21,7 @@ move_uploaded_file($file['tmp_name'], $path . $filename);
 
 // Füge das Hochgeladene zur Datenbank hinzu
 include_once 'pdo.php';
-execute("INSERT INTO `uploads`(`name`, `file_name`, `path`, `category`, `size`, `uploader`, `active`) VALUES ('$name','$filename','uploads/$category/$filename','$category','$fileSize',$userID,'$active')");
+execute("INSERT INTO `uploads`(`name`, `file_name`, `path`, `category`, `size`, `uploader`) VALUES ('$name','$filename','uploads/$category/$filename','$category','$fileSize',$userID)");
 // Führe die Abfrage aus
 
 // Geben Sie eine Antwort zurück an den Client
