@@ -16,7 +16,7 @@ if(isset($_GET['first_name']) && isset($_GET['last_name']) && isset($_GET['date_
     $passwdHex = hash('sha256', $passwd);
     include_once 'pdo.php';
     if(!empty(select("SELECT `ID` FROM `user` WHERE `username`='$email'"))) {
-        exit("<div class='alert alert-warning' role='alert'><p>Es exestiert bereits ein Benutzer mit der selben E-Mail Adresse</p></div>");
+        exit("<div class='alert alert-warning' role='alert'><p>Es existiert bereits ein Benutzer mit derselben E-Mail-Adresse</p></div>");
     }
     execute("INSERT INTO `user`(`title`, `first name`, `last name`, `second title`, `name day`, `date_of_enter`, `note`, `username`, `password`) VALUES ('$title','$first_name','$last_name','$second_title','--;--','$date_of_enter','$text','$email','$passwdHex')");
     $userData = select("SELECT `ID` FROM user WHERE `username`='$email'");

@@ -105,11 +105,11 @@ foreach ($userData as $key => $value) {
             <div>
                 <div class="row" style="align-items: center">
                     <div class="form-floating" style="width: 110px">
-                        <input style="text-align: center" maxlength="2" type="text" class="form-control" id="dayInput" placeholder="TT" <?php if(isset($title)) {echo "value='" . $dateOfEnter ."'";}?>>
+                        <input style="text-align: center" maxlength="2" type="text" class="form-control" id="dayInput" placeholder="Tag" <?php if(isset($title)) {echo "value='" . $dateOfEnter ."'";}?>>
                         <label for="dayInput">Tag</label>
                     </div>
                     <div class="form-floating" style="width: 110px">
-                        <input style="text-align: center" maxlength="2" type="text" class="form-control" id="monthInput" placeholder="MM" <?php if(isset($title)) {echo "value='" . $dateOfEnter ."'";}?>>
+                        <input style="text-align: center" maxlength="2" type="text" class="form-control" id="monthInput" placeholder="Monat" <?php if(isset($title)) {echo "value='" . $dateOfEnter ."'";}?>>
                         <label for="monthInput">Monat</label>
                     </div>
                 </div>
